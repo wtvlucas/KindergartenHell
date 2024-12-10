@@ -1,0 +1,176 @@
+[gd_scene load_steps=11 format=3 uid="uid://dmnhko1353yff"]
+
+[ext_resource type="Script" path="res://assets/Scripts/main_menu.gd" id="1_s3fjm"]
+[ext_resource type="Texture2D" uid="uid://rehircjb8c6l" path="res://assets/Sprite/cenarioPortaGrande.png" id="1_vormu"]
+[ext_resource type="FontFile" uid="uid://ec8ip5yx458f" path="res://assets/fonts/PressStart2P-vaV7.ttf" id="2_eotu1"]
+[ext_resource type="Texture2D" uid="uid://dwemv5mvsspi2" path="res://assets/Sprite/Kids/green_kid.png" id="2_ixem2"]
+[ext_resource type="Texture2D" uid="uid://cdyomvk6hfh3y" path="res://assets/Sprite/star.png" id="3_23hh4"]
+[ext_resource type="Texture2D" uid="uid://jcskk2i62hon" path="res://assets/Sprite/Kids/blue_kid.png" id="5_f5vpc"]
+[ext_resource type="Texture2D" uid="uid://hyabi47pk3pk" path="res://assets/Sprite/Kids/red_kid.png" id="6_jur3j"]
+[ext_resource type="Texture2D" uid="uid://okwjlfnicput" path="res://assets/Sprite/teacher_2.png" id="8_0ldwe"]
+
+[sub_resource type="Theme" id="Theme_ysxye"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_graja"]
+font = ExtResource("2_eotu1")
+font_size = 20
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-1, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s3fjm")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 640.0
+texture = ExtResource("1_vormu")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.607843)
+
+[node name="Level1Button" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 107.0
+offset_top = 296.0
+offset_right = 155.0
+offset_bottom = 344.0
+pivot_offset = Vector2(21, 0)
+theme = SubResource("Theme_ysxye")
+texture_normal = ExtResource("2_ixem2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="StarsContainerLvl1" type="HBoxContainer" parent="Level1Button"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -7.0
+offset_top = -16.0
+offset_right = 49.0
+alignment = 1
+
+[node name="Lvl1Star1" type="TextureRect" parent="Level1Button/StarsContainerLvl1"]
+layout_mode = 2
+texture = ExtResource("3_23hh4")
+expand_mode = 2
+
+[node name="Lvl1Star2" type="TextureRect" parent="Level1Button/StarsContainerLvl1"]
+layout_mode = 2
+texture = ExtResource("3_23hh4")
+expand_mode = 2
+
+[node name="Lvl1Star3" type="TextureRect" parent="Level1Button/StarsContainerLvl1"]
+layout_mode = 2
+texture = ExtResource("3_23hh4")
+expand_mode = 2
+
+[node name="Level2Button" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 299.0
+offset_top = 296.0
+offset_right = 347.0
+offset_bottom = 344.0
+pivot_offset = Vector2(21, 0)
+theme = SubResource("Theme_ysxye")
+texture_normal = ExtResource("5_f5vpc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="StarsContainerLvl2" type="HBoxContainer" parent="Level2Button"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -7.0
+offset_top = -16.0
+offset_right = 49.0
+alignment = 1
+
+[node name="Lvl2Star1" type="TextureRect" parent="Level2Button/StarsContainerLvl2"]
+layout_mode = 2
+texture = ExtResource("3_23hh4")
+expand_mode = 2
+
+[node name="Lvl2Star2" type="TextureRect" parent="Level2Button/StarsContainerLvl2"]
+layout_mode = 2
+texture = ExtResource("3_23hh4")
+expand_mode = 2
+
+[node name="Lvl2Star3" type="TextureRect" parent="Level2Button/StarsContainerLvl2"]
+layout_mode = 2
+texture = ExtResource("3_23hh4")
+expand_mode = 2
+
+[node name="Level3Button" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 491.0
+offset_top = 296.0
+offset_right = 539.0
+offset_bottom = 344.0
+pivot_offset = Vector2(21, 0)
+theme = SubResource("Theme_ysxye")
+texture_normal = ExtResource("6_jur3j")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="StarsContainerLvl3" type="HBoxContainer" parent="Level3Button"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -7.0
+offset_top = -16.0
+offset_right = 49.0
+alignment = 1
+
+[node name="Lvl3Star1" type="TextureRect" parent="Level3Button/StarsContainerLvl3"]
+layout_mode = 2
+texture = ExtResource("3_23hh4")
+expand_mode = 2
+
+[node name="Lvl3Star2" type="TextureRect" parent="Level3Button/StarsContainerLvl3"]
+layout_mode = 2
+texture = ExtResource("3_23hh4")
+expand_mode = 2
+
+[node name="Lvl3Star3" type="TextureRect" parent="Level3Button/StarsContainerLvl3"]
+layout_mode = 2
+texture = ExtResource("3_23hh4")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.012
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 104.32
+offset_right = -160.0
+offset_bottom = -508.0
+grow_horizontal = 2
+text = "Kindergarten Hell"
+label_settings = SubResource("LabelSettings_graja")
+uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(128, 232)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_0ldwe")
+
+[connection signal="pressed" from="Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level2Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="Level3Button" to="." method="_on_level_3_button_pressed"]

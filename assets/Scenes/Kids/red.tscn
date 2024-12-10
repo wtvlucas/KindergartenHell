@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://p4s6bsp70ti5"]
+
+[ext_resource type="Script" path="res://assets/Scripts/Kids/red.gd" id="1_in5dd"]
+[ext_resource type="Texture2D" uid="uid://hyabi47pk3pk" path="res://assets/Sprite/Kids/red_kid.png" id="2_g8w5r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1mjo"]
+size = Vector2(32, 32)
+
+[node name="Red" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_in5dd")
+
+[node name="Sprite2d" type="Sprite2D" parent="." groups=["Kids"]]
+position = Vector2(2, 9)
+scale = Vector2(0.2875, 0.2875)
+texture = ExtResource("2_g8w5r")
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s1mjo")
+
+[node name="RayCast2d" type="RayCast2D" parent="."]
+collide_with_areas = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
