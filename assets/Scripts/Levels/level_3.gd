@@ -9,6 +9,8 @@ extends Node2D
 @onready var next_level_button: Button = $Hud/LevelComplete/NextLevelButton
 @onready var no_stars_label: Label = %NoStarsLabel
 
+@onready var label: Label = $Hud/Label
+
 
 
 var saved = 0
@@ -21,11 +23,13 @@ func _ready() -> void:
 	level_complete.hide()
 	no_stars_label.hide()
 	next_level_button.text = "Next Chapter"
+	GameManager.moves = 0
 	#SaveSystem.reset_stars()
 	#SaveSystem.save_data()
 
 func _process(delta: float) -> void:
-	timer_bar.value = timer.time_left
+	#timer_bar.value = timer.time_left
+	label.text = str(GameManager.moves)
 	#print(SaveSystem.get_stars_for_level("level3"))
 	#SaveSystem.set_stars_for_level("level3", 0)
 		

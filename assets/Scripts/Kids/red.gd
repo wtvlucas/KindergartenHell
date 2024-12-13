@@ -56,7 +56,8 @@ func move(dir):
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Kids") || area.is_in_group("Player") || area.is_in_group("Walls"):
+	#if area.is_in_group("Kids") || area.is_in_group("Player") || area.is_in_group("Walls"):
+	if !area.is_in_group("Exit"):
 		moving = true
 		inverted = !inverted
 		var tween = get_tree().create_tween()
@@ -67,6 +68,6 @@ func _on_area_entered(area: Area2D) -> void:
 		#inverted = !inverted
 		#print(inverted)
 		
-	if area.is_in_group("Exit"):
+	else:
 		self.queue_free()
 		get_parent().saved += 1

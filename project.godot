@@ -22,7 +22,6 @@ SaveSystem="*res://resources/save_system.gd"
 
 [display]
 
-window/size/viewport_width=640
 window/size/viewport_height=640
 window/size/initial_position_type=0
 window/size/resizable=false

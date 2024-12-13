@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bll5udapx4mfi"]
+
+[ext_resource type="Texture2D" uid="uid://bwry54vj2d0b6" path="res://assets/Sprite/logo.png" id="1_2768v"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.419608)
+
+[node name="Logo" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -161.0
+offset_top = 64.0
+offset_right = 161.0
+offset_bottom = 192.0
+grow_horizontal = 2
+texture = ExtResource("1_2768v")
+expand_mode = 1

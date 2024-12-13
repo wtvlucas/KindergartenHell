@@ -1,11 +1,40 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0wysm6c2nqgj"]
+[gd_scene load_steps=15 format=3 uid="uid://b0wysm6c2nqgj"]
 
 [ext_resource type="Script" path="res://assets/Scripts/player.gd" id="1_26y8w"]
 [ext_resource type="Texture2D" uid="uid://fn3ats00hpd7" path="res://assets/sokoban_character.png" id="2_47llq"]
 [ext_resource type="Texture2D" uid="uid://okwjlfnicput" path="res://assets/Sprite/teacher_2.png" id="3_eaae3"]
+[ext_resource type="Texture2D" uid="uid://cxls4hnjypfm4" path="res://assets/Sprite/teacher/teacherlowpoly - Layer 1 - 0.png" id="4_1csme"]
+[ext_resource type="Texture2D" uid="uid://dnpidl6hgf82r" path="res://assets/Sprite/teacher/teacherlowpoly - Layer 1 - 1.png" id="5_rcb07"]
+[ext_resource type="Texture2D" uid="uid://b6tp2clyyeyjl" path="res://assets/Sprite/teacher/teacherlowpoly-walk - Layer 1 - 0.png" id="6_m23rc"]
+[ext_resource type="Texture2D" uid="uid://dvn7q1cr3m0n4" path="res://assets/Sprite/teacher/teacherlowpoly-walk - Layer 1 - 1.png" id="7_u8rdw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k0l4s"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("4_1csme")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_rcb07")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("6_m23rc")
+}, {
+"duration": 3.0,
+"texture": ExtResource("7_u8rdw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tia2a"]
-size = Vector2(32, 32)
+size = Vector2(32, 48)
 
 [sub_resource type="Animation" id="Animation_c7mrc"]
 resource_name = "down"
@@ -81,6 +110,7 @@ _data = {
 
 [node name="Player" type="Area2D" groups=["Player"]]
 script = ExtResource("1_26y8w")
+metadata/_edit_horizontal_guides_ = [-40.0]
 
 [node name="Sprite2d" type="Sprite2D" parent="."]
 visible = false
@@ -90,9 +120,17 @@ vframes = 4
 frame = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -2)
 scale = Vector2(0.209, 0.209)
 texture = ExtResource("3_eaae3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(0.042, 0.042)
+sprite_frames = SubResource("SpriteFrames_k0l4s")
+animation = &"stand"
+autoplay = "stand"
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tia2a")

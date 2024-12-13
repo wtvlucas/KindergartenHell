@@ -42,7 +42,7 @@ func move(dir):
 	#checker(dir)
 	if GameManager.checker(dir, ray, inputs, tile_size) == true:
 		GameManager.blocked = false
-		
+		GameManager.moves += 1
 		tile_pos = tile_map.local_to_map(transform.get_origin()) 
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", position + inputs[dir] * tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)

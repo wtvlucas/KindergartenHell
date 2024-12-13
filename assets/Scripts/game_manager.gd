@@ -2,7 +2,7 @@ extends Node
 
 
 var blocked = false
-signal movement_locked() 
+var moves = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -24,6 +24,8 @@ func checker(dir, ray, inputs, tile_size):
 	for i in range(5): 
 		if current_collider.is_in_group("Kids") or current_collider.is_in_group("Player"):
 			var next_ray = current_collider.ray
+			next_ray.target_position = inputs[dir] * tile_size
+			next_ray.force_raycast_update()
 			if next_ray.is_colliding():
 				current_collider = next_ray.get_collider()
 			else:

@@ -1,13 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://7s8tap4or6wg"]
+[gd_scene load_steps=12 format=3 uid="uid://7s8tap4or6wg"]
 
-[ext_resource type="Texture2D" uid="uid://c2sq6xghtafe0" path="res://assets/Sprite/out.png" id="2_o5sml"]
-[ext_resource type="Texture2D" uid="uid://2h0snqhp2afp" path="res://assets/Sprite/fill.png" id="3_4fucf"]
 [ext_resource type="Texture2D" uid="uid://cdyomvk6hfh3y" path="res://assets/Sprite/star.png" id="4_0v2x5"]
 [ext_resource type="FontFile" uid="uid://ec8ip5yx458f" path="res://assets/fonts/PressStart2P-vaV7.ttf" id="5_uefnh"]
 [ext_resource type="Theme" uid="uid://4r6b2cnujbph" path="res://assets/gui_assets/waste_no_space.theme" id="6_occ5a"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7ujfh"]
-load_path = "res://.godot/imported/fill.png-980de3b83c4bcad8345134d983741e79.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61jwa"]
 content_margin_left = 4.0
@@ -142,22 +137,13 @@ shadow_size = 2
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(-1, 1)
 
-[node name="Hud" type="CanvasLayer"]
+[sub_resource type="LabelSettings" id="LabelSettings_66vi6"]
+line_spacing = 3.725
+font = ExtResource("5_uefnh")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
 
-[node name="Timer" type="TextureProgressBar" parent="."]
-offset_right = 300.0
-offset_bottom = 50.0
-scale = Vector2(0.56, 0.72)
-max_value = 60.0
-step = 0.1
-value = 6.0
-rounded = true
-texture_under = SubResource("CompressedTexture2D_7ujfh")
-texture_over = ExtResource("2_o5sml")
-texture_progress = ExtResource("3_4fucf")
-tint_under = Color(0.220127, 0.206432, 0.191766, 1)
-tint_over = Color(0.696272, 0.558581, 0.792089, 1)
-tint_progress = Color(0.878465, 0.875644, 0.879844, 1)
+[node name="Hud" type="CanvasLayer"]
 
 [node name="LevelComplete" type="Control" parent="."]
 visible = false
@@ -233,3 +219,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_occ5a")
 text = "Next Level"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -231.0
+offset_right = 231.0
+offset_bottom = 66.0
+grow_horizontal = 2
+text = "MOVES: "
+label_settings = SubResource("LabelSettings_66vi6")
+horizontal_alignment = 1
