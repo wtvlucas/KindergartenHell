@@ -7,3 +7,5 @@ extends Resource
 	"level2": 0,
 	"level3": 0
 }
+
+@export var last_level : String = "cp1_lvl1"

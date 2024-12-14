@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bll5udapx4mfi"]
+[gd_scene load_steps=6 format=3 uid="uid://bll5udapx4mfi"]
 
 [ext_resource type="Texture2D" uid="uid://bwry54vj2d0b6" path="res://assets/Sprite/logo.png" id="1_2768v"]
+[ext_resource type="Script" path="res://assets/Scripts/pause_menu.gd" id="1_cu273"]
+[ext_resource type="Texture2D" uid="uid://cnd6n08htgmik" path="res://assets/Sprite/UI/back.png" id="2_awwnj"]
+[ext_resource type="Texture2D" uid="uid://bu3nob04xrmey" path="res://assets/Sprite/UI/home.png" id="3_hmav5"]
+[ext_resource type="Texture2D" uid="uid://cfybfndsyclny" path="res://assets/Sprite/UI/restart.png" id="4_wv0ce"]
 
 [node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_cu273")
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -19,7 +24,57 @@ anchor_right = 0.5
 offset_left = -161.0
 offset_top = 64.0
 offset_right = 161.0
-offset_bottom = 192.0
+offset_bottom = 184.0
 grow_horizontal = 2
 texture = ExtResource("1_2768v")
 expand_mode = 1
+
+[node name="Back" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -24.0
+offset_right = -232.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_awwnj")
+texture_pressed = ExtResource("2_awwnj")
+texture_hover = ExtResource("2_awwnj")
+
+[node name="Home" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_hmav5")
+texture_pressed = ExtResource("3_hmav5")
+texture_hover = ExtResource("3_hmav5")
+
+[node name="Restart" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 216.0
+offset_top = -48.0
+offset_right = 312.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_wv0ce")
+texture_pressed = ExtResource("4_wv0ce")
+texture_hover = ExtResource("4_wv0ce")
+
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]

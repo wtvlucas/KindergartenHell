@@ -14,7 +14,8 @@ func load_data() -> void:
 
 func _ready() -> void:
 	load_data()
-
+	if data:
+		GameManager.current_level = data.last_level
 
 
 func set_stars_for_level(level: String, value: int):
@@ -41,3 +42,10 @@ func reset_stars():
 		data.stars[level] = 0
 	print("Todas as estrelas foram resetadas para 0.")
 	save_data()
+	
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		if data:
+			data.last_level = GameManager.current_level
+			save_data()
+			get_tree().quit()

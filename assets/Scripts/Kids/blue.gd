@@ -27,13 +27,14 @@ func _unhandled_input(event):
 		return
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
-			#await get_tree().create_timer(0.5).timeout
 			move(dir)
 			
 func move(dir):
 	ray.target_position = inputs[dir] * tile_size
 	ray.force_raycast_update()
-	if GameManager.checker(dir, ray, inputs, tile_size) == true:
+	#GameManager.checker(dir, ray, inputs, tile_size, true)
+	
+	if GameManager.checker(dir, ray, inputs, tile_size, true) == true:
 		tile_pos = tile_map.local_to_map(transform.get_origin()) 
 		
 		last_pos = position

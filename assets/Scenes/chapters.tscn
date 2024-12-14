@@ -1,0 +1,137 @@
+[gd_scene load_steps=10 format=3 uid="uid://boou8o8uywpnh"]
+
+[ext_resource type="Script" path="res://assets/Scripts/chapters.gd" id="1_aoovc"]
+[ext_resource type="Texture2D" uid="uid://bqorcsgr226ya" path="res://assets/Sprite/UI/chapters.png" id="3_6hfjf"]
+[ext_resource type="Texture2D" uid="uid://buhed3ow5tlaq" path="res://assets/Sprite/UI/arrow.png" id="3_vhoqs"]
+[ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="4_45iv4"]
+
+[sub_resource type="Theme" id="Theme_ysxye"]
+
+[sub_resource type="Animation" id="Animation_r1643"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8civw"]
+resource_name = "blink"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.5, 1.3, 1.5, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5x4ac"]
+_data = {
+"RESET": SubResource("Animation_r1643"),
+"blink": SubResource("Animation_8civw")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_0a0tm"]
+font = ExtResource("4_45iv4")
+font_size = 31
+
+[node name="Chapters" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aoovc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_6hfjf")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.132
+anchor_top = 0.687
+anchor_right = 0.59
+anchor_bottom = 0.75
+offset_left = -0.0639954
+offset_top = -7.68002
+offset_right = 0.319946
+offset_bottom = -8.00003
+color = Color(0.239216, 0.431373, 0.439216, 1)
+
+[node name="Chapter1" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 134.0
+offset_top = 200.0
+offset_right = 230.0
+offset_bottom = 232.0
+theme = SubResource("Theme_ysxye")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Chapter2" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 479.0
+offset_top = 200.0
+offset_right = 575.0
+offset_bottom = 232.0
+theme = SubResource("Theme_ysxye")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Arrow" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(104, 224)
+scale = Vector2(0.958333, 0.958333)
+texture = ExtResource("3_vhoqs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Arrow"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_5x4ac")
+}
+autoplay = "blink"
+
+[node name="Chapter1Stars" type="Label" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 432.0
+offset_right = 301.0
+offset_bottom = 472.0
+text = "xx/15 *"
+label_settings = SubResource("LabelSettings_0a0tm")
+
+[node name="Chapter2Stars" type="Label" parent="."]
+offset_left = 504.0
+offset_top = 432.0
+offset_right = 653.0
+offset_bottom = 472.0
+text = "xx/15 *"
+label_settings = SubResource("LabelSettings_0a0tm")
+
+[connection signal="pressed" from="Chapter1" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Chapter2" to="." method="_on_level_1_button_pressed"]
