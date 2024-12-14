@@ -13,7 +13,7 @@ var last_pos
 var tile_pos
 @onready var tile_map: TileMap = %TileMap
 var can_move = true
-
+#
 @onready var ray = $RayCast2d
 
 func _ready():
