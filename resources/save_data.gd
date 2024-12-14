@@ -8,4 +8,4 @@ extends Resource
 	"level3": 0
 }
 
-@export var last_level : String = "cp1_lvl1"
+@export var last_level : String = GameManager.current_level

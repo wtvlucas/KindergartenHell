@@ -27,11 +27,10 @@ func change_lvl() -> void:
 	if Input.is_action_just_pressed("select"):
 		if current_option == 1:
 			var last_lvl = SaveSystem.data.last_level
-			get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + last_lvl + ".tscn")
-		elif current_option == 2:
-			get_tree().change_scene_to_file("res://assets/Scenes/chapters.tscn")
-		elif current_option == 3:
-			get_tree().quit()
+			get_tree().change_scene_to_file("res://assets/Scenes/chapters/chapter_1.tscn")
+		#elif current_option == 2:
+			#get_tree().change_scene_to_file("res://assets/Scenes/chapters.tscn")
+	
 		
 
 func _process(delta: float) -> void:

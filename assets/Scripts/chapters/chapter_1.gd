@@ -1,8 +1,13 @@
 extends Control
 
-@onready var chapter_1: TextureButton = %Chapter1
-@onready var chapter_2: TextureButton = %Chapter2
+
 @onready var arrow: Sprite2D = %Arrow
+@onready var level_1: TextureButton = %Level1
+@onready var level_2: TextureButton = %Level2
+@onready var level_3: TextureButton = %Level3
+@onready var level_4: TextureButton = %Level4
+@onready var level_5: TextureButton = %Level5
+
 
 
 var levels_position: Array = []
@@ -15,8 +20,11 @@ func _ready() -> void:
 
 
 	levels_position = [
-		chapter_1.position,
-		chapter_2.position
+		level_1.position,
+		level_2.position,
+		level_3.position,
+		level_4.position,
+		level_5.position
 	]
 	
 	
@@ -27,11 +35,10 @@ func change_lvl() -> void:
 	if Input.is_action_just_pressed("select"):
 		if current_level == 1:
 			var last_lvl = SaveSystem.data.last_level
-			get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + last_lvl + ".tscn")
+			get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl1.tscn")
 		elif current_level == 2:
-			get_tree().change_scene_to_file("res://assets/Scenes/chapters.tscn")
-		elif current_level == 3:
-			get_tree().quit()
+			get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl2.tscn")
+	
 		
 
 func _process(delta: float) -> void:
@@ -48,4 +55,4 @@ func move_character(direction: int) -> void:
 	update_option_position()
 
 func update_option_position() -> void:
-	arrow.position = Vector2(levels_position[current_level - 1].x - 20, levels_position[current_level - 1].y + 30)
+	arrow.position = Vector2(levels_position[current_level - 1].x, levels_position[current_level - 1].y - 30)
