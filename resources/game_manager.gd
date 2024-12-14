@@ -7,6 +7,7 @@ var pause_menu = preload("res://assets/Scenes/pause_menu.tscn")
 var paused = false
 var menu = pause_menu.instantiate()
 
+var moving : int = 0
 var current_level : String = "cp1_lvl1"
 
 func _ready() -> void:
@@ -23,8 +24,9 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") and get_tree().get_current_scene().get_name() != "MainMenu":
 		pause() if !paused else unpause()
 		paused = !paused
-		
-	prints(current_level, SaveSystem.data.last_level)
+	
+	print(moving)
+	#prints(current_level, SaveSystem.data.last_level)
 
 
 func checker(dir, ray, inputs, tile_size, blue = false):

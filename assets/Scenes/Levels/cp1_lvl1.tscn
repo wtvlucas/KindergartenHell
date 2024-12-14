@@ -1,15 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://xocrv0482y40"]
+[gd_scene load_steps=16 format=3 uid="uid://xocrv0482y40"]
 
 [ext_resource type="Script" path="res://assets/Scripts/Levels/cp1_lvl1.gd" id="1_unhpj"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_aqs1t"]
-[ext_resource type="Texture2D" uid="uid://01p42u4x3oo7" path="res://assets/Sprite/cenario_resolucaocorrigida.png" id="3_qfavn"]
+[ext_resource type="Texture2D" uid="uid://josmu1668w6w" path="res://assets/Sprite/cenario final.png" id="3_f86va"]
 [ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="4_gbllo"]
 [ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="5_d4p8d"]
 [ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="6_2e6xn"]
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="7_xh7ve"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="9_uarbo"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nfvqp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_60tv1"]
 texture = ExtResource("2_aqs1t")
 texture_region_size = Vector2i(64, 64)
 4:0/0 = 0
@@ -102,141 +102,9 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_qytxo"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_nfvqp")
+sources/0 = SubResource("TileSetAtlasSource_60tv1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh75o"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61jwa"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-skew = Vector2(1, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.374139, 0.374139, 0.374139, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 1
-expand_margin_top = 11.0
-expand_margin_bottom = 11.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgh1q"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-skew = Vector2(1, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.374139, 0.374139, 0.374139, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 1
-expand_margin_top = 11.0
-expand_margin_bottom = 11.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dp868"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-skew = Vector2(1, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.374139, 0.374139, 0.374139, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 1
-expand_margin_top = 11.0
-expand_margin_bottom = 11.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdf5g"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-skew = Vector2(1, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 0.768627, 1, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 1
-expand_margin_top = 11.0
-expand_margin_bottom = 11.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bprxc"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-skew = Vector2(1, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.374139, 0.374139, 0.374139, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 1
-expand_margin_top = 11.0
-expand_margin_bottom = 11.0
-
-[sub_resource type="Theme" id="Theme_d7riq"]
-Button/colors/font_color = Color(0.984314, 0.87451, 0.87451, 1)
-Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
-Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
-Button/colors/icon_focus_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_normal_color = Color(1, 1, 1, 1)
-Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
-Button/constants/align_to_largest_stylebox = 0
-Button/constants/h_separation = 4
-Button/constants/icon_max_width = 0
-Button/constants/outline_size = 1
-Button/font_sizes/font_size = 31
-Button/fonts/font = null
-Button/styles/disabled = SubResource("StyleBoxFlat_61jwa")
-Button/styles/focus = SubResource("StyleBoxFlat_bgh1q")
-Button/styles/hover = SubResource("StyleBoxFlat_dp868")
-Button/styles/normal = SubResource("StyleBoxFlat_sdf5g")
-Button/styles/pressed = SubResource("StyleBoxFlat_bprxc")
-
-[sub_resource type="LabelSettings" id="LabelSettings_1q2ku"]
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 2
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(-1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50lxg"]
 size = Vector2(38, 624)
@@ -244,10 +112,13 @@ size = Vector2(38, 624)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1w3ky"]
 size = Vector2(20, 768)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eivbf"]
+size = Vector2(48, 56)
+
 [sub_resource type="LabelSettings" id="LabelSettings_dewek"]
 font_size = 251
 
-[node name="Level1" type="Node2D"]
+[node name="Cp1Lvl1" type="Node2D"]
 script = ExtResource("1_unhpj")
 
 [node name="TileMap" type="TileMap" parent="." groups=["Tilemap"]]
@@ -263,7 +134,10 @@ layer_1/tile_data = PackedInt32Array(-65518, 262144, 0, 18, 262144, 0, 65554, 26
 offset_right = 1780.0
 offset_bottom = 989.0
 scale = Vector2(0.647, 0.647)
-texture = ExtResource("3_qfavn")
+texture = ExtResource("3_f86va")
+
+[node name="Player" parent="." instance=ExtResource("9_uarbo")]
+position = Vector2(344, 296)
 
 [node name="Green4" parent="." instance=ExtResource("4_gbllo")]
 position = Vector2(480, 408)
@@ -299,30 +173,20 @@ shape = SubResource("RectangleShape2D_gh75o")
 [node name="Hud" parent="." instance=ExtResource("7_xh7ve")]
 
 [node name="Stars" parent="Hud/LevelComplete" index="1"]
-offset_top = 168.0
-offset_bottom = 336.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.999
+offset_top = -88.0
+offset_right = 88.001
+offset_bottom = 80.0
 
 [node name="NextLevelButton" parent="Hud/LevelComplete" index="3"]
+anchor_left = 0.402778
+anchor_right = 0.531945
 offset_right = 129.501
-disabled = true
-text = "Next Chapter soon..."
-
-[node name="NoStarsLabel" type="Label" parent="Hud/LevelComplete" index="4"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -173.5
-offset_top = 400.0
-offset_right = 178.5
-offset_bottom = 457.0
-grow_horizontal = 2
-theme = SubResource("Theme_d7riq")
-text = "You only have x/x stars to get in the 2nd chapter!"
-label_settings = SubResource("LabelSettings_1q2ku")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -350,17 +214,23 @@ position = Vector2(576, 656)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_1w3ky")
 
-[node name="Player" parent="." instance=ExtResource("9_uarbo")]
-position = Vector2(344, 296)
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2(488, 92)
+shape = SubResource("RectangleShape2D_eivbf")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
+position = Vector2(664, 88)
+shape = SubResource("RectangleShape2D_eivbf")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 488.0
-offset_top = 168.0
-offset_right = 872.0
-offset_bottom = 511.0
+offset_left = -16.0
+offset_top = -72.0
+offset_right = 368.0
+offset_bottom = 271.0
 text = "1"
 label_settings = SubResource("LabelSettings_dewek")
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
+[connection signal="pressed" from="Hud/LevelComplete/NextLevelButton" to="." method="_on_next_level_button_pressed"]
 
 [editable path="Hud"]

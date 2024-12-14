@@ -126,6 +126,7 @@ text = "xx/15 *"
 label_settings = SubResource("LabelSettings_0a0tm")
 
 [node name="Chapter2Stars" type="Label" parent="."]
+layout_mode = 0
 offset_left = 504.0
 offset_top = 432.0
 offset_right = 653.0

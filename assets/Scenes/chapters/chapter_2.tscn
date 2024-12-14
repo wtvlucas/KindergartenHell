@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1j83vpuqld87"]
+[gd_scene load_steps=10 format=3 uid="uid://by35re0g887b3"]
 
-[ext_resource type="Script" path="res://assets/Scripts/chapters/chapter_1.gd" id="1_iioah"]
-[ext_resource type="Texture2D" uid="uid://x12526ynoe67" path="res://assets/Sprite/UI/level_selection.png" id="2_o7ia8"]
-[ext_resource type="Texture2D" uid="uid://buhed3ow5tlaq" path="res://assets/Sprite/UI/arrow.png" id="3_bdsch"]
-[ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="4_jdefv"]
+[ext_resource type="Script" path="res://assets/Scripts/chapters/chapter_2.gd" id="1_hfoxf"]
+[ext_resource type="Texture2D" uid="uid://x12526ynoe67" path="res://assets/Sprite/UI/level_selection.png" id="2_se0bb"]
+[ext_resource type="Texture2D" uid="uid://buhed3ow5tlaq" path="res://assets/Sprite/UI/arrow.png" id="3_8n2b7"]
+[ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="4_fjdse"]
 
 [sub_resource type="Theme" id="Theme_awuhk"]
 
@@ -45,19 +45,19 @@ _data = {
 "blink": SubResource("Animation_8civw")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_o0xuf"]
+[sub_resource type="LabelSettings" id="LabelSettings_7xe41"]
 line_spacing = 7.0
-font = ExtResource("4_jdefv")
+font = ExtResource("4_fjdse")
 font_size = 56
 
-[node name="Chapter1" type="Control"]
+[node name="Chapter2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_iioah")
+script = ExtResource("1_hfoxf")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -70,7 +70,7 @@ offset_right = 16.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_o7ia8")
+texture = ExtResource("2_se0bb")
 expand_mode = 1
 
 [node name="Level1" type="TextureButton" parent="."]
@@ -138,7 +138,7 @@ unique_name_in_owner = true
 position = Vector2(264, 224)
 rotation = 1.5708
 scale = Vector2(0.958333, 0.958333)
-texture = ExtResource("3_bdsch")
+texture = ExtResource("3_8n2b7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Arrow"]
 root_node = NodePath("../..")
@@ -153,8 +153,8 @@ offset_left = 360.0
 offset_top = 80.0
 offset_right = 711.0
 offset_bottom = 152.0
-text = "Chapter 1"
-label_settings = SubResource("LabelSettings_o0xuf")
+text = "Chapter 2"
+label_settings = SubResource("LabelSettings_7xe41")
 
 [connection signal="pressed" from="Level1" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="Level2" to="." method="_on_level_1_button_pressed"]

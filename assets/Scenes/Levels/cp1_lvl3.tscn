@@ -1,16 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://ufq36fpaar6o"]
+[gd_scene load_steps=22 format=3 uid="uid://c84f3yby4qd6i"]
 
-[ext_resource type="Script" path="res://assets/Scripts/Levels/cp1_lvl2.gd" id="1_iprqh"]
-[ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_inkju"]
-[ext_resource type="Texture2D" uid="uid://01p42u4x3oo7" path="res://assets/Sprite/cenario_resolucaocorrigida.png" id="3_k1i6g"]
-[ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="4_3nf0a"]
-[ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="5_cb086"]
-[ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="6_jtvfm"]
-[ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="7_3sry6"]
-[ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="9_2m4fx"]
+[ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_k68yq"]
+[ext_resource type="Texture2D" uid="uid://01p42u4x3oo7" path="res://assets/Sprite/cenario_resolucaocorrigida.png" id="3_j6cu5"]
+[ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="4_ktjpn"]
+[ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="5_adtmt"]
+[ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="6_s1hv5"]
+[ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="7_sxiuv"]
+[ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="8_b6ye2"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxns4"]
-texture = ExtResource("2_inkju")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_snjwh"]
+texture = ExtResource("2_k68yq")
 texture_region_size = Vector2i(64, 64)
 4:0/0 = 0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
@@ -99,10 +98,10 @@ texture_region_size = Vector2i(64, 64)
 11:7/0 = 0
 12:7/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_cpnob"]
+[sub_resource type="TileSet" id="TileSet_m1000"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_pxns4")
+sources/0 = SubResource("TileSetAtlasSource_snjwh")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh75o"]
 
@@ -239,23 +238,22 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(-1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50lxg"]
-size = Vector2(38, 600)
+size = Vector2(38, 624)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1w3ky"]
 size = Vector2(20, 768)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_csxu3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_173nd"]
 size = Vector2(48, 56)
 
-[sub_resource type="LabelSettings" id="LabelSettings_1q8f8"]
+[sub_resource type="LabelSettings" id="LabelSettings_dewek"]
 font_size = 251
 
-[node name="Cp1Lvl2" type="Node2D"]
-script = ExtResource("1_iprqh")
+[node name="Cp1Lvl3" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="." groups=["Tilemap"]]
 unique_name_in_owner = true
-tile_set = SubResource("TileSet_cpnob")
+tile_set = SubResource("TileSet_m1000")
 format = 2
 layer_0/name = "floor"
 layer_0/tile_data = PackedInt32Array(655370, 262144, 0, 720895, 262144, 0, 655359, 262144, 0, 589823, 262144, 0, 524287, 262144, 0, 458751, 262144, 0, 393215, 262144, 0, 327679, 262144, 0, 262143, 262144, 0, 65535, 262144, 0, 131071, 262144, 0, 196607, 262144, 0, -1, 262144, 0, -65536, 262144, 0, -65535, 262144, 0, -65534, 262144, 0, -65533, 262144, 0, -65532, 262144, 0, -65531, 262144, 0, -65530, 262144, 0, -65529, 262144, 0, -65528, 262144, 0, -65527, 262144, 0, -65526, 262144, 0, 655369, 262144, 0, 655368, 262144, 0, 655367, 262144, 0, 655366, 262144, 0, 655365, 262144, 0, 655364, 262144, 0, 655361, 262144, 0, 655360, 262144, 0, 655362, 262144, 0, 655363, 262144, 0, -65525, 262144, 0, -65524, 262144, 0, -65523, 262144, 0, -65522, 262144, 0, -65521, 262144, 0, -65520, 262144, 0, -65519, 262144, 0, 655371, 262144, 0, 655372, 262144, 0, 655373, 262144, 0, 655374, 262144, 0, 655376, 262144, 0, 655377, 262144, 0, 589841, 262144, 0, 589840, 262144, 0, 393217, 262144, 0, 327680, 262144, 0, 262144, 262144, 0, 196608, 262144, 0, 196609, 262144, 0, 131073, 262144, 0, 65537, 262144, 0, 1, 262144, 0, 65536, 262144, 0, 0, 262144, 0, 131072, 262144, 0, 262145, 262144, 0, 327681, 262144, 0, 393216, 262144, 0, 524288, 262144, 0, 589825, 262144, 0, 524289, 262144, 0, 458753, 262144, 0, 458752, 262144, 0, 16, 262144, 0, 65552, 262144, 0, 131088, 262144, 0, 196624, 262144, 0, 262160, 262144, 0, 327696, 262144, 0, 393232, 262144, 0, 458768, 262144, 0, 524304, 262144, 0, 524305, 262144, 0, 458769, 262144, 0, 393233, 262144, 0, 327697, 262144, 0, 262161, 262144, 0, 196625, 262144, 0, 131089, 262144, 0, 17, 262144, 0, 65553, 262144, 0)
@@ -266,25 +264,25 @@ layer_1/tile_data = PackedInt32Array(-65518, 262144, 0, 18, 262144, 0, 65554, 26
 offset_right = 1780.0
 offset_bottom = 989.0
 scale = Vector2(0.647, 0.647)
-texture = ExtResource("3_k1i6g")
+texture = ExtResource("3_j6cu5")
 
-[node name="Green4" parent="." instance=ExtResource("4_3nf0a")]
+[node name="Green4" parent="." instance=ExtResource("4_ktjpn")]
 position = Vector2(480, 408)
 metadata/_edit_group_ = true
 
-[node name="Red" parent="." instance=ExtResource("5_cb086")]
+[node name="Red" parent="." instance=ExtResource("5_adtmt")]
 position = Vector2(608, 216)
 scale = Vector2(1.04753, 1.04753)
 
-[node name="Green3" parent="." instance=ExtResource("4_3nf0a")]
+[node name="Green3" parent="." instance=ExtResource("4_ktjpn")]
 position = Vector2(736, 408)
 metadata/_edit_group_ = true
 
-[node name="Green2" parent="." instance=ExtResource("4_3nf0a")]
+[node name="Green2" parent="." instance=ExtResource("4_ktjpn")]
 position = Vector2(544, 288)
 metadata/_edit_group_ = true
 
-[node name="Blue" parent="." instance=ExtResource("6_jtvfm")]
+[node name="Blue" parent="." instance=ExtResource("6_s1hv5")]
 position = Vector2(480, 216)
 collision_layer = 1
 
@@ -299,7 +297,7 @@ collision_mask = 2
 position = Vector2(59.8132, 8)
 shape = SubResource("RectangleShape2D_gh75o")
 
-[node name="Hud" parent="." instance=ExtResource("7_3sry6")]
+[node name="Hud" parent="." instance=ExtResource("7_sxiuv")]
 
 [node name="Stars" parent="Hud/LevelComplete" index="1"]
 offset_top = 168.0
@@ -355,22 +353,21 @@ shape = SubResource("RectangleShape2D_1w3ky")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
 position = Vector2(488, 92)
-shape = SubResource("RectangleShape2D_csxu3")
+shape = SubResource("RectangleShape2D_173nd")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
 position = Vector2(664, 88)
-shape = SubResource("RectangleShape2D_csxu3")
+shape = SubResource("RectangleShape2D_173nd")
 
-[node name="Player" parent="." instance=ExtResource("9_2m4fx")]
+[node name="Player" parent="." instance=ExtResource("8_b6ye2")]
 position = Vector2(344, 296)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 8.0
-offset_top = -88.0
-offset_right = 392.0
-offset_bottom = 255.0
-text = "2"
-label_settings = SubResource("LabelSettings_1q8f8")
+offset_top = -64.0
+offset_right = 384.0
+offset_bottom = 279.0
+text = "3"
+label_settings = SubResource("LabelSettings_dewek")
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 

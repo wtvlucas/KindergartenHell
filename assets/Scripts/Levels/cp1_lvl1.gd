@@ -13,6 +13,7 @@ extends Node2D
 
 var current_level = "cp1_lvl1"
 
+
 var saved = 0
 var stars = 0
 
@@ -21,34 +22,28 @@ func _ready() -> void:
 	_2_star.hide()
 	_3_star.hide()
 	level_complete.hide()
-	no_stars_label.hide()
-	next_level_button.text = "Next Chapter"
+	#next_level_button.text = "Next Chapter"
 	GameManager.moves = 30
 	GameManager.current_level = current_level
+	
+	
 	#SaveSystem.reset_stars()
 	#SaveSystem.save_data()
 
 func _process(delta: float) -> void:
 	label.text = str(GameManager.moves)
-	get_tree().quit_on_go_back
+	show_end()
+	print(saved)
 		
-	#prints("total:",SaveSystem.get_total_stars(), "| level1:", SaveSystem.get_stars_for_level("level1"), "| level2:",SaveSystem.get_stars_for_level("level2"), "| level3: ",SaveSystem.get_stars_for_level("level3"), "| saved:", saved, "| stars:", stars)
-
-		
-		#if SaveSystem.get_total_stars() < 6:
-			#next_level_button.disabled = true
-			#no_stars_label.show()
-			#no_stars_label.text = "You only have " + str(SaveSystem.get_total_stars()) + "/6 stars to get into 2nd chapter!"
-
 
 func show_end() -> void:
 	if saved == 4:
 		
-		if timer.time_left > 40:
+		if GameManager.moves > 20:
 			stars = 3
-		elif timer.time_left > 20:
+		elif GameManager.moves > 10:
 			stars = 2
-		elif timer.time_left > 0:
+		elif GameManager.moves > 5:
 			stars = 1
 		else:
 			stars = 0
@@ -58,10 +53,10 @@ func show_end() -> void:
 		
 		var total_stars = SaveSystem.get_total_stars()  
 		
-		if total_stars < 7:
-			next_level_button.disabled = true
-			no_stars_label.show()
-			no_stars_label.text = "You only have " + str(total_stars) + "/7 stars to get into 2nd chapter!"
+		#if total_stars < 10:
+			#next_level_button.disabled = true
+			#no_stars_label.show()
+			#no_stars_label.text = "You only have " + str(total_stars) + "/7 stars to get into 2nd chapter!"
 			
 			
 		if stars == 3:
@@ -78,5 +73,5 @@ func show_end() -> void:
 		
 
 
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://assets/Scenes/Levels/level_4.tscn")
+func _on_next_level_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl2.tscn")

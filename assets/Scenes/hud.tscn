@@ -1,7 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://7s8tap4or6wg"]
+[gd_scene load_steps=12 format=3 uid="uid://7s8tap4or6wg"]
 
+[ext_resource type="Texture2D" uid="uid://dti7dv1aawhij" path="res://assets/Sprite/UI/estrelaCAPITULO1.png" id="1_abd4k"]
 [ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="2_e333t"]
-[ext_resource type="Texture2D" uid="uid://cdyomvk6hfh3y" path="res://assets/Sprite/star.png" id="4_0v2x5"]
+[ext_resource type="Texture2D" uid="uid://dtttaxmdb5gtu" path="res://assets/Sprite/UI/calendar.png" id="3_fv52y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_66vi6"]
+line_spacing = 0.0
+font = ExtResource("2_e333t")
+font_size = 65
+font_color = Color(0.190762, 0.190762, 0.190762, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61jwa"]
 content_margin_left = 4.0
@@ -130,18 +137,38 @@ Button/styles/normal = SubResource("StyleBoxFlat_sdf5g")
 Button/styles/pressed = SubResource("StyleBoxFlat_bprxc")
 
 [sub_resource type="LabelSettings" id="LabelSettings_glr88"]
+font = ExtResource("2_e333t")
+font_size = 36
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 2
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(-1, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_66vi6"]
-line_spacing = 3.725
-font = ExtResource("2_e333t")
-font_size = 21
-font_color = Color(0, 0, 0, 1)
-
 [node name="Hud" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.0112847
+anchor_top = -0.009375
+anchor_right = 0.118056
+anchor_bottom = 0.182812
+texture = ExtResource("3_fv52y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Moves" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.0138889
+anchor_top = 0.037
+anchor_right = 0.101563
+anchor_bottom = 0.128125
+offset_top = -7.68
+offset_bottom = 24.0
+grow_horizontal = 2
+text = "11"
+label_settings = SubResource("LabelSettings_66vi6")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="LevelComplete" type="Control" parent="."]
 visible = false
@@ -153,6 +180,8 @@ offset_right = 768.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.599999, 1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="ColorRect" type="ColorRect" parent="LevelComplete"]
 layout_mode = 1
@@ -165,75 +194,63 @@ color = Color(0, 0, 0, 0.501961)
 
 [node name="Stars" type="HBoxContainer" parent="LevelComplete"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -188.0
-offset_top = -60.0
-offset_right = 188.0
-offset_bottom = 60.0
+anchors_preset = -1
+anchor_left = 0.354167
+anchor_top = 0.421875
+anchor_right = 0.648055
+anchor_bottom = 0.578125
+offset_right = -196.265
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.53333, 1)
 alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="1star" type="TextureRect" parent="LevelComplete/Stars"]
 layout_mode = 2
-size_flags_horizontal = 0
-texture = ExtResource("4_0v2x5")
-expand_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("1_abd4k")
+stretch_mode = 3
 
 [node name="2star" type="TextureRect" parent="LevelComplete/Stars"]
 layout_mode = 2
-texture = ExtResource("4_0v2x5")
-expand_mode = 3
+size_flags_horizontal = 6
+texture = ExtResource("1_abd4k")
+stretch_mode = 5
 
 [node name="3star" type="TextureRect" parent="LevelComplete/Stars"]
 layout_mode = 2
-texture = ExtResource("4_0v2x5")
-expand_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("1_abd4k")
+stretch_mode = 3
 
 [node name="CompletedLabel" type="Label" parent="LevelComplete"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -176.0
-offset_top = 136.0
-offset_right = 176.0
-offset_bottom = 193.0
+anchors_preset = -1
+anchor_left = 0.401563
+anchor_top = 0.2875
+anchor_right = 0.598437
+anchor_bottom = 0.376563
 grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_d7riq")
 text = "Level completed!"
 label_settings = SubResource("LabelSettings_glr88")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="NextLevelButton" type="Button" parent="LevelComplete"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -133.499
-offset_top = 16.0
-offset_right = 114.501
-offset_bottom = 64.0
+anchors_preset = -1
+anchor_left = 0.430469
+anchor_top = 0.625
+anchor_right = 0.559636
+anchor_bottom = 0.7
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_e333t")
+theme_override_font_sizes/font_size = 31
 text = "Next Level"
-
-[node name="Moves" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -231.0
-offset_right = 231.0
-offset_bottom = 66.0
-grow_horizontal = 2
-text = "MOVES: "
-label_settings = SubResource("LabelSettings_66vi6")
-horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

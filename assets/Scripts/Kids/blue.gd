@@ -32,31 +32,34 @@ func _unhandled_input(event):
 func move(dir):
 	ray.target_position = inputs[dir] * tile_size
 	ray.force_raycast_update()
-	#GameManager.checker(dir, ray, inputs, tile_size, true)
+	
+	#if GameManager.moving != 0:
+		#return 
 	
 	if GameManager.checker(dir, ray, inputs, tile_size, true) == true:
+		GameManager.moving += 1
 		tile_pos = tile_map.local_to_map(transform.get_origin()) 
 		
 		last_pos = position
 		#prints(last_pos, tile_pos)
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", position + inputs[dir] * tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
-		moving = true
+
 		await tween.finished
-		moving = false
+		GameManager.moving -= 1
 
 		
 		
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Kids") || area.is_in_group("Player"):
+		GameManager.moving += 1
 		var tween = get_tree().create_tween()
-		moving = true
 		tween.tween_property(self, "position", tile_map.map_to_local(tile_pos), 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 
 		
 		await tween.finished
-		moving = false
+		GameManager.moving -= 1
 		
 	if area.is_in_group("Exit"):
 		self.queue_free()
