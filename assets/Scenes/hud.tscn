@@ -7,7 +7,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_66vi6"]
 line_spacing = 0.0
 font = ExtResource("2_e333t")
-font_size = 65
+font_size = 70
 font_color = Color(0.190762, 0.190762, 0.190762, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61jwa"]
@@ -146,28 +146,63 @@ shadow_offset = Vector2(-1, 1)
 
 [node name="Hud" type="CanvasLayer"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Hud" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Calendar" type="TextureRect" parent="Hud"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0112847
 anchor_top = -0.009375
 anchor_right = 0.118056
 anchor_bottom = 0.182812
-texture = ExtResource("3_fv52y")
-metadata/_edit_use_anchors_ = true
-
-[node name="Moves" type="Label" parent="."]
-anchors_preset = -1
-anchor_left = 0.0138889
-anchor_top = 0.037
-anchor_right = 0.101563
-anchor_bottom = 0.128125
-offset_top = -7.68
-offset_bottom = 24.0
+offset_right = 7.08072
+offset_bottom = 1.16562
 grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fv52y")
+
+[node name="Moves" type="Label" parent="Hud/Calendar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.176813
+anchor_top = 0.177183
+anchor_right = 0.714941
+anchor_bottom = 0.902021
+grow_horizontal = 2
+grow_vertical = 2
 text = "11"
 label_settings = SubResource("LabelSettings_66vi6")
 horizontal_alignment = 1
-vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Stars" type="HBoxContainer" parent="Hud"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 13.0
+offset_right = 507.0
+offset_bottom = 113.0
+scale = Vector2(0.67, 0.67)
+
+[node name="Star" type="TextureRect" parent="Hud/Stars"]
+layout_mode = 2
+texture = ExtResource("1_abd4k")
+metadata/_edit_use_anchors_ = true
+
+[node name="Star2" type="TextureRect" parent="Hud/Stars"]
+layout_mode = 2
+texture = ExtResource("1_abd4k")
+metadata/_edit_use_anchors_ = true
+
+[node name="Star3" type="TextureRect" parent="Hud/Stars"]
+layout_mode = 2
+texture = ExtResource("1_abd4k")
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelComplete" type="Control" parent="."]

@@ -1,11 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://xocrv0482y40"]
+[gd_scene load_steps=14 format=3 uid="uid://xocrv0482y40"]
 
 [ext_resource type="Script" path="res://assets/Scripts/Levels/cp1_lvl1.gd" id="1_unhpj"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_aqs1t"]
 [ext_resource type="Texture2D" uid="uid://josmu1668w6w" path="res://assets/Sprite/cenario final.png" id="3_f86va"]
 [ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="4_gbllo"]
-[ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="5_d4p8d"]
-[ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="6_2e6xn"]
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="7_xh7ve"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="9_uarbo"]
 
@@ -130,34 +128,18 @@ layer_0/tile_data = PackedInt32Array(655370, 262144, 0, 720895, 262144, 0, 65535
 layer_1/name = "walls"
 layer_1/tile_data = PackedInt32Array(-65518, 262144, 0, 18, 262144, 0, 65554, 262144, 0, 131090, 262144, 0, 196626, 262144, 0, 262162, 262144, 0, 327698, 262144, 0, 393234, 262144, 0, 458770, 262144, 0, 524306, 262144, 0, 589842, 262144, 0, 655378, 262144, 0, 655377, 262144, 0, 655376, 262144, 0, 589840, 262144, 0, 589841, 262144, 0, 524305, 262144, 0, 524304, 262144, 0, 458768, 262144, 0, 458769, 262144, 0, 393233, 262144, 0, 393232, 262144, 0, 327696, 262144, 0, 327697, 262144, 0, 262161, 262144, 0, 262160, 262144, 0, 196624, 262144, 0, 196625, 262144, 0, 131088, 262144, 0, 131089, 262144, 0, 65553, 262144, 0, -65521, 262144, 0, 65552, 262144, 0, 17, 262144, 0, -65519, 262144, 0, -65520, 262144, 0, -65522, 262144, 0, -65523, 262144, 0, -65524, 262144, 0, -65525, 262144, 0, -65526, 262144, 0, -65527, 262144, 0, -65528, 262144, 0, -65529, 262144, 0, -65530, 262144, 0, -65531, 262144, 0, -65532, 262144, 0, -65533, 262144, 0, 3, 262144, 0, 4, 262144, 0, 5, 262144, 0, 6, 262144, 0, 7, 262144, 0, 8, 262144, 0, 9, 262144, 0, 10, 262144, 0, 11, 262144, 0, 12, 262144, 0, 13, 262144, 0, 14, 262144, 0, 65543, 262144, 0, 65546, 262144, 0, 1, 262144, 0, -65535, 262144, 0, -65536, 262144, 0, -1, 262144, 0, 65535, 262144, 0, 131071, 262144, 0, 196607, 262144, 0, 262143, 262144, 0, 327679, 262144, 0, 393215, 262144, 0, 458751, 262144, 0, 524287, 262144, 0, 589823, 262144, 0, 655359, 262144, 0, 720895, 262144, 0, 655360, 262144, 0, 655361, 262144, 0, 655363, 262144, 0, 655364, 262144, 0, 655365, 262144, 0, 655366, 262144, 0, 655367, 262144, 0, 655368, 262144, 0, 655369, 262144, 0, 655370, 262144, 0, 655371, 262144, 0, 655372, 262144, 0, 655373, 262144, 0, 655374, 262144, 0, 262145, 262144, 0, 327681, 262144, 0, 393217, 262144, 0, 589825, 262144, 0, 589824, 262144, 0, 524288, 262144, 0, 16, 262144, 0, 0, 262144, 0, 65536, 262144, 0, 65537, 262144, 0, 131073, 262144, 0, 196609, 262144, 0, 196608, 262144, 0, 131072, 262144, 0, 262144, 262144, 0, 327680, 262144, 0, 393216, 262144, 0, 458752, 262144, 0, 458753, 262144, 0, 524289, 262144, 0, 786431, 262144, 0, 720896, 262144, 0, 720897, 262144, 0, 720898, 262144, 0, 720899, 262144, 0, 720900, 262144, 0, 720901, 262144, 0, 720902, 262144, 0, 720903, 262144, 0, 720904, 262144, 0, 720905, 262144, 0, 720906, 262144, 0, 720907, 262144, 0, 720908, 262144, 0, 720909, 262144, 0, 720910, 262144, 0, 720911, 262144, 0, 720912, 262144, 0, 720913, 262144, 0, 720914, 262144, 0, 655362, 262144, 0, 655375, 262144, 0, 589839, 262144, 0, 524303, 262144, 0, 458767, 262144, 0, 393231, 262144, 0, 327695, 262144, 0, 262159, 262144, 0, 196623, 262144, 0, 131087, 262144, 0, 65551, 262144, 0, 15, 262144, 0, 589826, 262144, 0, 524290, 262144, 0, 458754, 262144, 0, 393218, 262144, 0, 327682, 262144, 0, 262146, 262144, 0, 196610, 262144, 0, 131074, 262144, 0, 65538, 262144, 0, 2, 262144, 0, -65534, 262144, 0)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 offset_right = 1780.0
 offset_bottom = 989.0
 scale = Vector2(0.647, 0.647)
 texture = ExtResource("3_f86va")
 
 [node name="Player" parent="." instance=ExtResource("9_uarbo")]
-position = Vector2(344, 296)
+position = Vector2(528, 472)
 
-[node name="Green4" parent="." instance=ExtResource("4_gbllo")]
-position = Vector2(480, 408)
+[node name="Green" parent="." instance=ExtResource("4_gbllo")]
+position = Vector2(400, 272)
 metadata/_edit_group_ = true
-
-[node name="Red" parent="." instance=ExtResource("5_d4p8d")]
-position = Vector2(608, 216)
-scale = Vector2(1.04753, 1.04753)
-
-[node name="Green3" parent="." instance=ExtResource("4_gbllo")]
-position = Vector2(736, 408)
-metadata/_edit_group_ = true
-
-[node name="Green2" parent="." instance=ExtResource("4_gbllo")]
-position = Vector2(544, 288)
-metadata/_edit_group_ = true
-
-[node name="Blue" parent="." instance=ExtResource("6_2e6xn")]
-position = Vector2(480, 216)
-collision_layer = 1
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 position = Vector2(320, 96)
@@ -224,9 +206,9 @@ shape = SubResource("RectangleShape2D_eivbf")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -16.0
-offset_top = -72.0
+offset_top = 104.0
 offset_right = 368.0
-offset_bottom = 271.0
+offset_bottom = 447.0
 text = "1"
 label_settings = SubResource("LabelSettings_dewek")
 

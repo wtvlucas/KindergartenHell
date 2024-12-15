@@ -15,7 +15,7 @@ extends Node2D
 @onready var star_3: TextureRect = $Hud/Hud/Stars/Star3
 
 
-var current_level = "cp1_lvl1"
+var current_level = "cp1_lvl3"
 
 var dicts : Dictionary = {
 	max_moves = 20,
@@ -82,4 +82,4 @@ func show_end() -> void:
 
 
 func _on_next_level_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl2.tscn")
+	get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl4.tscn")

@@ -43,14 +43,14 @@ func move(dir):
 		
 	if GameManager.checker(dir, ray, inputs, tile_size) == true:
 		GameManager.blocked = false
-		GameManager.moving += 1
+		moving = true
 		#GameManager.blocked = false
 		GameManager.moves -= 1
 		tile_pos = tile_map.local_to_map(transform.get_origin()) 
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", position + inputs[dir] * tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 		await tween.finished
-		GameManager.moving -= 1
+		moving = false
 	else:
 		GameManager.blocked = true
 	
@@ -58,9 +58,9 @@ func move(dir):
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Tilemap") || area.is_in_group("Walls") || area.is_in_group("Kids"):
-		GameManager.moving += 1
+		moving = true
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", tile_map.map_to_local(tile_pos), 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 			
 		await tween.finished
-		GameManager.moving -= 1
+		moving = false

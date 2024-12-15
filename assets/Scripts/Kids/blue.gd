@@ -37,7 +37,7 @@ func move(dir):
 		#return 
 	
 	if GameManager.checker(dir, ray, inputs, tile_size, true) == true:
-		GameManager.moving += 1
+		moving = true
 		tile_pos = tile_map.local_to_map(transform.get_origin()) 
 		
 		last_pos = position
@@ -46,7 +46,7 @@ func move(dir):
 		tween.tween_property(self, "position", position + inputs[dir] * tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 
 		await tween.finished
-		GameManager.moving -= 1
+		moving = false
 
 		
 		
@@ -63,4 +63,4 @@ func _on_area_entered(area: Area2D) -> void:
 		
 	if area.is_in_group("Exit"):
 		self.queue_free()
-		get_parent().saved += 1
+		get_parent().dicts.saved += 1

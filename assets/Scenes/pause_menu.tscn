@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cfybfndsyclny" path="res://assets/Sprite/UI/restart.png" id="4_wv0ce"]
 
 [node name="PauseMenu" type="CanvasLayer"]
+layer = 5
 script = ExtResource("1_cu273")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -77,4 +78,6 @@ texture_normal = ExtResource("4_wv0ce")
 texture_pressed = ExtResource("4_wv0ce")
 texture_hover = ExtResource("4_wv0ce")
 
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

@@ -25,9 +25,11 @@ func _process(delta: float) -> void:
 		pause() if !paused else unpause()
 		paused = !paused
 	
-	print(moving)
-	#prints(current_level, SaveSystem.data.last_level)
+	
 
+
+func can_all_move():
+	return moving == 0  
 
 func checker(dir, ray, inputs, tile_size, blue = false):
 	ray.target_position = inputs[dir] * tile_size

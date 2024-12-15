@@ -34,10 +34,16 @@ func _ready() -> void:
 func change_lvl() -> void:
 	if Input.is_action_just_pressed("select"):
 		if current_level == 1:
-			var last_lvl = SaveSystem.data.last_level
+			#var last_lvl = SaveSystem.data.last_level
 			get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl1.tscn")
 		elif current_level == 2:
 			get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl2.tscn")
+		elif current_level == 3:
+			get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl3.tscn")
+		elif current_level == 4:
+			get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl4.tscn")
+		elif current_level == 5:
+			get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl5.tscn")
 	
 		
 

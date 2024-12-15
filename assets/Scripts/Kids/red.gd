@@ -42,7 +42,7 @@ func move(dir):
 	#if GameManager.moving != 0:
 		#return
 		
-	GameManager.moving += 1
+	moving = true
 	var moves = inputs_invert[dir] if inverted else inputs[dir]
 		
 	ray.target_position = moves * tile_size
@@ -54,22 +54,22 @@ func move(dir):
 	tween.tween_property(self, "position", position + moves * tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 	#moving = true
 	await tween.finished
-	GameManager.moving -= 1
+	moving = false
 	
 
 
 func _on_area_entered(area: Area2D) -> void:
 	if !area.is_in_group("Exit"):
-		GameManager.moving += 1
+		moving = true
 		inverted = !inverted
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", tile_map.map_to_local(tile_pos), 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 		
 		await tween.finished
-		GameManager.moving -= 1
+		moving = false
 		#inverted = !inverted
 		#print(inverted)
 		
 	else:
 		self.queue_free()
-		get_parent().saved += 1
+		get_parent().dicts.saved += 1
