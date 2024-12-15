@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6tp2clyyeyjl"
-path="res://.godot/imported/teacherlowpoly-walk - Layer 1 - 0.png-d7828054e46f8402af275355d530d750.ctex"
+uid="uid://our1ec5pogqv"
+path="res://.godot/imported/teacher_walk1.png-fd8a05255db082c7d311af99f0f1fd90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprite/teacher/teacherlowpoly-walk - Layer 1 - 0.png"
-dest_files=["res://.godot/imported/teacherlowpoly-walk - Layer 1 - 0.png-d7828054e46f8402af275355d530d750.ctex"]
+source_file="res://assets/Sprite/teacher/teacher_walk1.png"
+dest_files=["res://.godot/imported/teacher_walk1.png-fd8a05255db082c7d311af99f0f1fd90.ctex"]
 
 [params]
 

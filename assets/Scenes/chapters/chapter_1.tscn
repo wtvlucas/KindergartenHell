@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://b1j83vpuqld87"]
 
 [ext_resource type="Script" path="res://assets/Scripts/chapters/chapter_1.gd" id="1_iioah"]
-[ext_resource type="Texture2D" uid="uid://x12526ynoe67" path="res://assets/Sprite/UI/level_selection.png" id="2_o7ia8"]
-[ext_resource type="Texture2D" uid="uid://buhed3ow5tlaq" path="res://assets/Sprite/UI/arrow.png" id="3_bdsch"]
-[ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="4_jdefv"]
+[ext_resource type="Texture2D" uid="uid://cidpjgiev2jtr" path="res://assets/Sprite/UI/level_selection.png" id="2_o7ia8"]
+[ext_resource type="Texture2D" uid="uid://cw0tqnfsgqbtk" path="res://assets/Sprite/UI/arrow.png" id="3_bdsch"]
+[ext_resource type="Texture2D" uid="uid://bdl16a87xyqrq" path="res://assets/Sprite/UI/setaback.png" id="4_8g2os"]
 
 [sub_resource type="Theme" id="Theme_awuhk"]
 
@@ -45,10 +45,7 @@ _data = {
 "blink": SubResource("Animation_8civw")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_o0xuf"]
-line_spacing = 7.0
-font = ExtResource("4_jdefv")
-font_size = 56
+[sub_resource type="Theme" id="Theme_hnlk0"]
 
 [node name="Chapter1" type="Control"]
 layout_mode = 3
@@ -64,10 +61,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -41.0
-offset_top = -33.0
-offset_right = 16.0
-offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_o7ia8")
@@ -76,68 +69,74 @@ expand_mode = 1
 [node name="Level1" type="TextureButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 216.0
-offset_top = 256.0
-offset_right = 312.0
-offset_bottom = 352.0
+anchor_left = 0.109375
+anchor_top = 0.4125
+anchor_right = 0.192708
+anchor_bottom = 0.5625
 pivot_offset = Vector2(48, 0)
 theme = SubResource("Theme_awuhk")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Level2" type="TextureButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 352.0
-offset_top = 256.0
-offset_right = 448.0
-offset_bottom = 352.0
+anchor_left = 0.284722
+anchor_top = 0.4125
+anchor_right = 0.368056
+anchor_bottom = 0.5625
 pivot_offset = Vector2(40, 0)
 theme = SubResource("Theme_awuhk")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Level3" type="TextureButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 480.0
-offset_top = 256.0
-offset_right = 576.0
-offset_bottom = 352.0
+anchor_left = 0.458333
+anchor_top = 0.4125
+anchor_right = 0.541667
+anchor_bottom = 0.5625
 pivot_offset = Vector2(48, 0)
 theme = SubResource("Theme_awuhk")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Level4" type="TextureButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 608.0
-offset_top = 256.0
-offset_right = 704.0
-offset_bottom = 352.0
+anchor_left = 0.631944
+anchor_top = 0.4125
+anchor_right = 0.715278
+anchor_bottom = 0.5625
 pivot_offset = Vector2(48, 0)
 theme = SubResource("Theme_awuhk")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Level5" type="TextureButton" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 744.0
-offset_top = 256.0
-offset_right = 840.0
-offset_bottom = 352.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.807292
+anchor_top = 0.4125
+anchor_right = 0.890625
+anchor_bottom = 0.5625
 pivot_offset = Vector2(48, 0)
 theme = SubResource("Theme_awuhk")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(264, 224)
+position = Vector2(243.088, 233.749)
 rotation = 1.5708
-scale = Vector2(0.958333, 0.958333)
+scale = Vector2(0.48, 0.48)
 texture = ExtResource("3_bdsch")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Arrow"]
@@ -147,14 +146,46 @@ libraries = {
 }
 autoplay = "blink"
 
-[node name="Label" type="Label" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 80.0
-offset_right = 711.0
-offset_bottom = 152.0
-text = "Chapter 1"
-label_settings = SubResource("LabelSettings_o0xuf")
+offset_left = 64.0
+offset_top = 56.0
+offset_right = 184.0
+offset_bottom = 144.0
+color = Color(0.239216, 0.431373, 0.439216, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 400.0
+offset_right = 1040.0
+offset_bottom = 440.0
+color = Color(0.239216, 0.431373, 0.439216, 1)
+
+[node name="Back" type="TextureRect" parent="."]
+offset_left = 96.0
+offset_top = 512.0
+offset_right = 168.0
+offset_bottom = 560.0
+pivot_offset = Vector2(40, 0)
+texture = ExtResource("4_8g2os")
+expand_mode = 1
+
+[node name="BackButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0763889
+anchor_top = 0.801562
+anchor_right = 0.118056
+anchor_bottom = 0.876562
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(106, 48)
+theme = SubResource("Theme_hnlk0")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Level1" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="Level2" to="." method="_on_level_1_button_pressed"]

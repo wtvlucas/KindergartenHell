@@ -53,4 +53,4 @@ func move_character(direction: int) -> void:
 	update_option_position()
 
 func update_option_position() -> void:
-	arrow.position = Vector2(option_position[current_option - 1].x - 25, option_position[current_option - 1].y + 30)
+	arrow.position = Vector2(option_position[current_option - 1].x - 20, option_position[current_option - 1].y + 25)

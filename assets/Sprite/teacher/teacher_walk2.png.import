@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw0tqnfsgqbtk"
-path="res://.godot/imported/arrow.png-3e4190f20e1f2c1ed5f7caeb6f3f125e.ctex"
+uid="uid://c5hwlid7ppdfw"
+path="res://.godot/imported/teacher_walk2.png-a49fa6be0bff3c1adc7663c5c3a00175.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprite/UI/arrow.png"
-dest_files=["res://.godot/imported/arrow.png-3e4190f20e1f2c1ed5f7caeb6f3f125e.ctex"]
+source_file="res://assets/Sprite/teacher/teacher_walk2.png"
+dest_files=["res://.godot/imported/teacher_walk2.png-a49fa6be0bff3c1adc7663c5c3a00175.ctex"]
 
 [params]
 

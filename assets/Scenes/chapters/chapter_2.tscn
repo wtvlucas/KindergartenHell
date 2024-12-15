@@ -1,9 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://by35re0g887b3"]
 
 [ext_resource type="Script" path="res://assets/Scripts/chapters/chapter_2.gd" id="1_hfoxf"]
-[ext_resource type="Texture2D" uid="uid://x12526ynoe67" path="res://assets/Sprite/UI/level_selection.png" id="2_se0bb"]
-[ext_resource type="Texture2D" uid="uid://buhed3ow5tlaq" path="res://assets/Sprite/UI/arrow.png" id="3_8n2b7"]
+[ext_resource type="Texture2D" uid="uid://cw0tqnfsgqbtk" path="res://assets/Sprite/UI/arrow.png" id="3_8n2b7"]
 [ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="4_fjdse"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ksdcg"]
+load_path = "res://.godot/imported/level_selection.png-2ff576b4bcf17921631a77135f44236f.ctex"
 
 [sub_resource type="Theme" id="Theme_awuhk"]
 
@@ -70,7 +72,7 @@ offset_right = 16.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_se0bb")
+texture = SubResource("CompressedTexture2D_ksdcg")
 expand_mode = 1
 
 [node name="Level1" type="TextureButton" parent="."]

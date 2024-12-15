@@ -13,6 +13,9 @@ var last_pos
 var tile_pos
 @onready var tile_map: TileMap = %TileMap
 var can_move = true
+
+@onready var player_sprite: AnimatedSprite2D = %PlayerSprite
+
 #
 @onready var ray = $RayCast2d
 
@@ -44,6 +47,12 @@ func move(dir):
 	if GameManager.checker(dir, ray, inputs, tile_size) == true:
 		GameManager.blocked = false
 		moving = true
+		
+		if dir == "left":
+			player_sprite.flip_h = true
+		elif dir == "right":
+			player_sprite.flip_h = false
+		player_sprite.play("walk")
 		#GameManager.blocked = false
 		GameManager.moves -= 1
 		tile_pos = tile_map.local_to_map(transform.get_origin()) 
@@ -51,6 +60,7 @@ func move(dir):
 		tween.tween_property(self, "position", position + inputs[dir] * tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 		await tween.finished
 		moving = false
+		player_sprite.play("stand")
 	else:
 		GameManager.blocked = true
 	
@@ -59,8 +69,10 @@ func move(dir):
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Tilemap") || area.is_in_group("Walls") || area.is_in_group("Kids"):
 		moving = true
+		player_sprite.play("walk")
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", tile_map.map_to_local(tile_pos), 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 			
 		await tween.finished
 		moving = false
+		player_sprite.play("stand")

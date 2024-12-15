@@ -16,7 +16,7 @@ func _ready() -> void:
 	load_data()
 	if data:
 		GameManager.current_level = data.last_level
-
+	
 
 func set_stars_for_level(level: String, value: int):
 	if not data:

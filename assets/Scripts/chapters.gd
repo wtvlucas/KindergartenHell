@@ -3,10 +3,11 @@ extends Control
 @onready var chapter_1: TextureButton = %Chapter1
 @onready var chapter_2: TextureButton = %Chapter2
 @onready var arrow: Sprite2D = %Arrow
+@onready var back: TextureButton = %BackButton
 
 
 var option_position: Array = []
-var current_option : int = 1
+var current_option : int = 2
 
  
 func _ready() -> void:
@@ -15,6 +16,7 @@ func _ready() -> void:
 
 
 	option_position = [
+		back.position,
 		chapter_1.position,
 		chapter_2.position
 	]
@@ -26,6 +28,8 @@ func _ready() -> void:
 func change_lvl() -> void:
 	if Input.is_action_just_pressed("select"):
 		if current_option == 1:
+			get_tree().change_scene_to_file("res://assets/Scenes/main_menu.tscn")
+		if current_option == 2:
 			var last_lvl = SaveSystem.data.last_level
 			get_tree().change_scene_to_file("res://assets/Scenes/chapters/chapter_1.tscn")
 		#elif current_option == 2:
@@ -47,4 +51,4 @@ func move_character(direction: int) -> void:
 	update_option_position()
 
 func update_option_position() -> void:
-	arrow.position = Vector2(option_position[current_option - 1].x - 25, option_position[current_option - 1].y + 20)
+	arrow.position = Vector2(option_position[current_option - 1].x + 5, option_position[current_option - 1].y - 15)
