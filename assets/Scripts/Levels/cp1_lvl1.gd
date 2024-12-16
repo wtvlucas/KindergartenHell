@@ -37,6 +37,7 @@ func _ready() -> void:
 	level_complete.hide()
 	GameManager.moves = dicts.max_moves
 	GameManager.current_level = current_level
+	GameManager.endLevel = false
 
 
 func _process(delta: float) -> void:
@@ -63,7 +64,7 @@ func _process(delta: float) -> void:
 
 func show_end() -> void:
 	if dicts.saved == dicts.need_to_save:
-		
+		GameManager.endLevel = true
 			
 		if SaveSystem.get_stars_for_level(current_level) < dicts.stars:
 			SaveSystem.set_stars_for_level(current_level, dicts.stars)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1j83vpuqld87"]
+[gd_scene load_steps=12 format=3 uid="uid://b1j83vpuqld87"]
 
 [ext_resource type="Script" path="res://assets/Scripts/chapters/chapter_1.gd" id="1_iioah"]
 [ext_resource type="Texture2D" uid="uid://cidpjgiev2jtr" path="res://assets/Sprite/UI/level_selection.png" id="2_o7ia8"]
 [ext_resource type="Texture2D" uid="uid://cw0tqnfsgqbtk" path="res://assets/Sprite/UI/arrow.png" id="3_bdsch"]
 [ext_resource type="Texture2D" uid="uid://bdl16a87xyqrq" path="res://assets/Sprite/UI/setaback.png" id="4_8g2os"]
+[ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="4_jdefv"]
 
 [sub_resource type="Theme" id="Theme_awuhk"]
 
@@ -46,6 +47,10 @@ _data = {
 }
 
 [sub_resource type="Theme" id="Theme_hnlk0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7kim8"]
+font = ExtResource("4_jdefv")
+font_size = 21
 
 [node name="Chapter1" type="Control"]
 layout_mode = 3
@@ -186,6 +191,61 @@ theme = SubResource("Theme_hnlk0")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel1" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 122.0
+offset_top = 392.0
+offset_right = 225.0
+offset_bottom = 419.0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="StarsLevel2" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 324.0
+offset_top = 392.0
+offset_right = 427.0
+offset_bottom = 419.0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="StarsLevel3" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 525.0
+offset_top = 392.0
+offset_right = 628.0
+offset_bottom = 419.0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="StarsLevel4" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 725.0
+offset_top = 392.0
+offset_right = 828.0
+offset_bottom = 419.0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="StarsLevel5" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 926.0
+offset_top = 392.0
+offset_right = 1029.0
+offset_bottom = 419.0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Level1" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="Level2" to="." method="_on_level_1_button_pressed"]

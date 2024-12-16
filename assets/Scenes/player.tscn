@@ -1,12 +1,16 @@
 [gd_scene load_steps=15 format=3 uid="uid://b0wysm6c2nqgj"]
 
 [ext_resource type="Script" path="res://assets/Scripts/player.gd" id="1_26y8w"]
-[ext_resource type="Texture2D" uid="uid://fn3ats00hpd7" path="res://assets/sokoban_character.png" id="2_47llq"]
-[ext_resource type="Texture2D" uid="uid://okwjlfnicput" path="res://assets/Sprite/teacher_2.png" id="3_eaae3"]
 [ext_resource type="Texture2D" uid="uid://our1ec5pogqv" path="res://assets/Sprite/teacher/teacher_walk1.png" id="4_lbc1n"]
 [ext_resource type="Texture2D" uid="uid://dbtt0n0ndqd3u" path="res://assets/Sprite/teacher/teacher_idle1.png" id="4_n5c28"]
 [ext_resource type="Texture2D" uid="uid://c5hwlid7ppdfw" path="res://assets/Sprite/teacher/teacher_walk2.png" id="5_46q2y"]
 [ext_resource type="Texture2D" uid="uid://ck0hvdwliqkkn" path="res://assets/Sprite/teacher/teacher_idle2.png" id="5_atipt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3v8fa"]
+load_path = "res://.godot/imported/sokoban_character.png-db20e081c3ea15b476d3a83e0251c071.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jujpy"]
+load_path = "res://.godot/imported/teacher_2.png-6f20312d3d7cfc99835aa37e955d01ae.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0l4s"]
 animations = [{
@@ -114,7 +118,7 @@ metadata/_edit_horizontal_guides_ = [-40.0]
 
 [node name="Sprite2d" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_47llq")
+texture = SubResource("CompressedTexture2D_3v8fa")
 hframes = 6
 vframes = 4
 frame = 6
@@ -123,7 +127,7 @@ frame = 6
 visible = false
 position = Vector2(0, -2)
 scale = Vector2(0.209, 0.209)
-texture = ExtResource("3_eaae3")
+texture = SubResource("CompressedTexture2D_jujpy")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

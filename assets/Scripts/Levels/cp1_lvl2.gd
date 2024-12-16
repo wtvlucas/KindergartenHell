@@ -19,11 +19,11 @@ var current_level = "cp1_lvl2"
 
 var dicts : Dictionary = {
 	max_moves = 20,
-	need_to_save = 1,
+	need_to_save = 2,
 	saved = 0,
 	stars = 0,
 	
-	treestars = 13,
+	treestars = 10,
 	twostars = 9,
 	onestar = 5,
 }
@@ -37,6 +37,7 @@ func _ready() -> void:
 	level_complete.hide()
 	GameManager.moves = dicts.max_moves
 	GameManager.current_level = current_level
+	GameManager.endLevel = false
 
 
 func _process(delta: float) -> void:
@@ -63,7 +64,7 @@ func _process(delta: float) -> void:
 
 func show_end() -> void:
 	if dicts.saved == dicts.need_to_save:
-		
+		GameManager.endLevel = true
 			
 		if SaveSystem.get_stars_for_level(current_level) < dicts.stars:
 			SaveSystem.set_stars_for_level(current_level, dicts.stars)

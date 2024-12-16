@@ -21,6 +21,8 @@ func _on_home_pressed() -> void:
 
 func _on_restart_pressed() -> void:
 	get_tree().reload_current_scene()
+	self.hide()
+	GameManager.paused = false
 
 
 func _on_back_pressed() -> void:

@@ -1,10 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://bll5udapx4mfi"]
 
-[ext_resource type="Texture2D" uid="uid://bwry54vj2d0b6" path="res://assets/Sprite/logo.png" id="1_2768v"]
 [ext_resource type="Script" path="res://assets/Scripts/pause_menu.gd" id="1_cu273"]
 [ext_resource type="Texture2D" uid="uid://cnd6n08htgmik" path="res://assets/Sprite/UI/back.png" id="2_awwnj"]
 [ext_resource type="Texture2D" uid="uid://bu3nob04xrmey" path="res://assets/Sprite/UI/home.png" id="3_hmav5"]
 [ext_resource type="Texture2D" uid="uid://cfybfndsyclny" path="res://assets/Sprite/UI/restart.png" id="4_wv0ce"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xg2ac"]
+load_path = "res://.godot/imported/logo.png-2fb801f7f6209733f8a4cf993661d40b.ctex"
 
 [node name="PauseMenu" type="CanvasLayer"]
 layer = 5
@@ -27,7 +29,7 @@ offset_top = 64.0
 offset_right = 161.0
 offset_bottom = 184.0
 grow_horizontal = 2
-texture = ExtResource("1_2768v")
+texture = SubResource("CompressedTexture2D_xg2ac")
 expand_mode = 1
 
 [node name="Back" type="TextureButton" parent="."]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://okwjlfnicput"
-path="res://.godot/imported/teacher_2.png-6f20312d3d7cfc99835aa37e955d01ae.ctex"
+uid="uid://josmu1668w6w"
+path="res://.godot/imported/Level1Background.png-5f4706950bf927d91aa7927b1afefd11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprite/teacher_2.png"
-dest_files=["res://.godot/imported/teacher_2.png-6f20312d3d7cfc99835aa37e955d01ae.ctex"]
+source_file="res://assets/Sprite/Level1Background.png"
+dest_files=["res://.godot/imported/Level1Background.png-5f4706950bf927d91aa7927b1afefd11.ctex"]
 
 [params]
 

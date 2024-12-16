@@ -9,6 +9,12 @@ extends Control
 @onready var level_5: TextureButton = %Level5
 @onready var back_button: TextureButton = %BackButton
 
+@onready var stars_level_1: Label = %StarsLevel1
+@onready var stars_level_2: Label = %StarsLevel2
+@onready var stars_level_3: Label = %StarsLevel3
+@onready var stars_level_4: Label = %StarsLevel4
+@onready var stars_level_5: Label = %StarsLevel5
+
 
 
 var levels_position: Array = []
@@ -30,8 +36,15 @@ func _ready() -> void:
 	]
 	
 	
+	stars_text()
 	update_option_position()
 
+func stars_text():
+	stars_level_1.text = str(SaveSystem.get_stars_for_level("cp1_lvl1")) + "/3 *"
+	stars_level_2.text = str(SaveSystem.get_stars_for_level("cp1_lvl2")) + "/3 *"
+	stars_level_3.text = str(SaveSystem.get_stars_for_level("cp1_lvl3")) + "/3 *"
+	stars_level_4.text = str(SaveSystem.get_stars_for_level("cp1_lvl4")) + "/3 *"
+	stars_level_5.text = str(SaveSystem.get_stars_for_level("cp1_lvl5")) + "/3 *"
 
 func change_lvl() -> void:
 	if Input.is_action_just_pressed("select"):

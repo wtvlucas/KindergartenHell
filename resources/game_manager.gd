@@ -6,6 +6,7 @@ var moves = 0
 var pause_menu = preload("res://assets/Scenes/pause_menu.tscn")
 var paused = false
 var menu = pause_menu.instantiate()
+var endLevel = false
 
 var moving : int = 0
 var current_level : String = "cp1_lvl1"
@@ -35,7 +36,7 @@ func checker(dir, ray, inputs, tile_size, blue = false):
 	ray.target_position = inputs[dir] * tile_size
 	ray.force_raycast_update()
 	
-	if paused:
+	if paused or endLevel:
 		return false
 	
 	if not ray.is_colliding():

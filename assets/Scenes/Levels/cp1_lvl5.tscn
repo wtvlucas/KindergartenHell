@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/Scripts/Levels/cp1_lvl5.gd" id="1_ogxw5"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_7qumv"]
-[ext_resource type="Texture2D" uid="uid://josmu1668w6w" path="res://assets/Sprite/cenario final.png" id="3_h5o0l"]
+[ext_resource type="Texture2D" uid="uid://josmu1668w6w" path="res://assets/Sprite/Level1Background.png" id="3_h5o0l"]
 [ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="4_0ivb7"]
 [ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="5_g1bge"]
 [ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="6_t8dvx"]
