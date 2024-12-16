@@ -1,12 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://boou8o8uywpnh"]
+[gd_scene load_steps=17 format=3 uid="uid://boou8o8uywpnh"]
 
 [ext_resource type="Script" path="res://assets/Scripts/chapters.gd" id="1_aoovc"]
-[ext_resource type="Texture2D" uid="uid://bqorcsgr226ya" path="res://assets/Sprite/UI/chapters.png" id="3_6hfjf"]
+[ext_resource type="Texture2D" uid="uid://kuyabmwgc1ee" path="res://assets/Sprite/UI/2.Chapters/chaptermenusbackground.png" id="2_cice4"]
 [ext_resource type="Texture2D" uid="uid://cw0tqnfsgqbtk" path="res://assets/Sprite/UI/arrow.png" id="3_vhoqs"]
 [ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="4_45iv4"]
 [ext_resource type="Texture2D" uid="uid://bdl16a87xyqrq" path="res://assets/Sprite/UI/setaback.png" id="5_vcf2d"]
+[ext_resource type="Texture2D" uid="uid://dmywcowxfuvk8" path="res://assets/Sprite/UI/2.Chapters/comingsoonicon.png" id="6_1uwnw"]
+[ext_resource type="Texture2D" uid="uid://d1nsdf00mvgjv" path="res://assets/Sprite/UI/2.Chapters/chapter2icon.png" id="7_movsd"]
 
 [sub_resource type="Theme" id="Theme_ysxye"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_631ye"]
+font = ExtResource("4_45iv4")
+font_size = 31
+font_color = Color(0.823529, 0.823529, 0.823529, 0.823529)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kfm2e"]
+font = ExtResource("4_45iv4")
+font_size = 28
+font_color = Color(0.823529, 0.823529, 0.823529, 0.823529)
 
 [sub_resource type="Animation" id="Animation_r1643"]
 length = 0.001
@@ -49,6 +61,15 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_0a0tm"]
 font = ExtResource("4_45iv4")
 font_size = 31
+font_color = Color(0.823529, 0.823529, 0.823529, 0.823529)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g2qt0"]
+font = ExtResource("4_45iv4")
+font_size = 31
+
+[sub_resource type="LabelSettings" id="LabelSettings_vl6us"]
+font = ExtResource("4_45iv4")
+font_size = 28
 
 [node name="Chapters" type="Control"]
 layout_mode = 3
@@ -58,6 +79,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aoovc")
+metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -66,7 +88,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_6hfjf")
+texture = ExtResource("2_cice4")
 expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -109,6 +131,38 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
+[node name="CommingSoon" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Chapter2Stars2" type="Label" parent="CommingSoon"]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 432.0
+offset_right = 960.0
+offset_bottom = 472.0
+text = "???"
+label_settings = SubResource("LabelSettings_631ye")
+
+[node name="Comingsoonicon" type="Sprite2D" parent="CommingSoon"]
+modulate = Color(0.823529, 0.823529, 0.823529, 0.823529)
+position = Vector2(922, 343)
+scale = Vector2(0.647619, 0.647619)
+texture = ExtResource("6_1uwnw")
+
+[node name="Label2" type="Label" parent="CommingSoon"]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 200.0
+offset_right = 1075.0
+offset_bottom = 236.0
+text = "COMING SOON"
+label_settings = SubResource("LabelSettings_kfm2e")
+
 [node name="Arrow" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(224, 184)
@@ -133,14 +187,17 @@ offset_bottom = 472.0
 text = "xx/15 *"
 label_settings = SubResource("LabelSettings_0a0tm")
 
-[node name="Chapter2Stars" type="Label" parent="."]
+[node name="TotalStars" type="Label" parent="."]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 504.0
-offset_top = 432.0
-offset_right = 653.0
-offset_bottom = 472.0
-text = "xx/15 *"
-label_settings = SubResource("LabelSettings_0a0tm")
+offset_left = 434.0
+offset_top = 535.0
+offset_right = 720.0
+offset_bottom = 581.0
+scale = Vector2(0.994975, 1)
+text = "You have "
+label_settings = SubResource("LabelSettings_g2qt0")
+horizontal_alignment = 1
 
 [node name="Back" type="TextureRect" parent="."]
 layout_mode = 0
@@ -166,6 +223,39 @@ pivot_offset = Vector2(106, 48)
 theme = SubResource("Theme_ysxye")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Chapter2Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Chapter2Stars" type="Label" parent="Chapter2Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 446.0
+offset_top = 432.0
+offset_right = 718.0
+offset_bottom = 472.0
+text = "10* to unlock"
+label_settings = SubResource("LabelSettings_0a0tm")
+
+[node name="Chapter2Icon" type="Sprite2D" parent="Chapter2Control"]
+unique_name_in_owner = true
+modulate = Color(0.823529, 0.823529, 0.823529, 0.823529)
+position = Vector2(576, 344)
+scale = Vector2(0.648, 0.648)
+texture = ExtResource("7_movsd")
+
+[node name="Chapter2Label" type="Label" parent="Chapter2Control"]
+unique_name_in_owner = true
+modulate = Color(0.823529, 0.823529, 0.823529, 0.823529)
+layout_mode = 0
+offset_left = 482.0
+offset_top = 200.0
+offset_right = 668.0
+offset_bottom = 236.0
+text = "CHAPTER 2"
+label_settings = SubResource("LabelSettings_vl6us")
 
 [connection signal="pressed" from="Chapter1" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="Chapter2" to="." method="_on_level_1_button_pressed"]
