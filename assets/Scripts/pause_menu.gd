@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-var open = false
 @onready var back: TextureButton = %Back
 @onready var home: TextureButton = %Home
 @onready var restart: TextureButton = %Restart
@@ -14,7 +13,7 @@ var option : int = 1
 func _ready() -> void:
 	#SaveSystem.reset_stars()
 	self.hide()
-	open = false
+	GameManager.paused = false
 	#SaveSystem.load_data()
 
 

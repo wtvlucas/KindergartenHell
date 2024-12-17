@@ -134,7 +134,7 @@ scale = Vector2(0.647, 0.647)
 texture = ExtResource("3_h5o0l")
 
 [node name="Red" parent="." instance=ExtResource("5_g1bge")]
-position = Vector2(472, 344)
+position = Vector2(600, 472)
 scale = Vector2(1.04753, 1.04753)
 
 [node name="Blue" parent="." instance=ExtResource("6_t8dvx")]
@@ -192,6 +192,7 @@ position = Vector2(592, 344)
 [node name="Hud" parent="." instance=ExtResource("7_rbpg4")]
 
 [node name="NextLevel" parent="Hud/LevelComplete" index="5"]
+anchor_right = 0.743056
 texture = ExtResource("8_webjt")
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]

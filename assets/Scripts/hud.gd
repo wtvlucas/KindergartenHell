@@ -9,6 +9,7 @@ var open = false
 
 
 var positions: Array = []
+var sprites : Array = []
 var option : int = 3
 
  
@@ -19,8 +20,11 @@ func _ready() -> void:
 		next_level.position
 	]
 	
-	
-	#update_option_position()
+	sprites = [
+		restart,
+		home,
+		next_level
+	]
 	
 	if get_parent().current_level == "cp1_lvl5":
 		option = 2
@@ -32,19 +36,20 @@ func change_lvl() -> void:
 	if Input.is_action_just_pressed("select"):
 		if option == 1:
 			get_tree().reload_current_scene()
+			GameManager.endLevel = false
 			#self.hide()
 		elif option == 2:
 			get_tree().change_scene_to_file("res://assets/Scenes/main_menu.tscn")
 			SaveSystem.data.last_level = GameManager.current_level
 			SaveSystem.save_data()
+			GameManager.endLevel = false
 		elif option == 3:
 			if get_parent().current_level == "cp1_lvl5":
 				if GameManager.chapter_2_unlocked:
 					get_tree().change_scene_to_file("res://assets/Scenes/chapters/chapter_2.tscn")
-				else:
-					print("Chapter 2 está bloqueado!")
 			else:
 				get_parent().next()
+				GameManager.endLevel = false
 		
 
 func _process(delta: float) -> void:
@@ -65,7 +70,7 @@ func move_character(direction: int) -> void:
 		var next_option = option + direction
 		if next_option >= 1 and next_option <= positions.size():
 			if next_option == 3 and not GameManager.chapter_2_unlocked:
-				return  # Não permite mover para a opção 3 se bloqueado
+				return 
 			option = next_option
 	else:
 		option = clamp(option + direction, 1, positions.size())
@@ -75,4 +80,4 @@ func move_character(direction: int) -> void:
 
 
 func update_option_position() -> void:
-	arrow.position = Vector2(positions[option - 1].x + 85, positions[option - 1].y + 130)
+	arrow.position = Vector2(positions[option - 1].x + sprites[option - 1].get_size().x / 2, positions[option - 1].y + 130)

@@ -70,7 +70,7 @@ func move(dir):
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Tilemap") || area.is_in_group("Walls") || area.is_in_group("Kids"):
+	if !area.is_in_group("Exit"):
 		moving = true
 		GameManager.moving += 1
 		player_sprite.play("walk")

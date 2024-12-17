@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu3nob04xrmey"
-path="res://.godot/imported/home.png-85d1b0efcc6c374111f9ddab03d4a693.ctex"
+uid="uid://dym82r2ybce1d"
+path="res://.godot/imported/retrySeta.png-b7bcc0c5f2d53b814d0626feafdac786.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprite/UI/home.png"
-dest_files=["res://.godot/imported/home.png-85d1b0efcc6c374111f9ddab03d4a693.ctex"]
+source_file="res://assets/Sprite/UI/retrySeta.png"
+dest_files=["res://.godot/imported/retrySeta.png-b7bcc0c5f2d53b814d0626feafdac786.ctex"]
 
 [params]
 

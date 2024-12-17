@@ -41,7 +41,6 @@ func _unhandled_input(event):
 			move(dir)
 			
 func move(dir):
-
 		
 	moving = true
 	red_kid_sprite.play("walk")

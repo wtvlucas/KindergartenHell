@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://by35re0g887b3"]
+[gd_scene load_steps=13 format=3 uid="uid://by35re0g887b3"]
 
 [ext_resource type="Script" path="res://assets/Scripts/chapters/chapter_2.gd" id="1_hfoxf"]
+[ext_resource type="Texture2D" uid="uid://cidpjgiev2jtr" path="res://assets/Sprite/UI/level_selection.png" id="2_t4c3x"]
 [ext_resource type="Texture2D" uid="uid://cw0tqnfsgqbtk" path="res://assets/Sprite/UI/arrow.png" id="3_8n2b7"]
 [ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="4_fjdse"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ksdcg"]
-load_path = "res://.godot/imported/level_selection.png-2ff576b4bcf17921631a77135f44236f.ctex"
+[ext_resource type="Texture2D" uid="uid://bdl16a87xyqrq" path="res://assets/Sprite/UI/setaback.png" id="4_x15su"]
 
 [sub_resource type="Theme" id="Theme_awuhk"]
 
@@ -47,10 +46,16 @@ _data = {
 "blink": SubResource("Animation_8civw")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_7xe41"]
-line_spacing = 7.0
+[sub_resource type="Theme" id="Theme_hnlk0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7kim8"]
 font = ExtResource("4_fjdse")
-font_size = 56
+font_size = 21
+
+[sub_resource type="LabelSettings" id="LabelSettings_474tl"]
+line_spacing = 2.96
+font = ExtResource("4_fjdse")
+font_size = 53
 
 [node name="Chapter2" type="Control"]
 layout_mode = 3
@@ -66,80 +71,82 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -41.0
-offset_top = -33.0
-offset_right = 16.0
-offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CompressedTexture2D_ksdcg")
+texture = ExtResource("2_t4c3x")
 expand_mode = 1
 
 [node name="Level1" type="TextureButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 216.0
-offset_top = 256.0
-offset_right = 312.0
-offset_bottom = 352.0
+anchor_left = 0.109375
+anchor_top = 0.4125
+anchor_right = 0.192708
+anchor_bottom = 0.5625
 pivot_offset = Vector2(48, 0)
 theme = SubResource("Theme_awuhk")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Level2" type="TextureButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 352.0
-offset_top = 256.0
-offset_right = 448.0
-offset_bottom = 352.0
+anchor_left = 0.284722
+anchor_top = 0.4125
+anchor_right = 0.368056
+anchor_bottom = 0.5625
 pivot_offset = Vector2(40, 0)
 theme = SubResource("Theme_awuhk")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Level3" type="TextureButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 480.0
-offset_top = 256.0
-offset_right = 576.0
-offset_bottom = 352.0
+anchor_left = 0.458333
+anchor_top = 0.4125
+anchor_right = 0.541667
+anchor_bottom = 0.5625
 pivot_offset = Vector2(48, 0)
 theme = SubResource("Theme_awuhk")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Level4" type="TextureButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 608.0
-offset_top = 256.0
-offset_right = 704.0
-offset_bottom = 352.0
+anchor_left = 0.631944
+anchor_top = 0.4125
+anchor_right = 0.715278
+anchor_bottom = 0.5625
 pivot_offset = Vector2(48, 0)
 theme = SubResource("Theme_awuhk")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Level5" type="TextureButton" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 744.0
-offset_top = 256.0
-offset_right = 840.0
-offset_bottom = 352.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.807292
+anchor_top = 0.4125
+anchor_right = 0.890625
+anchor_bottom = 0.5625
 pivot_offset = Vector2(48, 0)
 theme = SubResource("Theme_awuhk")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Arrow" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(264, 224)
+position = Vector2(243.088, 233.749)
 rotation = 1.5708
-scale = Vector2(0.958333, 0.958333)
+scale = Vector2(0.48, 0.48)
 texture = ExtResource("3_8n2b7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Arrow"]
@@ -149,14 +156,126 @@ libraries = {
 }
 autoplay = "blink"
 
-[node name="Label" type="Label" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 80.0
-offset_right = 711.0
-offset_bottom = 152.0
-text = "Chapter 2"
-label_settings = SubResource("LabelSettings_7xe41")
+offset_left = 64.0
+offset_top = 56.0
+offset_right = 184.0
+offset_bottom = 144.0
+color = Color(0.239216, 0.431373, 0.439216, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 400.0
+offset_right = 1040.0
+offset_bottom = 440.0
+color = Color(0.239216, 0.431373, 0.439216, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 68.0
+offset_right = 883.0
+offset_bottom = 162.0
+color = Color(0.239216, 0.431373, 0.439216, 1)
+
+[node name="Back" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0833333
+anchor_top = 0.8
+anchor_right = 0.145833
+anchor_bottom = 0.875
+pivot_offset = Vector2(40, 0)
+texture = ExtResource("4_x15su")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BackButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0763889
+anchor_top = 0.801562
+anchor_right = 0.118056
+anchor_bottom = 0.876562
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(106, 48)
+theme = SubResource("Theme_hnlk0")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel1" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 122.0
+offset_top = 392.0
+offset_right = 225.0
+offset_bottom = 419.0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="StarsLevel6" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.115625
+anchor_right = 1.0
+anchor_bottom = 0.248437
+grow_horizontal = 2
+grow_vertical = 2
+text = "CHAPTER 2"
+label_settings = SubResource("LabelSettings_474tl")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel2" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 324.0
+offset_top = 392.0
+offset_right = 427.0
+offset_bottom = 419.0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="StarsLevel3" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 525.0
+offset_top = 392.0
+offset_right = 628.0
+offset_bottom = 419.0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="StarsLevel4" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 725.0
+offset_top = 392.0
+offset_right = 828.0
+offset_bottom = 419.0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="StarsLevel5" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 926.0
+offset_top = 392.0
+offset_right = 1029.0
+offset_bottom = 419.0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Level1" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="Level2" to="." method="_on_level_1_button_pressed"]

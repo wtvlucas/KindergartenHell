@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://xocrv0482y40"]
+[gd_scene load_steps=14 format=3 uid="uid://xocrv0482y40"]
 
 [ext_resource type="Script" path="res://assets/Scripts/Levels/cp1_lvl1.gd" id="1_unhpj"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_aqs1t"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="7_xh7ve"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="9_uarbo"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_60tv1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rwp3"]
 texture = ExtResource("2_aqs1t")
 texture_region_size = Vector2i(64, 64)
 4:0/0 = 0
@@ -101,21 +101,19 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_qytxo"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_60tv1")
+sources/0 = SubResource("TileSetAtlasSource_5rwp3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh75o"]
+size = Vector2(28.0374, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50lxg"]
 size = Vector2(38, 624)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1w3ky"]
-size = Vector2(20, 768)
+size = Vector2(31.9988, 624)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eivbf"]
 size = Vector2(48, 56)
-
-[sub_resource type="LabelSettings" id="LabelSettings_dewek"]
-font_size = 251
 
 [node name="Cp1Lvl1" type="Node2D"]
 script = ExtResource("1_unhpj")
@@ -135,12 +133,8 @@ offset_bottom = 989.0
 scale = Vector2(0.647, 0.647)
 texture = ExtResource("3_f86va")
 
-[node name="Player" parent="." instance=ExtResource("9_uarbo")]
-position = Vector2(528, 472)
-
 [node name="Green" parent="." instance=ExtResource("4_gbllo")]
 position = Vector2(400, 272)
-metadata/_edit_group_ = true
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 position = Vector2(320, 96)
@@ -203,13 +197,8 @@ shape = SubResource("RectangleShape2D_eivbf")
 position = Vector2(664, 88)
 shape = SubResource("RectangleShape2D_eivbf")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -16.0
-offset_top = 104.0
-offset_right = 368.0
-offset_bottom = 447.0
-text = "1"
-label_settings = SubResource("LabelSettings_dewek")
+[node name="Player" parent="." instance=ExtResource("9_uarbo")]
+position = Vector2(528, 472)
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 
