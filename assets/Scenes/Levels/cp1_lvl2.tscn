@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://ufq36fpaar6o"]
+[gd_scene load_steps=14 format=3 uid="uid://ufq36fpaar6o"]
 
 [ext_resource type="Script" path="res://assets/Scripts/Levels/cp1_lvl2.gd" id="1_iprqh"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_inkju"]
 [ext_resource type="Texture2D" uid="uid://josmu1668w6w" path="res://assets/Sprite/Level1Background.png" id="3_pcamx"]
 [ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="4_3nf0a"]
+[ext_resource type="Texture2D" uid="uid://d3wno84u5w584" path="res://assets/Sprite/UI/3.Levels/3.png" id="6_747ud"]
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="7_3sry6"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="9_2m4fx"]
 
@@ -152,18 +153,13 @@ shape = SubResource("RectangleShape2D_gh75o")
 
 [node name="Hud" parent="." instance=ExtResource("7_3sry6")]
 
-[node name="LevelComplete" parent="Hud" index="1"]
-visible = true
-
 [node name="Stars" parent="Hud/LevelComplete" index="1"]
 anchor_top = 0.275
 anchor_bottom = 0.69375
 offset_bottom = 3.05176e-05
 
-[node name="NextLevelButton" parent="Hud/LevelComplete" index="3"]
-anchor_left = 0.395834
-anchor_right = 0.539323
-offset_right = 129.501
+[node name="NextLevel" parent="Hud/LevelComplete" index="5"]
+texture = ExtResource("6_747ud")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true

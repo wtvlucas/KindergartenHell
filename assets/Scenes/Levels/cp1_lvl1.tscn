@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://xocrv0482y40"]
+[gd_scene load_steps=15 format=3 uid="uid://xocrv0482y40"]
 
 [ext_resource type="Script" path="res://assets/Scripts/Levels/cp1_lvl1.gd" id="1_unhpj"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_aqs1t"]
 [ext_resource type="Texture2D" uid="uid://josmu1668w6w" path="res://assets/Sprite/Level1Background.png" id="3_f86va"]
 [ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="4_gbllo"]
+[ext_resource type="Texture2D" uid="uid://cqb83h3p7aid8" path="res://assets/Sprite/UI/3.Levels/2.png" id="7_b73y8"]
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="7_xh7ve"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="9_uarbo"]
 
@@ -165,10 +166,8 @@ offset_top = -88.0
 offset_right = 88.001
 offset_bottom = 80.0
 
-[node name="NextLevelButton" parent="Hud/LevelComplete" index="3"]
-anchor_left = 0.402778
-anchor_right = 0.531945
-offset_right = 129.501
+[node name="NextLevel" parent="Hud/LevelComplete" index="5"]
+texture = ExtResource("7_b73y8")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -213,6 +212,5 @@ text = "1"
 label_settings = SubResource("LabelSettings_dewek")
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
-[connection signal="pressed" from="Hud/LevelComplete/NextLevelButton" to="." method="_on_next_level_button_pressed"]
 
 [editable path="Hud"]

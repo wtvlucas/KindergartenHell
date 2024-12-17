@@ -19,7 +19,7 @@ var current_level = "cp1_lvl4"
 
 var dicts : Dictionary = {
 	max_moves = 20,
-	need_to_save = 1,
+	need_to_save = 2,
 	saved = 0,
 	stars = 0,
 	
@@ -59,11 +59,14 @@ func _process(delta: float) -> void:
 	star_3.visible = dicts.stars >= 3
 
 
-
+func next():
+	var next = "cp1_lvl5"
+	get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + next + ".tscn")
+	GameManager.endLevel = false
 
 func show_end() -> void:
 	if dicts.saved == dicts.need_to_save:
-		
+		GameManager.endLevel = true
 			
 		if SaveSystem.get_stars_for_level(current_level) < dicts.stars:
 			SaveSystem.set_stars_for_level(current_level, dicts.stars)

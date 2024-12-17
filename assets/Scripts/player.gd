@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 	
 	
 func _unhandled_input(event):
-	if moving:
+	if moving or GameManager.moving != 0:
 		return
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
@@ -48,10 +48,13 @@ func move(dir):
 		GameManager.blocked = false
 		moving = true
 		
+		
+		
 		if dir == "left":
 			player_sprite.flip_h = true
 		elif dir == "right":
 			player_sprite.flip_h = false
+
 		player_sprite.play("walk")
 		#GameManager.blocked = false
 		GameManager.moves -= 1
@@ -69,10 +72,12 @@ func move(dir):
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Tilemap") || area.is_in_group("Walls") || area.is_in_group("Kids"):
 		moving = true
+		GameManager.moving += 1
 		player_sprite.play("walk")
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", tile_map.map_to_local(tile_pos), 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 			
 		await tween.finished
 		moving = false
+		GameManager.moving -= 1
 		player_sprite.play("stand")

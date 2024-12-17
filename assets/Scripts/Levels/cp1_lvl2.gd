@@ -39,6 +39,9 @@ func _ready() -> void:
 	GameManager.current_level = current_level
 	GameManager.endLevel = false
 
+func next():
+	var next = "cp1_lvl3"
+	get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + next + ".tscn")
 
 func _process(delta: float) -> void:
 	moves.text = str(GameManager.moves)

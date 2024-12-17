@@ -1,7 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://p4s6bsp70ti5"]
+[gd_scene load_steps=8 format=3 uid="uid://p4s6bsp70ti5"]
 
 [ext_resource type="Script" path="res://assets/Scripts/Kids/red.gd" id="1_in5dd"]
-[ext_resource type="Texture2D" uid="uid://hyabi47pk3pk" path="res://assets/Sprite/Kids/red_kid.png" id="2_g8w5r"]
+[ext_resource type="Texture2D" uid="uid://cbiikeegqwc4g" path="res://assets/Sprite/Kids/idle/chavalovermelho1.png" id="2_x2nr1"]
+[ext_resource type="Texture2D" uid="uid://2hepadpc3bl3" path="res://assets/Sprite/Kids/idle/chavalovermelho2.png" id="3_j7s4j"]
+[ext_resource type="Texture2D" uid="uid://r32hlqepc1id" path="res://assets/Sprite/Kids/walking/chavalo_walk1.png" id="4_5dbiy"]
+[ext_resource type="Texture2D" uid="uid://bcht5rm61emnr" path="res://assets/Sprite/Kids/walking/chavalo_walk2.png" id="5_rktwf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pxwtl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x2nr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j7s4j")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5dbiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rktwf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1mjo"]
 size = Vector2(32, 32)
@@ -11,10 +39,13 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_in5dd")
 
-[node name="Sprite2d" type="Sprite2D" parent="." groups=["Kids"]]
-position = Vector2(2, 9)
-scale = Vector2(0.2875, 0.2875)
-texture = ExtResource("2_g8w5r")
+[node name="RedKidSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.57628e-07, 9)
+scale = Vector2(0.46, 0.46)
+sprite_frames = SubResource("SpriteFrames_pxwtl")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.259298
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s1mjo")

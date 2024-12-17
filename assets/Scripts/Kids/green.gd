@@ -4,6 +4,8 @@ var animation_speed = 2
 var moving = false
 var tile_size = 64
 var can_move = false
+@onready var green_kid_sprite: AnimatedSprite2D = $GreenKidSprite
+
 
 var inputs = {
 	"right": Vector2.RIGHT,
@@ -23,21 +25,28 @@ func _ready():
 	#GameManager.connect("movement_locked", self, "_on_movement_locked")
 	
 func _unhandled_input(event):
-	if moving or GameManager.blocked:
+	if moving or GameManager.blocked or GameManager.moving != 0:
 
 		return
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
-			print("CALLED")
+			
 			move(dir)
 			
 func move(dir):
 	ray.target_position = inputs[dir] * tile_size
 	ray.force_raycast_update()
-	print("OKE")
+
 	if GameManager.checker(dir, ray, inputs, tile_size) == true:
-		print("HERE")
+		
 		moving = true
+		green_kid_sprite.play("walk")
+		
+		if dir == "right":
+			green_kid_sprite.flip_h = true
+		elif dir == "left":
+			green_kid_sprite.flip_h = false
+			
 		tile_pos = tile_map.local_to_map(transform.get_origin()) 
 		
 		var tween = get_tree().create_tween()
@@ -45,6 +54,7 @@ func move(dir):
 
 		await tween.finished
 		moving = false
+		green_kid_sprite.play("idle")
 		
 
 
@@ -55,9 +65,13 @@ func _on_area_entered(area: Area2D) -> void:
 		get_parent().dicts.saved += 1
 		
 	else:
+		GameManager.moving += 1
 		moving = true
+		green_kid_sprite.play("walk")
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", tile_map.map_to_local(tile_pos), 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 		
 		await tween.finished
 		moving = false
+		green_kid_sprite.play("idle")
+		GameManager.moving -= 1

@@ -28,7 +28,7 @@ func _ready() -> void:
 	total_stars.text = total_stars.text + str(SaveSystem.get_total_stars()) + "*"
 	
 	if SaveSystem.get_total_stars() >= 10:
-		chapter_2_unlocked = true
+		GameManager.chapter_2_unlocked = true
 		chapter_2_stars.hide()
 		chapter_2_icon.set_modulate(Color(1,1,1,1))
 		chapter_2_label.set_modulate(Color(1,1,1,1))
@@ -42,13 +42,14 @@ func change_lvl() -> void:
 		elif current_option == 2:
 			get_tree().change_scene_to_file("res://assets/Scenes/chapters/chapter_1.tscn")
 		elif current_option == 3:
-			if chapter_2_unlocked:
+			if GameManager.chapter_2_unlocked:
 				get_tree().change_scene_to_file("res://assets/Scenes/chapters/chapter_2.tscn")
 			else:
 				print("Chapter 2 está bloqueado!")
 
 func _process(delta: float) -> void:
 	change_lvl()
+	print(current_option)
 	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("up"):
 		move_character(-1)
 	elif Input.is_action_just_pressed("right") or Input.is_action_just_pressed("down"):
@@ -60,7 +61,7 @@ func move_character(direction: int) -> void:
 		next_option += direction
 		if next_option < 1 or next_option > option_position.size():
 			break
-		if next_option == 3 and not chapter_2_unlocked:
+		if next_option == 3 and not GameManager.chapter_2_unlocked:
 			continue
 		current_option = next_option
 		break

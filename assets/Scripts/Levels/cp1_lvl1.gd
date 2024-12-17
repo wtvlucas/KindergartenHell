@@ -60,7 +60,9 @@ func _process(delta: float) -> void:
 	star_3.visible = dicts.stars >= 3
 
 
-
+func next():
+	var next = "cp1_lvl2"
+	get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + next + ".tscn")
 
 func show_end() -> void:
 	if dicts.saved == dicts.need_to_save:

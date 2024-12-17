@@ -7,10 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ck0hvdwliqkkn" path="res://assets/Sprite/teacher/teacher_idle2.png" id="5_atipt"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3v8fa"]
-load_path = "res://.godot/imported/sokoban_character.png-db20e081c3ea15b476d3a83e0251c071.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jujpy"]
-load_path = "res://.godot/imported/teacher_2.png-6f20312d3d7cfc99835aa37e955d01ae.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0l4s"]
 animations = [{
@@ -136,7 +134,7 @@ scale = Vector2(0.431299, 0.431299)
 sprite_frames = SubResource("SpriteFrames_k0l4s")
 animation = &"stand"
 autoplay = "stand"
-frame_progress = 0.375289
+frame_progress = 0.392263
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tia2a")

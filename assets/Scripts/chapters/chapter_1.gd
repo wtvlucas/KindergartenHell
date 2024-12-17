@@ -53,15 +53,7 @@ func change_lvl() -> void:
 			get_tree().change_scene_to_file("res://assets/Scenes/chapters.tscn")
 		else:
 			get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl" + str(current_level - 1) + ".tscn")
-		#elif current_level == 2:
-			#get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl2.tscn")
-		#elif current_level == 3:
-			#get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl3.tscn")
-		#elif current_level == 4:
-			#get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl4.tscn")
-		#elif current_level == 5:
-			#get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl5.tscn")
-	
+		
 		
 
 func _process(delta: float) -> void:

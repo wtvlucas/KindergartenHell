@@ -7,6 +7,7 @@ var pause_menu = preload("res://assets/Scenes/pause_menu.tscn")
 var paused = false
 var menu = pause_menu.instantiate()
 var endLevel = false
+var chapter_2_unlocked : bool = false
 
 var moving : int = 0
 var current_level : String = "cp1_lvl1"
@@ -22,9 +23,22 @@ func unpause() -> void:
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("pause") and get_tree().get_current_scene().get_name() != "MainMenu":
-		pause() if !paused else unpause()
+	var current_scene = get_tree().get_current_scene().get_name()
+	if Input.is_action_just_pressed("pause") and not current_scene in ["MainMenu", "Chapters", "Chapter1", "Chapter2"]:
+		if endLevel:
+			return
 		paused = !paused
+		if paused:
+			pause()
+		else:
+			unpause()
+			
+	
+	if SaveSystem.get_total_stars() > 10:
+		chapter_2_unlocked = true
+
+		
+	#prints(SaveSystem.data.last_level, current_level)
 	
 	
 

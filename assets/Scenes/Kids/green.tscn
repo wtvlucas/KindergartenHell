@@ -1,7 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwmqt23ggfnap"]
+[gd_scene load_steps=9 format=3 uid="uid://cwmqt23ggfnap"]
 
 [ext_resource type="Script" path="res://assets/Scripts/Kids/green.gd" id="1_y1a37"]
+[ext_resource type="Texture2D" uid="uid://b64h3q5q22sx8" path="res://assets/Sprite/Kids/idle/chavaloverde1.png" id="2_74kmb"]
 [ext_resource type="Texture2D" uid="uid://dwemv5mvsspi2" path="res://assets/Sprite/Kids/green_kid.png" id="2_v2dlt"]
+[ext_resource type="Texture2D" uid="uid://kjjgejw77cw0" path="res://assets/Sprite/Kids/idle/chavaloverde2.png" id="3_hpogm"]
+[ext_resource type="Texture2D" uid="uid://cak25yphp6lw0" path="res://assets/Sprite/Kids/walking/chavaloverde_walk1.png" id="4_1y0tc"]
+[ext_resource type="Texture2D" uid="uid://dilptot36tcjq" path="res://assets/Sprite/Kids/walking/chavaloverde_walk2.png" id="5_o4507"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2k4vl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_74kmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hpogm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1y0tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o4507")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqm1i"]
 size = Vector2(32, 32)
@@ -11,7 +40,16 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_y1a37")
 
+[node name="GreenKidSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.57628e-07, 9)
+scale = Vector2(0.46, 0.46)
+sprite_frames = SubResource("SpriteFrames_2k4vl")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.609783
+
 [node name="Sprite2d" type="Sprite2D" parent="." groups=["Kids"]]
+visible = false
 position = Vector2(2, 9)
 scale = Vector2(0.2875, 0.2875)
 texture = ExtResource("2_v2dlt")

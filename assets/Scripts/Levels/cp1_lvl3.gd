@@ -59,11 +59,13 @@ func _process(delta: float) -> void:
 	star_3.visible = dicts.stars >= 3
 
 
-
+func next():
+	var next = "cp1_lvl4"
+	get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + next + ".tscn")
 
 func show_end() -> void:
 	if dicts.saved == dicts.need_to_save:
-		
+		GameManager.endLevel = true
 			
 		if SaveSystem.get_stars_for_level(current_level) < dicts.stars:
 			SaveSystem.set_stars_for_level(current_level, dicts.stars)

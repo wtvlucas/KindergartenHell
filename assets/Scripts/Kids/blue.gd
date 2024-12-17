@@ -4,6 +4,8 @@ var animation_speed = 2
 var moving = false
 var tile_size = 64
 @onready var tile_map: TileMap = %TileMap
+@onready var blue_kid_sprite: AnimatedSprite2D = %BlueKidSprite
+
 
 var inputs = {
 	"left": Vector2.RIGHT,
@@ -23,7 +25,7 @@ func _ready():
 	position += Vector2.ONE * tile_size / 2
 	
 func _unhandled_input(event):
-	if moving or GameManager.blocked:
+	if moving or GameManager.blocked or GameManager.moving != 0:
 		return
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
@@ -38,6 +40,13 @@ func move(dir):
 	
 	if GameManager.checker(dir, ray, inputs, tile_size, true) == true:
 		moving = true
+		blue_kid_sprite.play("walk")
+		
+		if dir == "left":
+			blue_kid_sprite.flip_h = true
+		elif dir == "right":
+			blue_kid_sprite.flip_h = false
+			
 		tile_pos = tile_map.local_to_map(transform.get_origin()) 
 		
 		last_pos = position
@@ -47,19 +56,24 @@ func move(dir):
 
 		await tween.finished
 		moving = false
+		blue_kid_sprite.play("idle")
 
 		
 		
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Kids") || area.is_in_group("Player"):
+		moving = true
 		GameManager.moving += 1
+		blue_kid_sprite.play("walk")
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", tile_map.map_to_local(tile_pos), 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 
 		
 		await tween.finished
+		moving = false
 		GameManager.moving -= 1
+		blue_kid_sprite.play("idle")
 		
 	if area.is_in_group("Exit"):
 		self.queue_free()

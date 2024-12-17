@@ -19,7 +19,7 @@ var current_level = "cp1_lvl5"
 
 var dicts : Dictionary = {
 	max_moves = 20,
-	need_to_save = 1,
+	need_to_save = 2,
 	saved = 0,
 	stars = 0,
 	
@@ -63,7 +63,7 @@ func _process(delta: float) -> void:
 
 func show_end() -> void:
 	if dicts.saved == dicts.need_to_save:
-		
+		GameManager.endLevel = true
 			
 		if SaveSystem.get_stars_for_level(current_level) < dicts.stars:
 			SaveSystem.set_stars_for_level(current_level, dicts.stars)
