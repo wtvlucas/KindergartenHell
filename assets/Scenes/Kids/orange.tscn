@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://bf63slacbvmwl"]
+
+[ext_resource type="Script" path="res://assets/Scripts/Kids/orange.gd" id="1_d3c84"]
+[ext_resource type="Texture2D" uid="uid://csocfiopiltsg" path="res://assets/Sprite/Kids/idle/laranja (1).png" id="2_x6xbr"]
+[ext_resource type="Texture2D" uid="uid://c7sr2hwxcj4hr" path="res://assets/Sprite/Kids/idle/laranja (2).png" id="3_wkqba"]
+[ext_resource type="Texture2D" uid="uid://bf8seck0l81ay" path="res://assets/Sprite/Kids/walking/laranja_walk2.png" id="4_421i3"]
+[ext_resource type="Texture2D" uid="uid://do5wdm1rlhdjf" path="res://assets/Sprite/Kids/walking/laranja_walk.png" id="5_6k8do"]
+[ext_resource type="Texture2D" uid="uid://dwemv5mvsspi2" path="res://assets/Sprite/Kids/green_kid.png" id="6_nywds"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2k4vl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x6xbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wkqba")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_421i3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6k8do")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqm1i"]
+size = Vector2(32, 32)
+
+[node name="Orange" type="Area2D" groups=["orange"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_d3c84")
+
+[node name="OrangeKidSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(3.57628e-07, 9)
+scale = Vector2(0.46, 0.46)
+sprite_frames = SubResource("SpriteFrames_2k4vl")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.383352
+
+[node name="Sprite2d" type="Sprite2D" parent="." groups=["Kids"]]
+visible = false
+position = Vector2(2, 9)
+scale = Vector2(0.2875, 0.2875)
+texture = ExtResource("6_nywds")
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dqm1i")
+
+[node name="RayCast2d" type="RayCast2D" parent="."]
+collide_with_areas = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

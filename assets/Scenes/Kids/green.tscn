@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cak25yphp6lw0" path="res://assets/Sprite/Kids/walking/chavaloverde_walk1.png" id="4_1y0tc"]
 [ext_resource type="Texture2D" uid="uid://dilptot36tcjq" path="res://assets/Sprite/Kids/walking/chavaloverde_walk2.png" id="5_o4507"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2k4vl"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_5f3ts"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -43,10 +43,9 @@ script = ExtResource("1_y1a37")
 [node name="GreenKidSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(3.57628e-07, 9)
 scale = Vector2(0.46, 0.46)
-sprite_frames = SubResource("SpriteFrames_2k4vl")
-animation = &"idle"
+sprite_frames = SubResource("SpriteFrames_5f3ts")
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.609783
 
 [node name="Sprite2d" type="Sprite2D" parent="." groups=["Kids"]]
 visible = false

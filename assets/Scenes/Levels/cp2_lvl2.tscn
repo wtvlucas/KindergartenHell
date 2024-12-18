@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c4xd2gjy6mxh6"]
+[gd_scene load_steps=18 format=3 uid="uid://c4xd2gjy6mxh6"]
 
 [ext_resource type="Script" path="res://assets/Scripts/Levels/cp2_lvl1.gd" id="1_c3e4a"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_qtum2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="8_goyks"]
 [ext_resource type="Texture2D" uid="uid://d130am3gtlfq2" path="res://assets/Sprite/UI/estrelaCAPITULO2.png" id="9_mc78p"]
 [ext_resource type="Texture2D" uid="uid://cqb83h3p7aid8" path="res://assets/Sprite/UI/3.Levels/2.png" id="10_yivbs"]
+[ext_resource type="PackedScene" uid="uid://bf63slacbvmwl" path="res://assets/Scenes/Kids/orange.tscn" id="11_b8fnd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_edend"]
 texture = ExtResource("2_qtum2")
@@ -135,6 +136,9 @@ offset_bottom = 989.0
 scale = Vector2(0.647, 0.647)
 texture = ExtResource("3_kg3mk")
 expand_mode = 1
+
+[node name="Orange" parent="." instance=ExtResource("11_b8fnd")]
+position = Vector2(464, 528)
 
 [node name="Green" parent="." instance=ExtResource("4_m43ku")]
 position = Vector2(400, 272)

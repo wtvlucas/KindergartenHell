@@ -36,7 +36,7 @@ func _unhandled_input(event):
 func move(dir):
 	ray.target_position = inputs[dir] * tile_size
 	ray.force_raycast_update()
-
+	tile_pos = tile_map.local_to_map(transform.get_origin()) 
 	if GameManager.checker(dir, ray, inputs, tile_size) == true:
 		
 		moving = true
@@ -48,6 +48,7 @@ func move(dir):
 			green_kid_sprite.flip_h = false
 			
 		tile_pos = tile_map.local_to_map(transform.get_origin()) 
+		print(tile_pos)
 		
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", position + inputs[dir] * tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
@@ -65,10 +66,13 @@ func _on_area_entered(area: Area2D) -> void:
 		get_parent().dicts.saved += 1
 		
 	else:
+		if tile_pos == null:
+			return
 		GameManager.moving += 1
 		moving = true
 		green_kid_sprite.play("walk")
 		var tween = get_tree().create_tween()
+		
 		tween.tween_property(self, "position", tile_map.map_to_local(tile_pos), 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 		
 		await tween.finished
