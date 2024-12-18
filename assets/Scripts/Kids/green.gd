@@ -48,7 +48,7 @@ func move(dir):
 			green_kid_sprite.flip_h = false
 			
 		tile_pos = tile_map.local_to_map(transform.get_origin()) 
-		print(tile_pos)
+		#print(tile_pos)
 		
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", position + inputs[dir] * tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
@@ -63,6 +63,7 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	if area.is_in_group("Exit"):
 		self.queue_free()
+		SavedChild.play()
 		get_parent().dicts.saved += 1
 		
 	else:

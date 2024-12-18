@@ -35,7 +35,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqm1i"]
 size = Vector2(32, 32)
 
-[node name="Orange" type="Area2D" groups=["orange"]]
+[node name="Orange" type="Area2D" groups=["Orange"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_d3c84")
@@ -47,7 +47,7 @@ scale = Vector2(0.46, 0.46)
 sprite_frames = SubResource("SpriteFrames_2k4vl")
 animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.383352
+frame_progress = 0.348341
 
 [node name="Sprite2d" type="Sprite2D" parent="." groups=["Kids"]]
 visible = false

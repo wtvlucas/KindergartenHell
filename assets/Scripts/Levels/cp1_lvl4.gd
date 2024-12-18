@@ -28,7 +28,7 @@ var dicts : Dictionary = {
 	onestar = 5,
 }
 
-
+var last_stars: int = 0  
 
 func _ready() -> void:
 	_1_star.hide()
@@ -37,7 +37,7 @@ func _ready() -> void:
 	level_complete.hide()
 	GameManager.moves = dicts.max_moves
 	GameManager.current_level = current_level
-
+	last_stars = dicts.stars
 
 func _process(delta: float) -> void:
 	moves.text = str(GameManager.moves)
@@ -53,6 +53,10 @@ func _process(delta: float) -> void:
 		dicts.stars = 1
 	else:
 		dicts.stars = 0 
+		
+	if dicts.stars < last_stars:
+		LooseStar.play() 
+	last_stars = dicts.stars 
 		
 	star.visible = dicts.stars >= 1
 	star_2.visible = dicts.stars >= 2

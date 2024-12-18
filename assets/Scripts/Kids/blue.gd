@@ -62,7 +62,7 @@ func move(dir):
 		
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Kids") || area.is_in_group("Player"):
+	if area.is_in_group("Kids") || area.is_in_group("Player") || area.is_in_group("Orange"):
 		moving = true
 		GameManager.moving += 1
 		blue_kid_sprite.play("walk")
@@ -77,4 +77,5 @@ func _on_area_entered(area: Area2D) -> void:
 		
 	if area.is_in_group("Exit"):
 		self.queue_free()
+		SavedChild.play()
 		get_parent().dicts.saved += 1

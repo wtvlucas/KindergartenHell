@@ -47,6 +47,7 @@ func move(dir):
 	if GameManager.checker(dir, ray, inputs, tile_size) == true:
 		GameManager.blocked = false
 		moving = true
+		Walk.play_random()
 		
 		
 		

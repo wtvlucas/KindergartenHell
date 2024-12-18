@@ -14,6 +14,8 @@ extends Node2D
 @onready var star_2: TextureRect = $Hud/Hud/Stars/Star2
 @onready var star_3: TextureRect = $Hud/Hud/Stars/Star3
 
+# Adiciona o som LooseStar
+@onready var loose_star_sound: AudioStreamPlayer = $Hud/LooseStarSound
 
 var current_level = "cp1_lvl3"
 
@@ -28,7 +30,7 @@ var dicts : Dictionary = {
 	onestar = 5,
 }
 
-
+var last_stars: int = 0  
 
 func _ready() -> void:
 	_1_star.hide()
@@ -37,14 +39,13 @@ func _ready() -> void:
 	level_complete.hide()
 	GameManager.moves = dicts.max_moves
 	GameManager.current_level = current_level
-
+	last_stars = dicts.stars
 
 func _process(delta: float) -> void:
 	moves.text = str(GameManager.moves)
+	GameManager.moves = clamp(GameManager.moves, 0, dicts.max_moves)
 	
-	GameManager.moves = clamp(GameManager.moves, 0, dicts.max_moves)  
-	show_end()
-	
+	# Atualiza o número de estrelas baseado nos movimentos restantes
 	if GameManager.moves > dicts.treestars:
 		dicts.stars = 3
 	elif GameManager.moves > dicts.twostars:
@@ -52,12 +53,19 @@ func _process(delta: float) -> void:
 	elif GameManager.moves > dicts.onestar:
 		dicts.stars = 1
 	else:
-		dicts.stars = 0 
-		
+		dicts.stars = 0
+
+
+	if dicts.stars < last_stars:
+		LooseStar.play() 
+	last_stars = dicts.stars  
+
+	# Atualiza a visibilidade das estrelas no HUD
 	star.visible = dicts.stars >= 1
 	star_2.visible = dicts.stars >= 2
 	star_3.visible = dicts.stars >= 3
-
+	
+	show_end()
 
 func next():
 	var next = "cp1_lvl4"
@@ -70,18 +78,11 @@ func show_end() -> void:
 		if SaveSystem.get_stars_for_level(current_level) < dicts.stars:
 			SaveSystem.set_stars_for_level(current_level, dicts.stars)
 		
-		#if total_stars < 10:
-			#next_level_button.disabled = true
-			#no_stars_label.show()
-			#no_stars_label.text = "You only have " + str(total_stars) + "/7 stars to get into 2nd chapter!"
-			
 		_1_star.visible = dicts.stars >= 1
 		_2_star.visible = dicts.stars >= 2
 		_3_star.visible = dicts.stars >= 3
 			
 		level_complete.show()
-		
-
 
 func _on_next_level_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl4.tscn")

@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 	if SaveSystem.get_total_stars() > 10:
 		chapter_2_unlocked = true
 		
-	print(moving)
+	#print(moving)
 
 		
 	#prints(SaveSystem.data.last_level, current_level)

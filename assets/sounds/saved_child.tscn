@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckjx8ofie0jcg"]
+
+[ext_resource type="AudioStream" uid="uid://cr7ly4ixf4oh" path="res://assets/sounds/criança salva.wav" id="1_1o3oo"]
+
+[node name="SavedChild" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_1o3oo")
+volume_db = -6.933

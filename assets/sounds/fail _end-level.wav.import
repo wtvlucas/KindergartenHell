@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dj7imqy34iei3"
+path="res://.godot/imported/fail _end-level.wav-6d61def66d01d45232be8fdb27aea825.sample"
+
+[deps]
+
+source_file="res://assets/sounds/fail _end-level.wav"
+dest_files=["res://.godot/imported/fail _end-level.wav-6d61def66d01d45232be8fdb27aea825.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

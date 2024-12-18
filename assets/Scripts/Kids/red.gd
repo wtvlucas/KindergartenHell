@@ -91,4 +91,5 @@ func _on_area_entered(area: Area2D) -> void:
 		
 	else:
 		self.queue_free()
+		SavedChild.play()
 		get_parent().dicts.saved += 1

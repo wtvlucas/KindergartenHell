@@ -19,6 +19,9 @@ config/icon="res://icon.svg"
 
 GameManager="*res://resources/game_manager.gd"
 SaveSystem="*res://resources/save_system.gd"
+Walk="*res://assets/sounds/walk.tscn"
+LooseStar="*res://assets/sounds/loose_star.tscn"
+SavedChild="*res://assets/sounds/saved_child.tscn"
 
 [display]
 
@@ -38,7 +41,7 @@ Tilemap=""
 Walls=""
 BlueKid=""
 RedKid=""
-orange=""
+Orange=""
 
 [input]
 

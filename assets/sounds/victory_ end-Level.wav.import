@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dp1tk2jb6vew0"
+path="res://.godot/imported/victory_ end-Level.wav-a92989601650f83ff1d20053ce1367e7.sample"
+
+[deps]
+
+source_file="res://assets/sounds/victory_ end-Level.wav"
+dest_files=["res://.godot/imported/victory_ end-Level.wav-a92989601650f83ff1d20053ce1367e7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
