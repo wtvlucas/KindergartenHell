@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://assets/Scripts/Kids/orange.gd" id="1_d3c84"]
 [ext_resource type="Texture2D" uid="uid://csocfiopiltsg" path="res://assets/Sprite/Kids/idle/laranja (1).png" id="2_x6xbr"]
 [ext_resource type="Texture2D" uid="uid://c7sr2hwxcj4hr" path="res://assets/Sprite/Kids/idle/laranja (2).png" id="3_wkqba"]
-[ext_resource type="Texture2D" uid="uid://bf8seck0l81ay" path="res://assets/Sprite/Kids/walking/laranja_walk2.png" id="4_421i3"]
-[ext_resource type="Texture2D" uid="uid://do5wdm1rlhdjf" path="res://assets/Sprite/Kids/walking/laranja_walk.png" id="5_6k8do"]
+[ext_resource type="Texture2D" uid="uid://prnvisobojik" path="res://assets/Sprite/Kids/walking/laranja_walk2.png" id="4_421i3"]
+[ext_resource type="Texture2D" uid="uid://cgysdimkqsohe" path="res://assets/Sprite/Kids/walking/laranja_walk.png" id="5_6k8do"]
 [ext_resource type="Texture2D" uid="uid://dwemv5mvsspi2" path="res://assets/Sprite/Kids/green_kid.png" id="6_nywds"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2k4vl"]

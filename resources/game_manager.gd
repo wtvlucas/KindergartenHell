@@ -28,15 +28,16 @@ func unpause() -> void:
 
 
 func _process(delta: float) -> void:
-	var current_scene = get_tree().get_current_scene().get_name()
-	if Input.is_action_just_pressed("pause") and not current_scene in ["MainMenu", "Chapters", "Chapter1", "Chapter2"]:
-		if endLevel:
-			return
-		paused = !paused
-		if paused:
-			pause()
-		else:
-			unpause()
+	if get_tree().get_current_scene() != null:
+		var current_scene = get_tree().get_current_scene().get_name()
+		if Input.is_action_just_pressed("pause") and not current_scene in ["MainMenu", "Chapters", "Chapter1", "Chapter2"]:
+			if endLevel:
+				return
+			paused = !paused
+			if paused:
+				pause()
+			else:
+				unpause()
 			
 	
 	if SaveSystem.get_total_stars() > 10:

@@ -95,6 +95,9 @@ func show_end() -> void:
 			
 		level_complete.show()
 		
+		await get_tree().create_timer(2).timeout 
+		get_tree().change_scene_to_file("res://assets/Scenes/comming.tscn")
+		
 
 
 func _on_next_level_button_pressed() -> void:

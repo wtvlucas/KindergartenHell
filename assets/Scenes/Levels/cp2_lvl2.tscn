@@ -124,6 +124,7 @@ script = ExtResource("1_stp0d")
 
 [node name="TileMap" type="TileMap" parent="." groups=["Tilemap"]]
 unique_name_in_owner = true
+visible = false
 tile_set = SubResource("TileSet_f14yj")
 format = 2
 layer_0/name = "floor"

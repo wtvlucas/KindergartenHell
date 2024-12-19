@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="7_uwdxr"]
 [ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="9_wqgca"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_edend"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_530ll"]
 texture = ExtResource("2_lt1fo")
 texture_region_size = Vector2i(64, 64)
 4:0/0 = 0
@@ -103,7 +103,7 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_f14yj"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_edend")
+sources/0 = SubResource("TileSetAtlasSource_530ll")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh75o"]
 size = Vector2(28.0374, 20)
