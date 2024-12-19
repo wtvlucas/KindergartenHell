@@ -40,6 +40,7 @@ func _ready() -> void:
 	level_complete.hide()
 	GameManager.moves = dicts.max_moves
 	GameManager.current_level = current_level
+	GameManager.endLevel = false
 	last_stars = dicts.stars
 
 func _process(delta: float) -> void:

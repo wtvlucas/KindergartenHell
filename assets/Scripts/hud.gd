@@ -49,12 +49,14 @@ func change_lvl() -> void:
 		elif option == 3:
 			if get_parent().current_level == "cp1_lvl5":
 				if GameManager.chapter_2_unlocked:
-					get_tree().change_scene_to_file("res://assets/Scenes/chapters/chapter_2.tscn")
+					get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp2_lvl1.tscn")
+					
 					Chapter1.stop()
 					Chapter2.play()
 			else:
 				get_parent().next()
-				GameManager.endLevel = false
+				
+			GameManager.endLevel = false
 		
 
 func _process(delta: float) -> void:

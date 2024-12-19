@@ -1,6 +1,6 @@
 extends Area2D
 
-var animation_speed = 7
+var animation_speed = 10
 var moving = false
 var tile_size = 64
 @onready var green_kid_sprite: AnimatedSprite2D = $OrangeKidSprite

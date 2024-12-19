@@ -161,7 +161,7 @@ autostart = true
 [node name="Walls" type="Area2D" parent="." groups=["Walls"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2(104, 352)
+position = Vector2(152, 352)
 shape = SubResource("RectangleShape2D_50lxg")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]

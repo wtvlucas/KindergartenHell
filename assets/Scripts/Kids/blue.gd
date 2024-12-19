@@ -37,7 +37,7 @@ func move(dir):
 	
 	#if GameManager.moving != 0:
 		#return 
-	
+	tile_pos = tile_map.local_to_map(transform.get_origin()) 
 	if GameManager.checker(dir, ray, inputs, tile_size, true) == true:
 		moving = true
 		blue_kid_sprite.play("walk")
@@ -47,7 +47,7 @@ func move(dir):
 		elif dir == "right":
 			blue_kid_sprite.flip_h = false
 			
-		tile_pos = tile_map.local_to_map(transform.get_origin()) 
+
 		
 		last_pos = position
 		#prints(last_pos, tile_pos)

@@ -17,7 +17,8 @@ var current_level : String = "cp1_lvl1"
 
 func _ready() -> void:
 	add_child(menu)
-	Main.play()
+	if get_tree().current_scene.get_name() == "MainMenu":
+		Main.play()
 
 func pause() -> void:
 	menu.show()
