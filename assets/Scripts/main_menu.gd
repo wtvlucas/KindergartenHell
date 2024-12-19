@@ -31,7 +31,12 @@ func change_lvl() -> void:
 		
 		if current_option == 1:
 			var last_lvl = SaveSystem.data.last_level
-			
+			if last_lvl.begins_with("cp1"):
+				Chapter1.play()
+			elif last_lvl.begins_with("cp2"):
+				Chapter2.play()
+				
+			Main.stream_paused = true
 			get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + last_lvl + ".tscn")
 			
 		elif current_option == 2:

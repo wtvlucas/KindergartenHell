@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dre4ma7ffg1pu"]
+
+[ext_resource type="AudioStream" uid="uid://dj7imqy34iei3" path="res://assets/sounds/fail _end-level.wav" id="1_x74rs"]
+
+[node name="Failed" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_x74rs")
+volume_db = -6.933

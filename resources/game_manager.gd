@@ -9,11 +9,15 @@ var menu = pause_menu.instantiate()
 var endLevel = false
 var chapter_2_unlocked : bool = false
 
+var colided = false
+var colided_played = false
+
 var moving : int = 0
 var current_level : String = "cp1_lvl1"
 
 func _ready() -> void:
 	add_child(menu)
+	Main.play()
 
 func pause() -> void:
 	menu.show()
@@ -37,7 +41,12 @@ func _process(delta: float) -> void:
 	if SaveSystem.get_total_stars() > 10:
 		chapter_2_unlocked = true
 		
-	#print(moving)
+		
+	if colided and !colided_played:
+		Colided.play_random()
+		colided_played = true
+		
+	#prints(SaveSystem.data.last_level, current_level)
 
 		
 	#prints(SaveSystem.data.last_level, current_level)

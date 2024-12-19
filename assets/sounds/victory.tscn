@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2gk7oa4x2fin"]
+
+[ext_resource type="AudioStream" uid="uid://dp1tk2jb6vew0" path="res://assets/sounds/victory_ end-Level.wav" id="1_paq3h"]
+
+[node name="Victory" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_paq3h")
+volume_db = -6.933

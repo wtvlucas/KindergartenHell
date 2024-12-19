@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnhmgdb4tqjt0"]
+
+[ext_resource type="AudioStream" uid="uid://dtk074sgnql75" path="res://assets/sounds/intro e menus.mp3" id="1_odpbf"]
+
+[node name="Main" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_odpbf")
+volume_db = -6.933

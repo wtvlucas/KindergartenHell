@@ -22,6 +22,12 @@ SaveSystem="*res://resources/save_system.gd"
 Walk="*res://assets/sounds/walk.tscn"
 LooseStar="*res://assets/sounds/loose_star.tscn"
 SavedChild="*res://assets/sounds/saved_child.tscn"
+Failed="*res://assets/sounds/failed.tscn"
+Victory="*res://assets/sounds/victory.tscn"
+Colided="*res://assets/sounds/colided.tscn"
+Main="*res://assets/sounds/main.tscn"
+Chapter1="*res://assets/sounds/chapter_1.tscn"
+Chapter2="*res://assets/sounds/chapter_2.tscn"
 
 [display]
 

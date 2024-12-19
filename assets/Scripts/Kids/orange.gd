@@ -46,7 +46,7 @@ func start_movement(dir):
 	# Verifica se o movimento é permitido pelo GameManager
 	if GameManager.checker(dir, ray, inputs, tile_size):
 		moving = true
-		GameManager.moving += 1
+		#GameManager.moving += 1
 		green_kid_sprite.play("walk")
 		
 		# Define a direção do sprite
@@ -55,6 +55,7 @@ func start_movement(dir):
 		# Atualiza o tile_pos antes de iniciar o movimento
 		tile_pos = tile_map.local_to_map(position)
 		move_in_direction(dir)
+		GameManager.moving += 1
 
 func move_in_direction(dir):
 	var target_pos = position + inputs[dir] * tile_size
@@ -66,6 +67,7 @@ func move_in_direction(dir):
 		return
 		
 	Walk.play_random()
+	#GameManager.moving += 1
 	
 	# Atualiza o tile_pos
 	tile_pos = tile_map.local_to_map(target_pos)
@@ -83,6 +85,7 @@ func move_in_direction(dir):
 
 func move_back():
 	# Retorna ao tile_pos anterior com tween
+	GameManager.moving += 1
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", tile_map.map_to_local(tile_pos), 1.0 / animation_speed).set_trans(Tween.TRANS_SINE)
 
@@ -99,5 +102,10 @@ func _on_area_entered(area: Area2D) -> void:
 		self.queue_free()
 		SavedChild.play()
 		get_parent().dicts.saved += 1
-	elif area.is_in_group("Player"):
+	else:
+		GameManager.colided = true
+		
 		move_back()
+		
+		GameManager.colided = false
+		GameManager.colided_played = false

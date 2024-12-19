@@ -29,6 +29,7 @@ var dicts : Dictionary = {
 }
 
 var last_stars: int = 0  
+var sound_played: bool = false
 
 func _ready() -> void:
 	_1_star.hide()
@@ -69,6 +70,15 @@ func _process(delta: float) -> void:
 func show_end() -> void:
 	if dicts.saved == dicts.need_to_save:
 		GameManager.endLevel = true
+			
+			
+		if !sound_played:
+			if dicts.stars == 0:
+				Failed.play()
+				sound_played = true
+			else:
+				Victory.play()
+				sound_played = true
 			
 		if SaveSystem.get_stars_for_level(current_level) < dicts.stars:
 			SaveSystem.set_stars_for_level(current_level, dicts.stars)

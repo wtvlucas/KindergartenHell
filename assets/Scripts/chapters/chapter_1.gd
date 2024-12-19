@@ -52,6 +52,8 @@ func change_lvl() -> void:
 			#var last_lvl = SaveSystem.data.last_level
 			get_tree().change_scene_to_file("res://assets/Scenes/chapters.tscn")
 		else:
+			Main.stream_paused = true
+			Chapter1.play()
 			get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl" + str(current_level - 1) + ".tscn")
 		
 		

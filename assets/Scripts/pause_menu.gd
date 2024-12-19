@@ -37,6 +37,9 @@ func change_lvl() -> void:
 			get_tree().change_scene_to_file("res://assets/Scenes/main_menu.tscn")
 			SaveSystem.data.last_level = GameManager.current_level
 			SaveSystem.save_data()
+			Main.stream_paused = false
+			Chapter1.stop()
+			Chapter2.stop()
 			self.hide()
 			GameManager.paused = false
 			GameManager.unpause()

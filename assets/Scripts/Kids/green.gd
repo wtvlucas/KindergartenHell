@@ -72,6 +72,8 @@ func _on_area_entered(area: Area2D) -> void:
 		GameManager.moving += 1
 		moving = true
 		green_kid_sprite.play("walk")
+		GameManager.colided = true
+
 		var tween = get_tree().create_tween()
 		
 		tween.tween_property(self, "position", tile_map.map_to_local(tile_pos), 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
@@ -80,3 +82,5 @@ func _on_area_entered(area: Area2D) -> void:
 		moving = false
 		green_kid_sprite.play("idle")
 		GameManager.moving -= 1
+		GameManager.colided = false
+		GameManager.colided_played = false
