@@ -23,9 +23,9 @@ var dicts : Dictionary = {
 	saved = 0,
 	stars = 0,
 	
-	treestars = 10,
-	twostars = 9,
-	onestar = 5,
+	treestars = 8,
+	twostars = 4,
+	onestar = 0,
 }
 
 var last_stars: int = 0  

@@ -6,7 +6,11 @@ extends Node2D
 @onready var _1_star: TextureRect = $"Hud/LevelComplete/Stars/1star"
 @onready var _2_star: TextureRect = $"Hud/LevelComplete/Stars/2star"
 @onready var _3_star: TextureRect = $"Hud/LevelComplete/Stars/3star"
-@onready var next_level_button: Button = $Hud/LevelComplete/NextLevelButton
+#@onready var next_level_button: Button = $Hud/LevelComplete/NextLevelButton
+#@onready var next_level: TextureRect = %"Hud/LevelComplete/NextLevel"
+#@onready var next_level: TextureRect = %NextLevel
+@onready var next_level: TextureRect = $Hud/LevelComplete/NextLevel
+
 
 @onready var moves: Label = $Hud/Hud/Calendar/Moves
 
@@ -18,14 +22,14 @@ extends Node2D
 var current_level = "cp2_lvl5"
 
 var dicts : Dictionary = {
-	max_moves = 20,
+	max_moves = 25,
 	need_to_save = 4,
 	saved = 0,
 	stars = 0,
 	
-	treestars = 13,
-	twostars = 9,
-	onestar = 5,
+	treestars = 14,
+	twostars = 10,
+	onestar = 6,
 }
 
 var last_stars: int = 0  
@@ -66,8 +70,7 @@ func _process(delta: float) -> void:
 
 
 func next():
-	var next = "cp2_lvl2"
-	get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + next + ".tscn")
+	get_tree().change_scene_to_file("res://assets/Scenes/comming.tscn")
 
 func show_end() -> void:
 	if dicts.saved == dicts.need_to_save:
@@ -94,6 +97,8 @@ func show_end() -> void:
 		_3_star.visible = dicts.stars >= 3
 			
 		level_complete.show()
+		#next_level.set_visible(false)
+
 		
 		await get_tree().create_timer(2).timeout 
 		get_tree().change_scene_to_file("res://assets/Scenes/comming.tscn")

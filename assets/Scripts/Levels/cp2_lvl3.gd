@@ -18,14 +18,14 @@ extends Node2D
 var current_level = "cp2_lvl3"
 
 var dicts : Dictionary = {
-	max_moves = 20,
+	max_moves = 25,
 	need_to_save = 4,
 	saved = 0,
 	stars = 0,
 	
-	treestars = 13,
-	twostars = 9,
-	onestar = 5,
+	treestars = 8,
+	twostars = 4,
+	onestar = 0,
 }
 
 var last_stars: int = 0  

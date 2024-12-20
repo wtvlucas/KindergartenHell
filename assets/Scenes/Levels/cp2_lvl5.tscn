@@ -1,14 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://byhyyoa7qnpvh"]
+[gd_scene load_steps=19 format=3 uid="uid://byhyyoa7qnpvh"]
 
 [ext_resource type="Script" path="res://assets/Scripts/Levels/cp2_lvl5.gd" id="1_tvew6"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_j1e8t"]
 [ext_resource type="Texture2D" uid="uid://ru1lu5ifor0u" path="res://assets/Sprite/UI/cenario2.png" id="3_ytjse"]
 [ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="4_1tpdx"]
+[ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="5_nje3b"]
 [ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="6_yvxtx"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="7_p8pro"]
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="8_4mwwo"]
 [ext_resource type="Texture2D" uid="uid://d130am3gtlfq2" path="res://assets/Sprite/UI/estrelaCAPITULO2.png" id="9_npwy2"]
-[ext_resource type="Texture2D" uid="uid://cqb83h3p7aid8" path="res://assets/Sprite/UI/3.Levels/2.png" id="10_yvkde"]
+[ext_resource type="Texture2D" uid="uid://dmywcowxfuvk8" path="res://assets/Sprite/UI/2.Chapters/comingsoonicon.png" id="11_1m1ml"]
+[ext_resource type="PackedScene" uid="uid://bf63slacbvmwl" path="res://assets/Scenes/Kids/orange.tscn" id="11_ub82j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_edend"]
 texture = ExtResource("2_j1e8t")
@@ -139,20 +141,20 @@ scale = Vector2(0.647, 0.647)
 texture = ExtResource("3_ytjse")
 expand_mode = 1
 
+[node name="Orange" parent="." instance=ExtResource("11_ub82j")]
+position = Vector2(272, 592)
+
+[node name="Blue" parent="." instance=ExtResource("5_nje3b")]
+position = Vector2(784, 144)
+
 [node name="Green" parent="." instance=ExtResource("4_1tpdx")]
-position = Vector2(720, 272)
-
-[node name="Green2" parent="." instance=ExtResource("4_1tpdx")]
-position = Vector2(784, 272)
-
-[node name="Red" parent="." instance=ExtResource("6_yvxtx")]
 position = Vector2(784, 336)
 
-[node name="Red2" parent="." instance=ExtResource("6_yvxtx")]
-position = Vector2(720, 336)
+[node name="Red" parent="." instance=ExtResource("6_yvxtx")]
+position = Vector2(656, 208)
 
 [node name="Player" parent="." instance=ExtResource("7_p8pro")]
-position = Vector2(592, 472)
+position = Vector2(528, 472)
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 position = Vector2(320, 96)
@@ -166,6 +168,9 @@ position = Vector2(118.692, 8)
 shape = SubResource("RectangleShape2D_gh75o")
 
 [node name="Hud" parent="." instance=ExtResource("8_4mwwo")]
+
+[node name="LevelComplete" parent="Hud" index="1"]
+visible = true
 
 [node name="Stars" parent="Hud/LevelComplete" index="1"]
 anchors_preset = 8
@@ -188,7 +193,7 @@ texture = ExtResource("9_npwy2")
 texture = ExtResource("9_npwy2")
 
 [node name="NextLevel" parent="Hud/LevelComplete" index="5"]
-texture = ExtResource("10_yvkde")
+texture = ExtResource("11_1m1ml")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true

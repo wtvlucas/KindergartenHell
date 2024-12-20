@@ -18,7 +18,7 @@ extends Node2D
 var current_level = "cp2_lvl2"
 
 var dicts : Dictionary = {
-	max_moves = 20,
+	max_moves = 25,
 	need_to_save = 4,
 	saved = 0,
 	stars = 0,

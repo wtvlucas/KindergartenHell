@@ -49,7 +49,6 @@ func move(dir):
 			
 
 		
-		last_pos = position
 		#prints(last_pos, tile_pos)
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", position + inputs[dir] * tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)

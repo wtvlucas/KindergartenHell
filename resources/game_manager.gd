@@ -50,7 +50,7 @@ func _process(delta: float) -> void:
 		
 	#prints(SaveSystem.data.last_level, current_level)
 
-		
+	#print(moving)
 	#prints(SaveSystem.data.last_level, current_level)
 	
 	

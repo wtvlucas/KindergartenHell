@@ -133,7 +133,7 @@ scale = Vector2(0.647, 0.647)
 texture = ExtResource("8_tj7by")
 
 [node name="Blue" parent="." instance=ExtResource("6_s1hv5")]
-position = Vector2(536, 344)
+position = Vector2(536, 400)
 collision_layer = 1
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
