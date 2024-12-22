@@ -22,6 +22,8 @@ var can_move = true
 func _ready():
 	position = position.snapped(Vector2.ONE * tile_size)
 	position += Vector2.ONE * tile_size / 2
+	#InputManager.connect("input_received", "_on_input_received", "_on_input_received")
+
 	
 	
 func _process(delta: float) -> void:

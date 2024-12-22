@@ -19,6 +19,12 @@ func _ready() -> void:
 	add_child(menu)
 	if get_tree().current_scene.get_name() == "MainMenu":
 		Main.play()
+		
+	#Touch.visible = true
+	#Touch.show()
+	
+
+
 
 func pause() -> void:
 	menu.show()
@@ -116,4 +122,6 @@ func can_object_move(dir, obj, inputs, tile_size):
 	ray.force_raycast_update()	
 	return not ray.is_colliding()  # Retorna true se o caminho estiver livre
 	
+
+
 	

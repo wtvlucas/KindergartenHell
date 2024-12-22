@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://8xn1x2kgo3qs"]
+
+[ext_resource type="Texture2D" uid="uid://cw0tqnfsgqbtk" path="res://assets/Sprite/UI/arrow.png" id="1_ahkt4"]
+[ext_resource type="Texture2D" uid="uid://bfad336n0mf0h" path="res://assets/Sprite/UI/select.png" id="2_jiww5"]
+[ext_resource type="Texture2D" uid="uid://brcnaxsu5a634" path="res://assets/Sprite/UI/settingsbutton.png" id="3_vvycl"]
+
+[node name="Touch" type="CanvasLayer"]
+layer = 128
+visible = false
+
+[node name="Joy" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.0217014
+anchor_top = 0.601563
+anchor_right = 0.242194
+anchor_bottom = 0.972616
+offset_right = -85.007
+offset_bottom = -79.474
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.503, 1.503)
+metadata/_edit_use_anchors_ = true
+
+[node name="Right2" type="TouchScreenButton" parent="Joy"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(131.956, 48.6971)
+scale = Vector2(0.64, 0.64)
+texture_normal = ExtResource("1_ahkt4")
+action = "right"
+
+[node name="Left2" type="TouchScreenButton" parent="Joy"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(35.9561, 112.697)
+rotation = -3.14159
+scale = Vector2(0.64, 0.64)
+texture_normal = ExtResource("1_ahkt4")
+action = "left"
+
+[node name="Up2" type="TouchScreenButton" parent="Joy"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(51.9561, 40.6971)
+rotation = -1.5708
+scale = Vector2(0.64, 0.64)
+texture_normal = ExtResource("1_ahkt4")
+action = "up"
+
+[node name="Down2" type="TouchScreenButton" parent="Joy"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(115.956, 120.697)
+rotation = 1.5708
+scale = Vector2(0.64, 0.64)
+texture_normal = ExtResource("1_ahkt4")
+action = "down"
+
+[node name="Select2" type="TouchScreenButton" parent="Joy"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(123.302, 41.3511)
+rotation = 1.5708
+scale = Vector2(0.494324, 0.494324)
+texture_normal = ExtResource("2_jiww5")
+action = "select"
+
+[node name="Pause" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1063, 504.654)
+rotation = 1.5708
+scale = Vector2(0.494324, 0.494324)
+texture_normal = ExtResource("3_vvycl")
+action = "pause"

@@ -14,6 +14,8 @@ var current_option : int = 1
 func _ready() -> void:
 	#SaveSystem.reset_stars()
 	SaveSystem.load_data()
+#	InputManager.connect("input_received", _on_input_received)
+
 
 
 	option_position = [
@@ -24,6 +26,7 @@ func _ready() -> void:
 	
 	
 	update_option_position()
+
 
 
 func change_lvl() -> void:
