@@ -1,12 +1,38 @@
-[gd_scene load_steps=13 format=3 uid="uid://by35re0g887b3"]
+[gd_scene load_steps=28 format=3 uid="uid://by35re0g887b3"]
 
-[ext_resource type="Script" path="res://assets/Scripts/chapters/chapter_2.gd" id="1_hfoxf"]
+[ext_resource type="Script" path="res://assets/Scripts/chapters/chapter_1.gd" id="1_p8dma"]
 [ext_resource type="Texture2D" uid="uid://cidpjgiev2jtr" path="res://assets/Sprite/UI/level_selection.png" id="2_t4c3x"]
 [ext_resource type="Texture2D" uid="uid://cw0tqnfsgqbtk" path="res://assets/Sprite/UI/arrow.png" id="3_8n2b7"]
 [ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="4_fjdse"]
 [ext_resource type="Texture2D" uid="uid://bdl16a87xyqrq" path="res://assets/Sprite/UI/setaback.png" id="4_x15su"]
+[ext_resource type="Texture2D" uid="uid://c8ch5yoxao2wq" path="res://assets/Sprite/UI/levels/1.png" id="5_70utg"]
+[ext_resource type="Texture2D" uid="uid://bs5d361s63cbv" path="res://assets/Sprite/UI/levels/2.png" id="6_t36nr"]
+[ext_resource type="Texture2D" uid="uid://bfv0aggj0rfnk" path="res://assets/Sprite/UI/levels/3.png" id="7_im0ev"]
+[ext_resource type="Texture2D" uid="uid://bvpt26s2kflql" path="res://assets/Sprite/UI/levels/4.png" id="8_ap2dk"]
+[ext_resource type="Texture2D" uid="uid://c4gtg1wfqyoqi" path="res://assets/Sprite/UI/levels/5.png" id="9_f8cqr"]
+[ext_resource type="Texture2D" uid="uid://dai012sdygran" path="res://assets/Sprite/UI/levels/6.png" id="10_qhmk6"]
+[ext_resource type="Texture2D" uid="uid://b2v5o1banqhn4" path="res://assets/Sprite/UI/levels/7.png" id="11_5k3jo"]
+[ext_resource type="Texture2D" uid="uid://c2lp615n40lsd" path="res://assets/Sprite/UI/levels/8.png" id="12_awqj6"]
+[ext_resource type="Texture2D" uid="uid://bx82kgp5h5ltl" path="res://assets/Sprite/UI/levels/9.png" id="13_b8y5q"]
+[ext_resource type="Texture2D" uid="uid://bwbklxiyg3scw" path="res://assets/Sprite/UI/levels/10.png" id="14_3oj8t"]
+[ext_resource type="Texture2D" uid="uid://com3uiltjaqxb" path="res://assets/Sprite/UI/levels/11.png" id="15_0vckq"]
+[ext_resource type="Texture2D" uid="uid://cat7nh6rn0tn2" path="res://assets/Sprite/UI/levels/12.png" id="16_1fgdh"]
+[ext_resource type="Texture2D" uid="uid://dp83io0r3oed3" path="res://assets/Sprite/UI/levels/13.png" id="17_qxgkh"]
+[ext_resource type="Texture2D" uid="uid://cxcw1nngrty0s" path="res://assets/Sprite/UI/levels/14.png" id="18_fr0f3"]
+[ext_resource type="Texture2D" uid="uid://k673tp2ed7rx" path="res://assets/Sprite/UI/levels/15.png" id="19_v7k8c"]
+
+[sub_resource type="Theme" id="Theme_hnlk0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_474tl"]
+line_spacing = 2.96
+font = ExtResource("4_fjdse")
+font_size = 53
 
 [sub_resource type="Theme" id="Theme_awuhk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7kim8"]
+font = ExtResource("4_fjdse")
+font_size = 21
 
 [sub_resource type="Animation" id="Animation_r1643"]
 length = 0.001
@@ -46,17 +72,6 @@ _data = {
 "blink": SubResource("Animation_8civw")
 }
 
-[sub_resource type="Theme" id="Theme_hnlk0"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_7kim8"]
-font = ExtResource("4_fjdse")
-font_size = 21
-
-[sub_resource type="LabelSettings" id="LabelSettings_474tl"]
-line_spacing = 2.96
-font = ExtResource("4_fjdse")
-font_size = 53
-
 [node name="Chapter2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -64,7 +79,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hfoxf")
+script = ExtResource("1_p8dma")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -75,86 +90,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_t4c3x")
 expand_mode = 1
-
-[node name="Level1" type="TextureButton" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-anchor_left = 0.109375
-anchor_top = 0.4125
-anchor_right = 0.192708
-anchor_bottom = 0.5625
-pivot_offset = Vector2(48, 0)
-theme = SubResource("Theme_awuhk")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Level2" type="TextureButton" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-anchor_left = 0.284722
-anchor_top = 0.4125
-anchor_right = 0.368056
-anchor_bottom = 0.5625
-pivot_offset = Vector2(40, 0)
-theme = SubResource("Theme_awuhk")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Level3" type="TextureButton" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-anchor_left = 0.458333
-anchor_top = 0.4125
-anchor_right = 0.541667
-anchor_bottom = 0.5625
-pivot_offset = Vector2(48, 0)
-theme = SubResource("Theme_awuhk")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Level4" type="TextureButton" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-anchor_left = 0.631944
-anchor_top = 0.4125
-anchor_right = 0.715278
-anchor_bottom = 0.5625
-pivot_offset = Vector2(48, 0)
-theme = SubResource("Theme_awuhk")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Level5" type="TextureButton" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.807292
-anchor_top = 0.4125
-anchor_right = 0.890625
-anchor_bottom = 0.5625
-pivot_offset = Vector2(48, 0)
-theme = SubResource("Theme_awuhk")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Arrow" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(243.088, 233.749)
-rotation = 1.5708
-scale = Vector2(0.48, 0.48)
-texture = ExtResource("3_8n2b7")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Arrow"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_5x4ac")
-}
-autoplay = "blink"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -167,8 +102,8 @@ color = Color(0.239216, 0.431373, 0.439216, 1)
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 104.0
-offset_top = 400.0
-offset_right = 1040.0
+offset_top = 219.0
+offset_right = 1061.0
 offset_bottom = 440.0
 color = Color(0.239216, 0.431373, 0.439216, 1)
 
@@ -180,52 +115,30 @@ offset_right = 883.0
 offset_bottom = 162.0
 color = Color(0.239216, 0.431373, 0.439216, 1)
 
-[node name="Back" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0833333
-anchor_top = 0.8
-anchor_right = 0.145833
-anchor_bottom = 0.875
-pivot_offset = Vector2(40, 0)
-texture = ExtResource("4_x15su")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="BackButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0763889
-anchor_top = 0.801562
-anchor_right = 0.118056
+anchor_top = 0.8
+anchor_right = 0.145833
 anchor_bottom = 0.876562
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(106, 48)
+pivot_offset = Vector2(40, 0)
 theme = SubResource("Theme_hnlk0")
+texture_normal = ExtResource("4_x15su")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="StarsLevel1" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 122.0
-offset_top = 392.0
-offset_right = 225.0
-offset_bottom = 419.0
-text = "0/3 *"
-label_settings = SubResource("LabelSettings_7kim8")
-horizontal_alignment = 1
-
-[node name="StarsLevel6" type="Label" parent="."]
+[node name="Chapther 2" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.115625
+anchor_top = 0.0875
 anchor_right = 1.0
-anchor_bottom = 0.248437
+anchor_bottom = 0.220312
 grow_horizontal = 2
 grow_vertical = 2
 text = "CHAPTER 2"
@@ -233,52 +146,475 @@ label_settings = SubResource("LabelSettings_474tl")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="StarsLevel2" type="Label" parent="."]
+[node name="Level1" type="TextureButton" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 324.0
-offset_top = 392.0
-offset_right = 427.0
-offset_bottom = 419.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.186632
+anchor_top = 0.225
+anchor_right = 0.256076
+anchor_bottom = 0.35
+pivot_offset = Vector2(41, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("5_70utg")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel1" type="Label" parent="Level1"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0374971
+anchor_top = 1.0375
+anchor_right = 0.962503
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
 text = "0/3 *"
 label_settings = SubResource("LabelSettings_7kim8")
 horizontal_alignment = 1
 
-[node name="StarsLevel3" type="Label" parent="."]
+[node name="Level2" type="TextureButton" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 525.0
-offset_top = 392.0
-offset_right = 628.0
-offset_bottom = 419.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.326818
+anchor_top = 0.225
+anchor_right = 0.396263
+anchor_bottom = 0.35
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("6_t36nr")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel2" type="Label" parent="Level2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0374989
+anchor_top = 1.0375
+anchor_right = 0.962491
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
 text = "0/3 *"
 label_settings = SubResource("LabelSettings_7kim8")
 horizontal_alignment = 1
 
-[node name="StarsLevel4" type="Label" parent="."]
+[node name="Level3" type="TextureButton" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 725.0
-offset_top = 392.0
-offset_right = 828.0
-offset_bottom = 419.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465617
+anchor_top = 0.225
+anchor_right = 0.535061
+anchor_bottom = 0.35
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("7_im0ev")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel3" type="Label" parent="Level3"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0374893
+anchor_top = 1.0375
+anchor_right = 0.962496
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
 text = "0/3 *"
 label_settings = SubResource("LabelSettings_7kim8")
 horizontal_alignment = 1
 
-[node name="StarsLevel5" type="Label" parent="."]
+[node name="Level4" type="TextureButton" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 926.0
-offset_top = 392.0
-offset_right = 1029.0
-offset_bottom = 419.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.604415
+anchor_top = 0.225
+anchor_right = 0.673859
+anchor_bottom = 0.35
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("8_ap2dk")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel4" type="Label" parent="Level4"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0374897
+anchor_top = 1.0375
+anchor_right = 0.962495
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
 text = "0/3 *"
 label_settings = SubResource("LabelSettings_7kim8")
 horizontal_alignment = 1
+
+[node name="Level5" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.744602
+anchor_top = 0.225
+anchor_right = 0.814046
+anchor_bottom = 0.35
+offset_right = 6.10352e-05
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("9_f8cqr")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel5" type="Label" parent="Level5"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0374997
+anchor_top = 1.0375
+anchor_right = 0.962505
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="Level6" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.186863
+anchor_top = 0.45
+anchor_right = 0.256307
+anchor_bottom = 0.575
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("10_qhmk6")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel6" type="Label" parent="Level6"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0374972
+anchor_top = 1.0375
+anchor_right = 0.962503
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="Level7" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.327049
+anchor_top = 0.45
+anchor_right = 0.396493
+anchor_bottom = 0.575
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("11_5k3jo")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel7" type="Label" parent="Level7"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.037492
+anchor_top = 1.0375
+anchor_right = 0.962498
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="Level8" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465847
+anchor_top = 0.45
+anchor_right = 0.535292
+anchor_bottom = 0.575
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("12_awqj6")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel8" type="Label" parent="Level8"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0374967
+anchor_top = 1.0375
+anchor_right = 0.962488
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="Level9" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.604646
+anchor_top = 0.45
+anchor_right = 0.67409
+anchor_bottom = 0.575
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("13_b8y5q")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel9" type="Label" parent="Level9"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0374893
+anchor_top = 1.0375
+anchor_right = 0.962496
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="Level10" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.744833
+anchor_top = 0.45
+anchor_right = 0.814277
+anchor_bottom = 0.575
+offset_right = 6.10352e-05
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("14_3oj8t")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel10" type="Label" parent="Level10"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0375
+anchor_top = 1.0375
+anchor_right = 0.962505
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="Level11" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.186632
+anchor_top = 0.6725
+anchor_right = 0.256076
+anchor_bottom = 0.7975
+offset_top = -3.05176e-05
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("15_0vckq")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel11" type="Label" parent="Level11"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0374971
+anchor_top = 1.0375
+anchor_right = 0.962503
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="Level12" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.326818
+anchor_top = 0.6725
+anchor_right = 0.396263
+anchor_bottom = 0.7975
+offset_top = -3.05176e-05
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("16_1fgdh")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel12" type="Label" parent="Level12"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0374989
+anchor_top = 1.0375
+anchor_right = 0.962491
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="Level13" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465617
+anchor_top = 0.6725
+anchor_right = 0.535061
+anchor_bottom = 0.7975
+offset_top = -3.05176e-05
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("17_qxgkh")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel13" type="Label" parent="Level13"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0374893
+anchor_top = 1.0375
+anchor_right = 0.962496
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="Level14" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.604415
+anchor_top = 0.6725
+anchor_right = 0.67386
+anchor_bottom = 0.7975
+offset_top = -3.05176e-05
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("18_fr0f3")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel14" type="Label" parent="Level14"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0374964
+anchor_top = 1.0375
+anchor_right = 0.962489
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="Level15" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.744602
+anchor_top = 0.6725
+anchor_right = 0.814046
+anchor_bottom = 0.7975
+offset_top = -3.05176e-05
+pivot_offset = Vector2(48, 0)
+theme = SubResource("Theme_awuhk")
+texture_normal = ExtResource("19_v7k8c")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StarsLevel15" type="Label" parent="Level15"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0374993
+anchor_top = 1.0375
+anchor_right = 0.962506
+anchor_bottom = 1.375
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/3 *"
+label_settings = SubResource("LabelSettings_7kim8")
+horizontal_alignment = 1
+
+[node name="Arrow" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(256, 128)
+rotation = 1.5708
+scale = Vector2(0.33135, 0.33135)
+texture = ExtResource("3_8n2b7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Arrow"]
+reset_on_save = false
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_5x4ac")
+}
+autoplay = "blink"
 
 [connection signal="pressed" from="Level1" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="Level2" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="Level3" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="Level4" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="Level5" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level6" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level7" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level8" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level9" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level10" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level11" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level12" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level13" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level14" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level15" to="." method="_on_level_1_button_pressed"]

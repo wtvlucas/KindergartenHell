@@ -33,17 +33,20 @@ func change_lvl() -> void:
 	if Input.is_action_just_pressed("select"):
 		
 		if current_option == 1:
-			var last_lvl = SaveSystem.data.last_level
-			if last_lvl.begins_with("cp1"):
-				Chapter1.play()
-			elif last_lvl.begins_with("cp2"):
-				Chapter2.play()
-				
-			Main.stream_paused = true
-			get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + last_lvl + ".tscn")
+			if !SaveSystem.data.TutGreen:
+				GameManager.change_scene("res://assets/Scenes/tutorial/green_tutorial.tscn")
+			else:
+				var last_lvl = SaveSystem.data.last_level
+				if last_lvl.begins_with("cp1"):
+					Chapter1.play()
+				elif last_lvl.begins_with("cp2"):
+					Chapter2.play()
+					
+				Main.stream_paused = true
+				GameManager.change_scene("res://assets/Scenes/Levels/" + last_lvl + ".tscn")
 			
 		elif current_option == 2:
-			get_tree().change_scene_to_file("res://assets/Scenes/chapters.tscn")
+			GameManager.change_scene("res://assets/Scenes/chapters.tscn")
 			
 		elif current_option == 3:
 			SaveSystem.data.last_level = GameManager.current_level

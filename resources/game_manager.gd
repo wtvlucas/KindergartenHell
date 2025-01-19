@@ -1,5 +1,7 @@
 extends Node
 
+#@onready var anim_player: AnimationPlayer = %AnimPlayer
+
 
 var blocked = false
 var moves = 0
@@ -8,6 +10,7 @@ var paused = false
 var menu = pause_menu.instantiate()
 var endLevel = false
 var chapter_2_unlocked : bool = false
+var chapter_3_unlocked : bool = false
 
 var colided = false
 var colided_played = false
@@ -46,8 +49,11 @@ func _process(delta: float) -> void:
 				unpause()
 			
 	
-	if SaveSystem.get_total_stars() > 10:
-		chapter_2_unlocked = true
+
+	chapter_2_unlocked = SaveSystem.get_total_stars() > 10
+		
+	chapter_3_unlocked = SaveSystem.get_total_stars() > 20
+		
 		
 		
 	if colided and !colided_played:
@@ -122,6 +128,14 @@ func can_object_move(dir, obj, inputs, tile_size):
 	ray.force_raycast_update()	
 	return not ray.is_colliding()  # Retorna true se o caminho estiver livre
 	
+	
+func change_scene(path: String):
+	
+	var anim_player = LevelChange.get_node("Fade/AnimPlayer")
+	anim_player.play("out")
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_file(path)
+	anim_player.play("in")
 
 
 	

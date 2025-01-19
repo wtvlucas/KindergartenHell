@@ -36,10 +36,11 @@ func change_lvl() -> void:
 	if Input.is_action_just_pressed("select"):
 		if option == 1:
 			get_tree().reload_current_scene()
+			
 			GameManager.endLevel = false
 			#self.hide()
 		elif option == 2:
-			get_tree().change_scene_to_file("res://assets/Scenes/main_menu.tscn")
+			GameManager.change_scene("res://assets/Scenes/main_menu.tscn")
 			Main.stream_paused = false
 			Chapter1.stop()
 			Chapter2.stop()
@@ -49,7 +50,7 @@ func change_lvl() -> void:
 		elif option == 3:
 			if get_parent().current_level == "cp1_lvl5":
 				if GameManager.chapter_2_unlocked:
-					get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp2_lvl1.tscn")
+					GameManager.change_scene("res://assets/Scenes/Levels/cp2_lvl1.tscn")
 					
 					Chapter1.stop()
 					Chapter2.play()

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6yetu8qkgsq2"]
+
+[ext_resource type="AudioStream" uid="uid://djelvgx30fnam" path="res://assets/sounds/letter.mp3" id="1_l3f5l"]
+
+[node name="Letter" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_l3f5l")
+volume_db = 24.0
+max_distance = 1855.0

@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxljlalno8rln"]
+
+[ext_resource type="Texture2D" uid="uid://bnwqe2yni82y7" path="res://assets/Sprite/UI/talking.png" id="1_ao1mj"]
+[ext_resource type="Script" path="res://assets/Scripts/tutorial.gd" id="1_bkhht"]
+[ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="2_fk74p"]
+
+[node name="Tutorial" type="CanvasLayer"]
+script = ExtResource("1_bkhht")
+
+[node name="Box" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ao1mj")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 264.0
+offset_top = 528.0
+offset_right = 912.0
+offset_bottom = 592.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="TextLabel" type="RichTextLabel" parent="ScrollContainer"]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/normal_font = ExtResource("2_fk74p")
+theme_override_font_sizes/normal_font_size = 25
+text = "amo te amote adoro te tiamopi kenena trafulha di guetto kkkkkkkkkkkkkkkk awokawdbbhhkhkawdknºçlhiugiulhfjskdhjkhkfsdfnknksdfhnisbheif"
+scroll_active = false
+tab_size = 0
+visible_characters_behavior = 1
+text_direction = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

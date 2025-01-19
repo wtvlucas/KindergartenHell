@@ -95,4 +95,4 @@ func show_end() -> void:
 		level_complete.show()
 
 func _on_next_level_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl4.tscn")
+	GameManager.change_scene("res://assets/Scenes/Levels/cp1_lvl4.tscn")

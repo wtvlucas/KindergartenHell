@@ -13,7 +13,15 @@ extends Resource
 	"cp2_lvl2": 0,
 	"cp2_lvl3": 0,
 	"cp2_lvl4": 0,
-	"cp2_lvl5": 0
+	"cp2_lvl5": 0,
+	
+	"cp3_lvl1": 0,
+	"cp3_lvl2": 0,
+	"cp3_lvl3": 0,
+	"cp3_lvl4": 0,
+	"cp3_lvl5": 0,
 }
 
 @export var last_level : String = GameManager.current_level
+
+@export var TutGreen : bool = false

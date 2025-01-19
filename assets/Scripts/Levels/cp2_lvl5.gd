@@ -70,7 +70,7 @@ func _process(delta: float) -> void:
 
 
 func next():
-	get_tree().change_scene_to_file("res://assets/Scenes/comming.tscn")
+	GameManager.change_scene("res://assets/Scenes/comming.tscn")
 
 func show_end() -> void:
 	if dicts.saved == dicts.need_to_save:

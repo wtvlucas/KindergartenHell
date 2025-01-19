@@ -25,7 +25,7 @@ func _ready():
 
 func _unhandled_input(event):
 	# Prevent input handling if already moving or blocked
-	if moving or GameManager.blocked or GameManager.moving != 0:
+	if moving or GameManager.blocked:
 		return
 	
 	for dir in inputs.keys():

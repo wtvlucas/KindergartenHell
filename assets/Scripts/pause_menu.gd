@@ -1,9 +1,10 @@
 extends CanvasLayer
 
-@onready var back: TextureButton = %Back
+
 @onready var home: TextureButton = %Home
 @onready var restart: TextureButton = %Restart
 @onready var arrow: Sprite2D = %Arrow
+@onready var back: TextureButton = $Back
 
 
 var positions: Array = []
@@ -33,8 +34,9 @@ func change_lvl() -> void:
 			get_tree().reload_current_scene()
 			self.hide()
 			GameManager.paused = false
+			GameManager.moving = false
 		elif option == 2:
-			get_tree().change_scene_to_file("res://assets/Scenes/main_menu.tscn")
+			GameManager.change_scene("res://assets/Scenes/main_menu.tscn")
 			SaveSystem.data.last_level = GameManager.current_level
 			SaveSystem.save_data()
 			Main.stream_paused = false
@@ -43,10 +45,12 @@ func change_lvl() -> void:
 			self.hide()
 			GameManager.paused = false
 			GameManager.unpause()
+			GameManager.moving = false
 			
 		elif option == 3:
 			self.hide()
 			GameManager.paused = false
+			GameManager.moving = false
 		
 
 func _process(delta: float) -> void:
@@ -71,7 +75,7 @@ func update_option_position() -> void:
 
 func _on_home_pressed() -> void:
 	
-	get_tree().change_scene_to_file("res://assets/Scenes/main_menu.tscn")
+	GameManager.change_scene("res://assets/Scenes/main_menu.tscn")
 	SaveSystem.data.last_level = GameManager.current_level
 	self.hide()
 	GameManager.paused = false

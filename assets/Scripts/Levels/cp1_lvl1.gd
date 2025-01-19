@@ -68,7 +68,7 @@ func _process(delta: float) -> void:
 
 func next():
 	var next = "cp1_lvl2"
-	get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + next + ".tscn")
+	GameManager.change_scene("res://assets/Scenes/Levels/" + next + ".tscn")
 
 func show_end() -> void:
 	if dicts.saved == dicts.need_to_save:
@@ -96,7 +96,3 @@ func show_end() -> void:
 			
 		level_complete.show()
 		
-
-
-func _on_next_level_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl2.tscn")
