@@ -14,7 +14,7 @@ font = ExtResource("2_e333t")
 font_size = 70
 font_color = Color(0.190762, 0.190762, 0.190762, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61jwa"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpopb"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -34,7 +34,7 @@ corner_detail = 1
 expand_margin_top = 11.0
 expand_margin_bottom = 11.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgh1q"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fddg"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -54,7 +54,7 @@ corner_detail = 1
 expand_margin_top = 11.0
 expand_margin_bottom = 11.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dp868"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyuce"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -74,7 +74,7 @@ corner_detail = 1
 expand_margin_top = 11.0
 expand_margin_bottom = 11.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdf5g"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5idco"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -94,7 +94,7 @@ corner_detail = 1
 expand_margin_top = 11.0
 expand_margin_bottom = 11.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bprxc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxe72"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -134,11 +134,11 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 1
 Button/font_sizes/font_size = 31
 Button/fonts/font = null
-Button/styles/disabled = SubResource("StyleBoxFlat_61jwa")
-Button/styles/focus = SubResource("StyleBoxFlat_bgh1q")
-Button/styles/hover = SubResource("StyleBoxFlat_dp868")
-Button/styles/normal = SubResource("StyleBoxFlat_sdf5g")
-Button/styles/pressed = SubResource("StyleBoxFlat_bprxc")
+Button/styles/disabled = SubResource("StyleBoxFlat_bpopb")
+Button/styles/focus = SubResource("StyleBoxFlat_0fddg")
+Button/styles/hover = SubResource("StyleBoxFlat_eyuce")
+Button/styles/normal = SubResource("StyleBoxFlat_5idco")
+Button/styles/pressed = SubResource("StyleBoxFlat_rxe72")
 
 [sub_resource type="LabelSettings" id="LabelSettings_glr88"]
 font = ExtResource("2_e333t")
@@ -230,11 +230,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Stars" type="HBoxContainer" parent="Hud"]
 layout_mode = 0
-offset_left = 139.0
-offset_top = 13.0
-offset_right = 507.0
-offset_bottom = 113.0
+anchor_left = 0.12066
+anchor_top = 0.0203125
+anchor_right = 0.334688
+anchor_bottom = 0.125
+offset_right = 121.44
+offset_bottom = 33.0
 scale = Vector2(0.67, 0.67)
+metadata/_edit_use_anchors_ = true
 
 [node name="Star" type="TextureRect" parent="Hud/Stars"]
 layout_mode = 2

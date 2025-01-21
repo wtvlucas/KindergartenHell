@@ -4,9 +4,15 @@ extends Node2D
 @onready var timer: Timer = %Timer
 @onready var player: Area2D = %Player
 @onready var box: TextureRect = %Box
-@onready var animation_player: AnimationPlayer = $Tutorial/Box/AnimationPlayer
+#@onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var animation_player: AnimationPlayer = $Tutorial/AnimationPlayer
+
 @onready var space_key: Sprite2D = %SpaceKey
 @onready var moves: Label = %Moves
+@onready var seta_porta_tutorial: Sprite2D = %SetaPortaTutorial
+@onready var calendar: TextureRect = %Calendar
+@onready var stars: HBoxContainer = %Stars
+
 
 
 var writing = false
@@ -46,11 +52,16 @@ func _ready() -> void:
 	GameManager.moving = true  # Bloqueia o movimento inicialmente
 	talk()
 	space_key.hide()
+	
+	animation_player.play("seta")
 	animation_player.play_backwards("fade")
 	
+	seta_porta_tutorial.hide()
 	GameManager.moves = dicts.max_moves
 
 func _process(delta: float) -> void:
+	#if current_text_index != 9:
+		#animation_player.play("seta")
 	timer.wait_time = 1.0 / speed
 	GameManager.moves = clamp(GameManager.moves, 0, dicts.max_moves)  
 	moves.text = str(GameManager.moves)
@@ -85,19 +96,39 @@ func _process(delta: float) -> void:
 		GameManager.moving = false
 		GameManager.change_scene("res://assets/Scenes/Levels/cp1_lvl1.tscn")
 		
-		#get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl1.tscn")
+
 
 func talk():
-	
+	print(current_text_index)
 	timer.start()
 	text_label.visible_characters = 0
 	text_label.text = texts[current_text_index]
 	writing = true
-
+	#animation_player.play("seta")
 	if current_text_index == 0:
 		show_key = true
 	else:
 		show_key = false
+		
+	if current_text_index == 3:
+		seta_porta_tutorial.show()
+		animation_player.play("seta")
+	elif current_text_index == 4:
+		seta_porta_tutorial.position.x = calendar.position.x + calendar.size.x / 2
+		seta_porta_tutorial.show()
+		animation_player.play("seta")
+	elif current_text_index == 5:
+		seta_porta_tutorial.position.x = stars.position.x + stars.size.x / 2
+		seta_porta_tutorial.show()
+		animation_player.play("seta")
+	elif current_text_index == 9:
+		
+		animation_player.play("fade")
+		GameManager.moving = false
+		finished = true
+		#return
+	else:
+		seta_porta_tutorial.hide()
 
 func skip():
 	#if current_text_index == 10 and dicts.saved < 1:

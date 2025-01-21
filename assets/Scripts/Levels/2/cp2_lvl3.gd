@@ -13,21 +13,21 @@ extends Node2D
 @onready var star: TextureRect = $Hud/Hud/Stars/Star
 @onready var star_2: TextureRect = $Hud/Hud/Stars/Star2
 @onready var star_3: TextureRect = $Hud/Hud/Stars/Star3
+@onready var completed_label: Label = $Hud/LevelComplete/CompletedLabel
 
-# Adiciona o som LooseStar
-@onready var loose_star_sound: AudioStreamPlayer = $Hud/LooseStarSound
-
-var current_level = "cp1_lvl3"
+var level = 3
+var lvl_str = "cp2_lvl"
+var current_level = lvl_str + str(level)
 
 var dicts : Dictionary = {
 	max_moves = 20,
-	need_to_save = 1,
+	need_to_save = 2,
 	saved = 0,
 	stars = 0,
 	
-	treestars = 13,
-	twostars = 9,
-	onestar = 5,
+	treestars = 8,
+	twostars = 4,
+	onestar = 0,
 }
 
 var last_stars: int = 0  
@@ -45,9 +45,10 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	moves.text = str(GameManager.moves)
-	GameManager.moves = clamp(GameManager.moves, 0, dicts.max_moves)
 	
-	# Atualiza o número de estrelas baseado nos movimentos restantes
+	GameManager.moves = clamp(GameManager.moves, 0, dicts.max_moves)  
+	show_end()
+	
 	if GameManager.moves > dicts.treestars:
 		dicts.stars = 3
 	elif GameManager.moves > dicts.twostars:
@@ -55,23 +56,25 @@ func _process(delta: float) -> void:
 	elif GameManager.moves > dicts.onestar:
 		dicts.stars = 1
 	else:
-		dicts.stars = 0
-
-
+		dicts.stars = 0 
+		
 	if dicts.stars < last_stars:
 		LooseStar.play() 
-	last_stars = dicts.stars  
-
-	# Atualiza a visibilidade das estrelas no HUD
+	last_stars = dicts.stars 
+		
 	star.visible = dicts.stars >= 1
 	star_2.visible = dicts.stars >= 2
 	star_3.visible = dicts.stars >= 3
 	
-	show_end()
+	
+		
+
 
 func next():
-	var next = "cp1_lvl4"
+	var next = lvl_str + str(level + 1)
+	print(next)
 	get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + next + ".tscn")
+	GameManager.endLevel = false
 
 func show_end() -> void:
 	if dicts.saved == dicts.need_to_save:
@@ -88,11 +91,24 @@ func show_end() -> void:
 		if SaveSystem.get_stars_for_level(current_level) < dicts.stars:
 			SaveSystem.set_stars_for_level(current_level, dicts.stars)
 		
+		#if total_stars < 10:
+			#next_level_button.disabled = true
+			#no_stars_label.show()
+			#no_stars_label.text = "You only have " + str(total_stars) + "/7 stars to get into 2nd chapter!"
+			
 		_1_star.visible = dicts.stars >= 1
 		_2_star.visible = dicts.stars >= 2
 		_3_star.visible = dicts.stars >= 3
 			
 		level_complete.show()
+		
+	elif GameManager.moves == 0:
+		GameManager.endLevel = true
+		completed_label.text = "Failed!\n You reached the maximum ammount of steps..."
+		get_node("Hud").failed = true
+		if !sound_played:
+			Failed.play()
+			sound_played = true
+		level_complete.show()
 
-func _on_next_level_button_pressed() -> void:
-	GameManager.change_scene("res://assets/Scenes/Levels/cp1_lvl4.tscn")
+		

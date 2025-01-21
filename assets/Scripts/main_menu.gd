@@ -19,9 +19,9 @@ func _ready() -> void:
 
 
 	option_position = [
-		play.position,
-		chapters.position,
-		exit.position
+		play,
+		chapters,
+		exit
 	]
 	
 	
@@ -68,4 +68,5 @@ func move_character(direction: int) -> void:
 	update_option_position()
 
 func update_option_position() -> void:
+	var pos = option_position[current_option].position
 	arrow.position = Vector2(option_position[current_option - 1].x - 25, option_position[current_option - 1].y + 30)

@@ -6,30 +6,28 @@ extends Node2D
 @onready var _1_star: TextureRect = $"Hud/LevelComplete/Stars/1star"
 @onready var _2_star: TextureRect = $"Hud/LevelComplete/Stars/2star"
 @onready var _3_star: TextureRect = $"Hud/LevelComplete/Stars/3star"
-#@onready var next_level_button: Button = $Hud/LevelComplete/NextLevelButton
-#@onready var next_level: TextureRect = %"Hud/LevelComplete/NextLevel"
-#@onready var next_level: TextureRect = %NextLevel
-@onready var next_level: TextureRect = $Hud/LevelComplete/NextLevel
-
+@onready var next_level_button: Button = $Hud/LevelComplete/NextLevelButton
 
 @onready var moves: Label = $Hud/Hud/Calendar/Moves
 
 @onready var star: TextureRect = $Hud/Hud/Stars/Star
 @onready var star_2: TextureRect = $Hud/Hud/Stars/Star2
 @onready var star_3: TextureRect = $Hud/Hud/Stars/Star3
+@onready var completed_label: Label = $Hud/LevelComplete/CompletedLabel
 
-
-var current_level = "cp2_lvl5"
+var level = 12
+var lvl_str = "cp1_lvl"
+var current_level = lvl_str + str(level)
 
 var dicts : Dictionary = {
-	max_moves = 25,
-	need_to_save = 4,
+	max_moves = 20,
+	need_to_save = 2,
 	saved = 0,
 	stars = 0,
 	
-	treestars = 14,
-	twostars = 10,
-	onestar = 6,
+	treestars = 8,
+	twostars = 4,
+	onestar = 0,
 }
 
 var last_stars: int = 0  
@@ -67,15 +65,21 @@ func _process(delta: float) -> void:
 	star.visible = dicts.stars >= 1
 	star_2.visible = dicts.stars >= 2
 	star_3.visible = dicts.stars >= 3
+	
+	
+		
 
 
 func next():
-	GameManager.change_scene("res://assets/Scenes/comming.tscn")
+	var next = lvl_str + str(level + 1)
+	print(next)
+	get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + next + ".tscn")
+	GameManager.endLevel = false
 
 func show_end() -> void:
 	if dicts.saved == dicts.need_to_save:
 		GameManager.endLevel = true
-		
+			
 		if !sound_played:
 			if dicts.stars == 0:
 				Failed.play()
@@ -97,13 +101,14 @@ func show_end() -> void:
 		_3_star.visible = dicts.stars >= 3
 			
 		level_complete.show()
-		#next_level.set_visible(false)
+		
+	elif GameManager.moves == 0:
+		GameManager.endLevel = true
+		completed_label.text = "Failed!\n You reached the maximum ammount of steps..."
+		get_node("Hud").failed = true
+		if !sound_played:
+			Failed.play()
+			sound_played = true
+		level_complete.show()
 
 		
-		await get_tree().create_timer(2).timeout 
-		get_tree().change_scene_to_file("res://assets/Scenes/comming.tscn")
-		
-
-
-func _on_next_level_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://assets/Scenes/Levels/cp1_lvl2.tscn")

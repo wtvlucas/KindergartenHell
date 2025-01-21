@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c22btbsuiy0np"]
+[gd_scene load_steps=23 format=3 uid="uid://c22btbsuiy0np"]
 
 [ext_resource type="Script" path="res://assets/Scripts/tutorial/green_tutorial.gd" id="1_t748n"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_dh2ed"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="9_hh4d2"]
 [ext_resource type="Texture2D" uid="uid://bnwqe2yni82y7" path="res://assets/Sprite/UI/talking.png" id="9_ktkxb"]
 [ext_resource type="Texture2D" uid="uid://bgb687c7a6v85" path="res://assets/Sprite/UI/keys/space.png" id="10_ixlvi"]
+[ext_resource type="Texture2D" uid="uid://hl5ef6vxv5sp" path="res://assets/Sprite/UI/Seta_porta_tutorial.png" id="11_cexnb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rkwde"]
 texture = ExtResource("2_dh2ed")
@@ -138,6 +139,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SetaPortaTutorial:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../SetaPortaTutorial:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_3i6io"]
 resource_name = "fade"
@@ -155,10 +180,40 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_cdoug"]
+resource_name = "seta"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SetaPortaTutorial:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333333, 0.3, 0.7, 1.23333, 1.63333, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.439216), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.439216), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SetaPortaTutorial:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 20), Vector2(0, 0), Vector2(0, 20), Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mtmkf"]
 _data = {
 "RESET": SubResource("Animation_gfrsn"),
-"fade": SubResource("Animation_3i6io")
+"fade": SubResource("Animation_3i6io"),
+"seta": SubResource("Animation_cdoug")
 }
 
 [node name="GreenTutorial" type="Node2D"]
@@ -205,6 +260,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Calendar" type="TextureRect" parent="Hud/Hud"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0112847
@@ -230,9 +286,9 @@ grow_vertical = 2
 text = "11"
 label_settings = SubResource("LabelSettings_66vi6")
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Stars" type="HBoxContainer" parent="Hud/Hud"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 139.0
 offset_top = 13.0
@@ -288,6 +344,13 @@ position = Vector2(528, 472)
 
 [node name="Tutorial" type="CanvasLayer" parent="."]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tutorial"]
+root_node = NodePath("../Box")
+libraries = {
+"": SubResource("AnimationLibrary_mtmkf")
+}
+autoplay = "seta"
+
 [node name="Box" type="TextureRect" parent="Tutorial"]
 unique_name_in_owner = true
 anchors_preset = 15
@@ -298,11 +361,6 @@ grow_vertical = 2
 texture = ExtResource("9_ktkxb")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Tutorial/Box"]
-libraries = {
-"": SubResource("AnimationLibrary_mtmkf")
-}
 
 [node name="Timer" type="Timer" parent="Tutorial"]
 unique_name_in_owner = true
@@ -333,6 +391,13 @@ unique_name_in_owner = true
 position = Vector2(503, 536)
 scale = Vector2(0.183333, 0.183333)
 texture = ExtResource("10_ixlvi")
+
+[node name="SetaPortaTutorial" type="Sprite2D" parent="Tutorial"]
+unique_name_in_owner = true
+position = Vector2(576, 151)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_cexnb")
+region_rect = Rect2(23.735, 22.975, 38.78, 13.7)
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 [connection signal="timeout" from="Tutorial/Timer" to="." method="_on_timer_timeout"]

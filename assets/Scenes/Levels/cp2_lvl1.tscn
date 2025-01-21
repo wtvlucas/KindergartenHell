@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bdp8384opc1jp"]
 
-[ext_resource type="Script" path="res://assets/Scripts/Levels/cp2_lvl1.gd" id="1_k53w6"]
+[ext_resource type="Script" path="res://assets/Scripts/Levels/2/cp2_lvl1.gd" id="1_ifv3u"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_lt1fo"]
 [ext_resource type="Texture2D" uid="uid://ru1lu5ifor0u" path="res://assets/Sprite/UI/cenario2.png" id="3_t0wt2"]
 [ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="4_1nnuj"]
@@ -118,7 +118,7 @@ size = Vector2(31.9988, 488)
 size = Vector2(31.9988, 624)
 
 [node name="Cp2Lvl1" type="Node2D"]
-script = ExtResource("1_k53w6")
+script = ExtResource("1_ifv3u")
 
 [node name="TileMap" type="TileMap" parent="." groups=["Tilemap"]]
 unique_name_in_owner = true

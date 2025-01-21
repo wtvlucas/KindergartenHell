@@ -16,12 +16,14 @@ var inputs = {
 @onready var tile_map: TileMap = %TileMap
 
 var tile_pos  # Posição atual do personagem no TileMap
+var position_history = []  # Histórico das posições visitadas
 
 func _ready():
 	# Snap the posição to the tile grid
 	position = position.snapped(Vector2.ONE * tile_size)
 	position += Vector2.ONE * tile_size / 2
 	tile_pos = tile_map.local_to_map(position)  # Define a posição inicial no TileMap
+	position_history.append(tile_pos)  # Adiciona a posição inicial ao histórico
 
 func _unhandled_input(event):
 	# Prevent input handling if already moving or blocked
@@ -39,14 +41,11 @@ func start_movement(dir):
 
 	# Verifica se o RayCast está colidindo antes de iniciar o movimento
 	if ray.is_colliding():
-		#move_back()  # Retorna para o tile anterior
-		
 		return
 
 	# Verifica se o movimento é permitido pelo GameManager
 	if GameManager.checker(dir, ray, inputs, tile_size):
 		moving = true
-		#GameManager.moving += 1
 		green_kid_sprite.play("walk")
 		
 		# Define a direção do sprite
@@ -54,6 +53,9 @@ func start_movement(dir):
 
 		# Atualiza o tile_pos antes de iniciar o movimento
 		tile_pos = tile_map.local_to_map(position)
+		position_history.append(tile_pos)  # Adiciona ao histórico antes de mover
+		if position_history.size() > 3:
+			position_history.pop_front()  # Mantém apenas as últimas 3 posições
 		move_in_direction(dir)
 		GameManager.moving += 1
 
@@ -67,10 +69,14 @@ func move_in_direction(dir):
 		return
 		
 	Walk.play_random()
-	#GameManager.moving += 1
 	
 	# Atualiza o tile_pos
 	tile_pos = tile_map.local_to_map(target_pos)
+	position_history.append(tile_pos)  # Atualiza o histórico com a nova posição
+	if position_history.size() > 3:
+		position_history.pop_front()  # Mantém apenas as últimas 3 posições
+
+	#prints(position_history)
 
 	# Cria o movimento com tween
 	var tween = get_tree().create_tween()
@@ -84,10 +90,21 @@ func move_in_direction(dir):
 			stop_movement())
 
 func move_back():
-	# Retorna ao tile_pos anterior com tween
+
+	if position_history.size() < 2:
+		stop_movement()
+		return
+		
+	moving = false
+	green_kid_sprite.play("idle")
+	#GameManager.moving = 0
+	
+	var previous_tile_pos = position_history[-2]  # Penúltima posição no histórico
+	var previous_world_pos = tile_map.map_to_local(previous_tile_pos)
+
 	GameManager.moving += 1
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", tile_map.map_to_local(tile_pos), 1.0 / animation_speed).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(self, "position", previous_world_pos, 1.0 / animation_speed).set_trans(Tween.TRANS_SINE)
 
 	await tween.finished
 	stop_movement()
@@ -105,7 +122,8 @@ func _on_area_entered(area: Area2D) -> void:
 		GameManager.moving -= 1
 	else:
 		GameManager.colided = true
-		
+		#print("colided", tile_pos)
+		print(GameManager.moving)
 		move_back()
 		
 		GameManager.colided = false

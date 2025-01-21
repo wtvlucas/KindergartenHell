@@ -95,7 +95,7 @@ stretch_mode = 0
 
 [node name="Arrow" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(858.302, 195.396)
+position = Vector2(858.302, 203)
 scale = Vector2(0.48, 0.48)
 texture = ExtResource("3_6chk1")
 

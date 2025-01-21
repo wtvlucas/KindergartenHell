@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-var open = false
+
+var failed = false
 @onready var restart: TextureRect = %Restart
 @onready var home: TextureRect = %Home
 @onready var next_level: TextureRect = %NextLevel
@@ -26,7 +27,7 @@ func _ready() -> void:
 		next_level
 	]
 	
-	if get_parent().current_level == "cp1_lvl5":
+	if get_parent().current_level == "cp1_lvl5" or failed == true:
 		option = 2
 		
 	update_option_position()
@@ -61,7 +62,8 @@ func change_lvl() -> void:
 		
 
 func _process(delta: float) -> void:
-	if !GameManager.chapter_2_unlocked and get_parent().current_level == "cp1_lvl5":
+	#print(failed)
+	if !GameManager.chapter_2_unlocked and get_parent().current_level == "cp1_lvl5" or failed == true:
 		next_level.set_modulate(Color(0.8, 0.8, 0.8, 0.8))
 	if !GameManager.endLevel:
 		return
@@ -71,13 +73,15 @@ func _process(delta: float) -> void:
 		move_character(-1)
 	elif Input.is_action_just_pressed("right") or Input.is_action_just_pressed("down"):
 		move_character(1)
+		
+	
 
 
 func move_character(direction: int) -> void:
-	if GameManager.current_level == "cp1_lvl5":
+	if GameManager.current_level == "cp1_lvl5" or failed:
 		var next_option = option + direction
 		if next_option >= 1 and next_option <= positions.size():
-			if next_option == 3 and not GameManager.chapter_2_unlocked:
+			if next_option == 3 and (!GameManager.chapter_2_unlocked or failed):
 				return 
 			option = next_option
 	else:

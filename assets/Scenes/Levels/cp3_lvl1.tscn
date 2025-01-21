@@ -1,10 +1,10 @@
 [gd_scene load_steps=18 format=3 uid="uid://d376i1esdau4m"]
 
-[ext_resource type="Script" path="res://assets/Scripts/Levels/cp2_lvl1.gd" id="1_4uhp5"]
+[ext_resource type="Script" path="res://assets/Scripts/Levels/3/cp3_lvl1.gd" id="1_4uhp5"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_pyilg"]
 [ext_resource type="Texture2D" uid="uid://dqbnguairri6r" path="res://assets/Sprite/UI/cenario3.png" id="3_j7mdc"]
+[ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="4_4h05t"]
 [ext_resource type="PackedScene" uid="uid://bf63slacbvmwl" path="res://assets/Scenes/Kids/orange.tscn" id="4_uho14"]
-[ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="5_2vkky"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="6_n8gs3"]
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="7_nr0tq"]
 [ext_resource type="Texture2D" uid="uid://d130am3gtlfq2" path="res://assets/Sprite/UI/estrelaCAPITULO2.png" id="8_em82t"]
@@ -141,17 +141,14 @@ texture = ExtResource("3_j7mdc")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Orange2" parent="." instance=ExtResource("4_uho14")]
-position = Vector2(464, 272)
-
 [node name="Orange" parent="." instance=ExtResource("4_uho14")]
-position = Vector2(784, 336)
+position = Vector2(848, 144)
 
-[node name="Red2" parent="." instance=ExtResource("5_2vkky")]
-position = Vector2(720, 464)
+[node name="Blue" parent="." instance=ExtResource("4_4h05t")]
+position = Vector2(272, 144)
 
 [node name="Player" parent="." instance=ExtResource("6_n8gs3")]
-position = Vector2(592, 344)
+position = Vector2(400, 152)
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 position = Vector2(320, 96)
@@ -223,7 +220,6 @@ texture = ExtResource("10_i4wf7")
 [node name="Area2D" type="Area2D" parent="Bush"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bush/Area2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1rq13")
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bbxh33otm4pyr"]
 
-[ext_resource type="Script" path="res://assets/Scripts/Levels/cp1_lvl5.gd" id="1_fcphh"]
+[ext_resource type="Script" path="res://assets/Scripts/Levels/1/cp1_lvl6.gd" id="1_1hkkv"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_db3h3"]
 [ext_resource type="Texture2D" uid="uid://josmu1668w6w" path="res://assets/Sprite/Level1Background.png" id="3_6wijc"]
 [ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="4_xgtfd"]
@@ -115,8 +115,8 @@ size = Vector2(20, 768)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k58w7"]
 size = Vector2(48, 56)
 
-[node name="Cp1Lvl5" type="Node2D"]
-script = ExtResource("1_fcphh")
+[node name="Cp1Lvl6" type="Node2D"]
+script = ExtResource("1_1hkkv")
 
 [node name="TileMap" type="TileMap" parent="." groups=["Tilemap"]]
 unique_name_in_owner = true

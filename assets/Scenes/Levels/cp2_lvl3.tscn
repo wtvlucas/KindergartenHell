@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://b4hlgtvrdgy74"]
 
-[ext_resource type="Script" path="res://assets/Scripts/Levels/cp2_lvl3.gd" id="1_s4sah"]
+[ext_resource type="Script" path="res://assets/Scripts/Levels/2/cp2_lvl3.gd" id="1_s4sah"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_myigc"]
 [ext_resource type="Texture2D" uid="uid://ru1lu5ifor0u" path="res://assets/Sprite/UI/cenario2.png" id="3_mkpoe"]
 [ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="5_nbrra"]
