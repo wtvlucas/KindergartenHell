@@ -82,10 +82,16 @@ func _process(delta: float) -> void:
 
 
 func move_character(direction: int) -> void:
-	if GameManager.current_level == "cp1_lvl15" or failed or GameManager.current_level == "cp2_lvl15":
+	if GameManager.current_level == "cp1_lvl15" or failed:
 		var next_option = option + direction
 		if next_option >= 1 and next_option <= positions.size():
-			if next_option == 3 and (!GameManager.chapter_2_unlocked or !GameManager.chapter_3_unlocked or failed):
+			if next_option == 3 and (!GameManager.chapter_2_unlocked or failed):
+				return 
+			option = next_option
+	elif GameManager.current_level == "cp2_lvl15":
+		var next_option = option + direction
+		if next_option >= 1 and next_option <= positions.size():
+			if next_option == 3 and (!GameManager.chapter_3_unlocked):
 				return 
 			option = next_option
 	else:

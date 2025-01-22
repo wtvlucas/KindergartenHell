@@ -18,7 +18,7 @@ warnings/check_angle_interpolation_type_conflicting=false
 config/name="Hell"
 run/main_scene="res://assets/Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3")
-config/icon="res://icon.svg"
+config/icon="res://logo.svg"
 
 [autoload]
 
