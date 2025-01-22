@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://assets/Scripts/tutorial/blue_tutorial.gd" id="1_uleea"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_41u0x"]
 [ext_resource type="Texture2D" uid="uid://josmu1668w6w" path="res://assets/Sprite/Level1Background.png" id="3_prqgf"]
-[ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="4_f3ihg"]
 [ext_resource type="Texture2D" uid="uid://dtttaxmdb5gtu" path="res://assets/Sprite/UI/calendar.png" id="5_gisek"]
 [ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="6_u1ssj"]
+[ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="7_rlrml"]
 [ext_resource type="Texture2D" uid="uid://dti7dv1aawhij" path="res://assets/Sprite/UI/estrelaCAPITULO1.png" id="7_smpsp"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="8_1l38v"]
 [ext_resource type="Texture2D" uid="uid://bnwqe2yni82y7" path="res://assets/Sprite/UI/talking.png" id="9_gfhwl"]
@@ -235,8 +235,8 @@ offset_bottom = 989.0
 scale = Vector2(0.647, 0.647)
 texture = ExtResource("3_prqgf")
 
-[node name="Green" parent="." instance=ExtResource("4_f3ihg")]
-position = Vector2(400, 272)
+[node name="Blue" parent="." instance=ExtResource("7_rlrml")]
+position = Vector2(784, 336)
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 position = Vector2(320, 96)
@@ -341,7 +341,7 @@ position = Vector2(664, 88)
 shape = SubResource("RectangleShape2D_eivbf")
 
 [node name="Player" parent="." instance=ExtResource("8_1l38v")]
-position = Vector2(528, 472)
+position = Vector2(336, 216)
 
 [node name="Tutorial" type="CanvasLayer" parent="."]
 
@@ -387,8 +387,6 @@ text = "You have a list of the children in your pause menu. Try pausing the game
 scroll_following = true
 autowrap_mode = 2
 tab_size = 24
-visible_characters = 102
-visible_ratio = 0.778626
 text_direction = 1
 metadata/_edit_use_anchors_ = true
 

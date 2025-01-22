@@ -174,6 +174,7 @@ autoplay = "blink"
 
 [node name="HelpControl" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
