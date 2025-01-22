@@ -11,6 +11,7 @@ var menu = pause_menu.instantiate()
 var endLevel = false
 var chapter_2_unlocked : bool = false
 var chapter_3_unlocked : bool = false
+var is_input_locked = false 
 
 var colided = false
 var colided_played = false
@@ -22,22 +23,18 @@ func _ready() -> void:
 	add_child(menu)
 	if get_tree().current_scene.get_name() == "MainMenu":
 		Main.play()
-		
-	#Touch.visible = true
-	#Touch.show()
-	
-
 
 
 func pause() -> void:
 	menu.show()
+
 
 func unpause() -> void:
 	menu.hide()
 
 
 func _process(delta: float) -> void:
-	print(GameManager.current_level)
+	#print(GameManager.current_level)
 	if get_tree().get_current_scene() != null:
 		var current_scene = get_tree().get_current_scene().get_name()
 		if Input.is_action_just_pressed("pause") and not current_scene in ["MainMenu", "Chapters", "Chapter1", "Chapter2"]:
@@ -48,39 +45,34 @@ func _process(delta: float) -> void:
 				pause()
 			else:
 				unpause()
-			
-	
-
+				
 	chapter_2_unlocked = SaveSystem.get_total_stars() > 38
 		
 	chapter_3_unlocked = SaveSystem.get_total_stars() > 76
 		
 		
-		
 	if colided and !colided_played:
 		Colided.play_random()
 		colided_played = true
-		
-	#prints(SaveSystem.data.last_level, current_level)
-
-	#print(moving)
-	#prints(SaveSystem.data.last_level, current_level)
-	
-	
 
 
 func can_all_move():
 	return moving == 0  
 
+
 func checker(dir, ray, inputs, tile_size, blue = false):
 	ray.target_position = inputs[dir] * tile_size
 	ray.force_raycast_update()
+	if moving != 0:
+		return false
 	
 	if paused or endLevel:
 		return false
 	
 	if not ray.is_colliding():
 		return true
+		
+
 		
 	var current_collider = ray.get_collider()
 	
@@ -117,26 +109,47 @@ func checker(dir, ray, inputs, tile_size, blue = false):
 			 
 		else:
 			return false
-
+			
 	return true
-	
+
+var moving_states = {}
+
+func set_moving_state(id: String, state: bool):
+	moving_states[id] = state
+
+func is_any_moving() -> bool:
+	for key in moving_states.keys():
+		if moving_states[key]:
+			return true
+	return false
+
+
 func can_object_move(dir, obj, inputs, tile_size):
 	if not obj.has_method("ray"): 
-		return false  # Se o objeto não tem raycast, considera como bloqueado	
+		return false 
 	var ray = obj.ray
-	# Atualiza o RayCast do objeto para a nova direção
+
 	ray.target_position = inputs[dir] * tile_size
-	ray.force_raycast_update()	
-	return not ray.is_colliding()  # Retorna true se o caminho estiver livre
-	
-	
+	ray.force_raycast_update()
+	return not ray.is_colliding() 
+
+
 func change_scene(path: String):
-	
-	var anim_player = LevelChange.get_node("Fade/AnimPlayer")
-	anim_player.play("out")
+	if is_input_locked:
+		return  
+
+	is_input_locked = true  
+	var anim_player = LevelChange.get_node("Fade/AnimPlayer") if LevelChange else null
+	if anim_player:
+		anim_player.play("out")
 	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file(path)
-	anim_player.play("in")
+	if anim_player:
+		anim_player.play("in")
+	is_input_locked = false 
 
+
+func is_locked() -> bool:
+	return is_input_locked
 
 	

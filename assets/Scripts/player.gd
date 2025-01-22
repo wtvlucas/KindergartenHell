@@ -33,6 +33,7 @@ func _process(delta: float) -> void:
 	
 func _unhandled_input(event):
 	if moving or GameManager.moving != 0:
+		
 		return
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):

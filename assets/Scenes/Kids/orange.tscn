@@ -45,9 +45,8 @@ unique_name_in_owner = true
 position = Vector2(3.57628e-07, 9)
 scale = Vector2(0.46, 0.46)
 sprite_frames = SubResource("SpriteFrames_2k4vl")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.348341
 
 [node name="Sprite2d" type="Sprite2D" parent="." groups=["Kids"]]
 visible = false
@@ -59,6 +58,7 @@ texture = ExtResource("6_nywds")
 shape = SubResource("RectangleShape2D_dqm1i")
 
 [node name="RayCast2d" type="RayCast2D" parent="."]
+unique_name_in_owner = true
 collide_with_areas = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

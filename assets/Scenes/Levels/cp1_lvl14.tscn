@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://assets/Scripts/Levels/1/cp1_lvl14.gd" id="1_hhu5b"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_pvgbu"]
 [ext_resource type="Texture2D" uid="uid://josmu1668w6w" path="res://assets/Sprite/Level1Background.png" id="3_iyei3"]
-[ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="4_xliqj"]
+[ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="4_hwcs7"]
 [ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="5_6amdl"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="6_hp4a4"]
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="7_u7dfb"]
-[ext_resource type="Texture2D" uid="uid://d1nsdf00mvgjv" path="res://assets/Sprite/UI/2.Chapters/chapter2icon.png" id="8_xnlmq"]
+[ext_resource type="Texture2D" uid="uid://k673tp2ed7rx" path="res://assets/Sprite/UI/levels/15.png" id="8_8h8mn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_snjwh"]
 texture = ExtResource("2_pvgbu")
@@ -133,12 +133,18 @@ offset_bottom = 989.0
 scale = Vector2(0.647, 0.647)
 texture = ExtResource("3_iyei3")
 
-[node name="Red" parent="." instance=ExtResource("4_xliqj")]
-position = Vector2(400, 336)
-scale = Vector2(1.04753, 1.04753)
+[node name="Green" parent="." instance=ExtResource("4_hwcs7")]
+position = Vector2(592, 208)
+
+[node name="Green2" parent="." instance=ExtResource("4_hwcs7")]
+position = Vector2(464, 208)
 
 [node name="Blue" parent="." instance=ExtResource("5_6amdl")]
-position = Vector2(464, 336)
+position = Vector2(336, 80)
+collision_layer = 1
+
+[node name="Blue2" parent="." instance=ExtResource("5_6amdl")]
+position = Vector2(720, 80)
 collision_layer = 1
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
@@ -191,9 +197,13 @@ position = Vector2(592, 344)
 
 [node name="Hud" parent="." instance=ExtResource("7_u7dfb")]
 
+[node name="LevelComplete" parent="Hud" index="1"]
+visible = true
+
 [node name="NextLevel" parent="Hud/LevelComplete" index="5"]
-anchor_right = 0.743056
-texture = ExtResource("8_xnlmq")
+offset_left = 0.0
+offset_right = 0.0
+texture = ExtResource("8_8h8mn")
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 

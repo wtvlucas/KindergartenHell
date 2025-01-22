@@ -4,4 +4,3 @@
 
 [node name="SavedChild" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_1o3oo")
-volume_db = -6.933

@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="1_5lto7"]
 [ext_resource type="Script" path="res://assets/Scripts/Levels/3/cp3_lvl11.gd" id="1_r16vl"]
 [ext_resource type="Texture2D" uid="uid://dqbnguairri6r" path="res://assets/Sprite/UI/cenario3.png" id="2_3w2ut"]
-[ext_resource type="PackedScene" uid="uid://bf63slacbvmwl" path="res://assets/Scenes/Kids/orange.tscn" id="3_yncwc"]
 [ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="4_kt53a"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="5_d8tu2"]
+[ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="5_nuhxc"]
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="6_t41qc"]
 [ext_resource type="Texture2D" uid="uid://d130am3gtlfq2" path="res://assets/Sprite/UI/estrelaCAPITULO2.png" id="7_txfmy"]
-[ext_resource type="Texture2D" uid="uid://cqb83h3p7aid8" path="res://assets/Sprite/UI/3.Levels/2.png" id="8_co13s"]
 [ext_resource type="Texture2D" uid="uid://b1d2lscxxr2i" path="res://assets/Sprite/obstaculobush.png" id="9_3docu"]
+[ext_resource type="Texture2D" uid="uid://cat7nh6rn0tn2" path="res://assets/Sprite/UI/levels/12.png" id="9_hcs53"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_530ll"]
 texture = ExtResource("1_5lto7")
@@ -141,14 +141,14 @@ texture = ExtResource("2_3w2ut")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Orange" parent="." instance=ExtResource("3_yncwc")]
-position = Vector2(848, 144)
-
 [node name="Blue" parent="." instance=ExtResource("4_kt53a")]
-position = Vector2(272, 144)
+position = Vector2(400, 272)
+
+[node name="Red" parent="." instance=ExtResource("5_nuhxc")]
+position = Vector2(464, 400)
 
 [node name="Player" parent="." instance=ExtResource("5_d8tu2")]
-position = Vector2(400, 152)
+position = Vector2(592, 408)
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 position = Vector2(320, 96)
@@ -184,7 +184,7 @@ texture = ExtResource("7_txfmy")
 texture = ExtResource("7_txfmy")
 
 [node name="NextLevel" parent="Hud/LevelComplete" index="5"]
-texture = ExtResource("8_co13s")
+texture = ExtResource("9_hcs53")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -213,13 +213,73 @@ rotation = -1.5708
 shape = SubResource("RectangleShape2D_1w3ky")
 
 [node name="Bush" type="Sprite2D" parent="."]
-position = Vector2(736, 416)
+position = Vector2(352, 288)
 scale = Vector2(0.63, 0.63)
 texture = ExtResource("9_3docu")
 
 [node name="Area2D" type="Area2D" parent="Bush"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bush/Area2D"]
+shape = SubResource("RectangleShape2D_1rq13")
+
+[node name="Bush2" type="Sprite2D" parent="."]
+position = Vector2(416, 224)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("9_3docu")
+
+[node name="Area2D" type="Area2D" parent="Bush2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bush2/Area2D"]
+shape = SubResource("RectangleShape2D_1rq13")
+
+[node name="Bush3" type="Sprite2D" parent="."]
+position = Vector2(480, 352)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("9_3docu")
+
+[node name="Area2D" type="Area2D" parent="Bush3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bush3/Area2D"]
+shape = SubResource("RectangleShape2D_1rq13")
+
+[node name="Bush4" type="Sprite2D" parent="."]
+position = Vector2(544, 416)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("9_3docu")
+
+[node name="Area2D" type="Area2D" parent="Bush4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bush4/Area2D"]
+shape = SubResource("RectangleShape2D_1rq13")
+
+[node name="Bush5" type="Sprite2D" parent="."]
+position = Vector2(608, 480)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("9_3docu")
+
+[node name="Area2D" type="Area2D" parent="Bush5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bush5/Area2D"]
+shape = SubResource("RectangleShape2D_1rq13")
+
+[node name="Bush6" type="Sprite2D" parent="."]
+position = Vector2(608, 224)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("9_3docu")
+
+[node name="Area2D" type="Area2D" parent="Bush6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bush6/Area2D"]
+shape = SubResource("RectangleShape2D_1rq13")
+
+[node name="Bush7" type="Sprite2D" parent="."]
+position = Vector2(352, 480)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("9_3docu")
+
+[node name="Area2D" type="Area2D" parent="Bush7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bush7/Area2D"]
 shape = SubResource("RectangleShape2D_1rq13")
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://nve6lie71jhm"]
+[gd_scene load_steps=18 format=3 uid="uid://nve6lie71jhm"]
 
 [ext_resource type="Script" path="res://assets/Scripts/Levels/2/cp2_lvl12.gd" id="1_fteex"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_u4tiv"]
@@ -6,11 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bf63slacbvmwl" path="res://assets/Scenes/Kids/orange.tscn" id="4_g0eks"]
 [ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="5_5cikh"]
 [ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="6_02koc"]
-[ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="7_5fllk"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="8_j1bat"]
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="9_ddrtk"]
 [ext_resource type="Texture2D" uid="uid://d130am3gtlfq2" path="res://assets/Sprite/UI/estrelaCAPITULO2.png" id="10_s417j"]
-[ext_resource type="Texture2D" uid="uid://dmywcowxfuvk8" path="res://assets/Sprite/UI/2.Chapters/comingsoonicon.png" id="11_3a55j"]
+[ext_resource type="Texture2D" uid="uid://dp83io0r3oed3" path="res://assets/Sprite/UI/levels/13.png" id="10_vjk54"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_edend"]
 texture = ExtResource("2_u4tiv")
@@ -142,19 +141,16 @@ texture = ExtResource("3_2527e")
 expand_mode = 1
 
 [node name="Orange" parent="." instance=ExtResource("4_g0eks")]
-position = Vector2(272, 592)
+position = Vector2(272, 400)
 
 [node name="Blue" parent="." instance=ExtResource("5_5cikh")]
-position = Vector2(784, 144)
+position = Vector2(720, 144)
 
 [node name="Green" parent="." instance=ExtResource("6_02koc")]
-position = Vector2(784, 336)
-
-[node name="Red" parent="." instance=ExtResource("7_5fllk")]
-position = Vector2(656, 208)
+position = Vector2(784, 272)
 
 [node name="Player" parent="." instance=ExtResource("8_j1bat")]
-position = Vector2(528, 472)
+position = Vector2(720, 408)
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 position = Vector2(320, 96)
@@ -190,7 +186,7 @@ texture = ExtResource("10_s417j")
 texture = ExtResource("10_s417j")
 
 [node name="NextLevel" parent="Hud/LevelComplete" index="5"]
-texture = ExtResource("11_3a55j")
+texture = ExtResource("10_vjk54")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true

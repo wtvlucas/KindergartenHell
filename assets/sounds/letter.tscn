@@ -4,5 +4,4 @@
 
 [node name="Letter" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_w47ov")
-volume_db = -8.685
 max_distance = 1855.0

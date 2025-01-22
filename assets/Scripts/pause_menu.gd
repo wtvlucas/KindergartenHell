@@ -59,6 +59,8 @@ func change_lvl() -> void:
 			GameManager.paused = false
 			GameManager.moving = false
 		elif option == 4:
+			help_control.option = 2
+			help_control.update_option_position()
 			helping = true
 			help_control.show()
 

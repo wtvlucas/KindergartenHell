@@ -6,4 +6,4 @@ loop = true
 
 [node name="Chapter1" type="AudioStreamPlayer2D"]
 stream = SubResource("AudioStreamMP3_2xoqr")
-volume_db = -6.933
+parameters/looping = true

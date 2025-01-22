@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxyucnpblgmst"]
+
+[ext_resource type="AudioStream" uid="uid://cty7yo2kyk2mb" path="res://assets/sounds/Capitulo 3_export.mp3" id="1_t2k6u"]
+
+[node name="Chapter3" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_t2k6u")
+parameters/looping = true

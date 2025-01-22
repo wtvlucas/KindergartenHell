@@ -21,17 +21,17 @@ var finished = false
 var movement_locked = true  
 var show_key = false
 var texts = [
-	"Pressiona a tecla \t para seguir o diálogo.",
-	"Olá professora Clara, bem-vinda ao Kindergarten Hell!",
-	"Precisamos da tua ajuda para guiar as crianças para as portas da escola dando o menor número de passos possíveis.",
-	"As portas estão assinaladas com uma seta.",
-	"O limite de passos que tens, está no bloco no canto superior esquerdo.",
-	"Também tens a tua avaliação em estrelas, que aparece junto ao bloco de passos.",
-	"Tenta dar o menor número de passos possíveis para colecionar todas as estrelas. Isto se quiseres explorar outros locais da escola.",
-	"Já agora, as crianças seguem sempre o teu exemplo, tens influência sobre elas.",
-	"Usa as setas de movimento para mover a professora e influenciar a criança verde até a porta da escola.",
+	"Press the  \t     key to start the dialogue. ",
+	"Hello Miss Clara, welcome to Kindergarten Hell!",
+	"We need your help to guide children through the school doors.",
+	"The doors are marked with an arrow. ",
+	"The limit of steps you have are in the note at the top left corner. ",
+	"We also give you a star rating, which appears next to the steps calendar.",
+	"Try to take as few steps as possible to collect all the stars. That is if you want to explore other parts of the school.",
+	"By the way, kids always follow your lead, you have influence over them.",
+	"Use the key arrows or WASD to move and influence the green child towards the school door.",
 	"",
-	"Boa conseguiste! Estás pronta para o próximo desafio!"
+	"Great, you did it! You're ready for the next challenge!"
 ]
 
 var current_text_index = 0
@@ -49,7 +49,7 @@ var dicts: Dictionary = {
 func _ready() -> void:
 	text_label.visible_characters = 0
 	text_label.text = texts[current_text_index]
-	GameManager.moving = true  # Bloqueia o movimento inicialmente
+	GameManager.moving = true  
 	talk()
 	space_key.hide()
 	
@@ -75,7 +75,7 @@ func _process(delta: float) -> void:
 	timer.paused = GameManager.paused
 
 	# Mostra o espaço para continuar o diálogo
-	if show_key and (text_label.visible_characters >= 18 or text_label.visible_characters == -1):
+	if show_key and (text_label.visible_characters >= 10 or text_label.visible_characters == -1):
 		space_key.show()
 	else:
 		space_key.hide()

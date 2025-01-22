@@ -137,19 +137,13 @@ texture = ExtResource("3_mkpoe")
 expand_mode = 1
 
 [node name="Blue" parent="." instance=ExtResource("5_nbrra")]
-position = Vector2(592, 144)
-
-[node name="Blue2" parent="." instance=ExtResource("5_nbrra")]
-position = Vector2(592, 208)
-
-[node name="Blue3" parent="." instance=ExtResource("5_nbrra")]
-position = Vector2(592, 592)
+position = Vector2(656, 272)
 
 [node name="Red" parent="." instance=ExtResource("6_iodry")]
-position = Vector2(848, 272)
+position = Vector2(720, 272)
 
 [node name="Player" parent="." instance=ExtResource("7_j2rwn")]
-position = Vector2(848, 216)
+position = Vector2(528, 280)
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 position = Vector2(320, 96)

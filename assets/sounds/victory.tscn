@@ -4,4 +4,3 @@
 
 [node name="Victory" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_paq3h")
-volume_db = -6.933

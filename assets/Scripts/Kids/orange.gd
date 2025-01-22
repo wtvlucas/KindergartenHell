@@ -55,8 +55,10 @@ func start_movement(dir):
 		tile_pos = tile_map.local_to_map(position)
 		position_history.append(tile_pos)  # Adiciona ao histórico antes de mover
 		if position_history.size() > 3:
-			position_history.pop_front()  # Mantém apenas as últimas 3 posições
+			position_history.pop_front()
+  # Mantém apenas as últimas 3 posições
 		move_in_direction(dir)
+		await get_tree().create_timer(0.1).timeout
 		GameManager.moving += 1
 
 func move_in_direction(dir):
@@ -123,7 +125,7 @@ func _on_area_entered(area: Area2D) -> void:
 	else:
 		GameManager.colided = true
 		#print("colided", tile_pos)
-		print(GameManager.moving)
+		#print(GameManager.moving)
 		move_back()
 		
 		GameManager.colided = false

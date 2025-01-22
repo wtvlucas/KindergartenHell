@@ -20,13 +20,13 @@ var lvl_str = "cp3_lvl"
 var current_level = lvl_str + str(level)
 
 var dicts : Dictionary = {
-	max_moves = 20,
+	max_moves = 11,
 	need_to_save = 2,
 	saved = 0,
 	stars = 0,
 	
-	treestars = 8,
-	twostars = 4,
+	treestars = 2,
+	twostars = 1,
 	onestar = 0,
 }
 
@@ -72,8 +72,8 @@ func _process(delta: float) -> void:
 
 func next():
 	var next = lvl_str + str(level + 1)
-	print(next)
-	get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + next + ".tscn")
+	
+	GameManager.change_scene("res://assets/Scenes/Levels/" + next + ".tscn")
 	GameManager.endLevel = false
 
 func show_end() -> void:

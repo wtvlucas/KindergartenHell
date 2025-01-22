@@ -174,7 +174,6 @@ autoplay = "blink"
 
 [node name="HelpControl" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -207,14 +206,19 @@ texture = ExtResource("3_auwu0")
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 256.0
-offset_top = 272.0
-offset_right = 896.0
-offset_bottom = 528.0
-text = "Texto dos putos"
+offset_top = 256.0
+offset_right = 960.0
+offset_bottom = 514.0
+text = "It copies your every move. If you walk up, he will walk up. If you walk to the right, he will walk to the right.
+
+Note.
+Child who always gets what he wants by being well-behaved. He always does his homework and has exemplary behavior."
 label_settings = SubResource("LabelSettings_wx61j")
+autowrap_mode = 3
 
 [node name="Green" type="TextureRect" parent="HelpControl"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 272.0
 offset_top = 128.0
 offset_right = 372.0
@@ -223,6 +227,7 @@ texture = ExtResource("6_kvae5")
 
 [node name="Blue" type="TextureRect" parent="HelpControl"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 464.0
 offset_top = 128.0
 offset_right = 564.0
@@ -231,6 +236,7 @@ texture = ExtResource("5_6g436")
 
 [node name="Red" type="TextureRect" parent="HelpControl"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 656.0
 offset_top = 128.0
 offset_right = 756.0
@@ -239,6 +245,7 @@ texture = ExtResource("7_ub2ig")
 
 [node name="Orange" type="TextureRect" parent="HelpControl"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 848.0
 offset_top = 128.0
 offset_right = 948.0
@@ -247,6 +254,7 @@ texture = ExtResource("8_53cuy")
 
 [node name="Setaback" type="TextureRect" parent="HelpControl"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 104.0
 offset_top = 510.0
 offset_right = 224.0

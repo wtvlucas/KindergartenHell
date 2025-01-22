@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c22btbsuiy0np"]
+[gd_scene load_steps=24 format=3 uid="uid://c22btbsuiy0np"]
 
 [ext_resource type="Script" path="res://assets/Scripts/tutorial/green_tutorial.gd" id="1_t748n"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_dh2ed"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bnwqe2yni82y7" path="res://assets/Sprite/UI/talking.png" id="9_ktkxb"]
 [ext_resource type="Texture2D" uid="uid://bgb687c7a6v85" path="res://assets/Sprite/UI/keys/space.png" id="10_ixlvi"]
 [ext_resource type="Texture2D" uid="uid://hl5ef6vxv5sp" path="res://assets/Sprite/UI/Seta_porta_tutorial.png" id="11_cexnb"]
+[ext_resource type="AudioStream" uid="uid://dknc7ox8a05lj" path="res://assets/sounds/-tutorial.mp3" id="12_xut6q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rkwde"]
 texture = ExtResource("2_dh2ed")
@@ -216,7 +217,7 @@ _data = {
 "seta": SubResource("Animation_cdoug")
 }
 
-[node name="GreenTutorial" type="Node2D"]
+[node name="GreenTut" type="Node2D"]
 script = ExtResource("1_t748n")
 
 [node name="TileMap" type="TileMap" parent="." groups=["Tilemap"]]
@@ -370,25 +371,28 @@ unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 anchors_preset = -1
 anchor_top = -0.0125
+anchor_right = 0.5625
+anchor_bottom = 0.115625
 offset_left = 264.0
 offset_top = 532.0
 offset_right = 912.0
 offset_bottom = 596.0
+scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 theme_override_fonts/normal_font = ExtResource("9_hh4d2")
-theme_override_font_sizes/normal_font_size = 18
-text = "Pressiona a tecla           para seguir o diálogo"
+theme_override_font_sizes/normal_font_size = 36
+text = "Press the           key to start the dialogue. "
 scroll_following = true
 autowrap_mode = 2
-tab_size = 21
+tab_size = 24
 text_direction = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="SpaceKey" type="Sprite2D" parent="Tutorial"]
 unique_name_in_owner = true
-position = Vector2(503, 536)
+position = Vector2(414, 536)
 scale = Vector2(0.183333, 0.183333)
 texture = ExtResource("10_ixlvi")
 
@@ -398,6 +402,11 @@ position = Vector2(576, 151)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_cexnb")
 region_rect = Rect2(23.735, 22.975, 38.78, 13.7)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_xut6q")
+autoplay = true
+parameters/looping = true
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 [connection signal="timeout" from="Tutorial/Timer" to="." method="_on_timer_timeout"]

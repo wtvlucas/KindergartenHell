@@ -58,3 +58,5 @@ extends Resource
 @export var TutBlue : bool = false
 @export var TutRed : bool = false
 @export var TutOrange : bool = false
+
+@export var volume : int = -7

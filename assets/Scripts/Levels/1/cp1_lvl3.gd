@@ -21,7 +21,7 @@ var current_level = lvl_str + str(level)
 
 var dicts : Dictionary = {
 	max_moves = 22,
-	need_to_save = 2,
+	need_to_save = 3,
 	saved = 0,
 	stars = 0,
 	
@@ -72,8 +72,8 @@ func _process(delta: float) -> void:
 
 func next():
 	var next = lvl_str + str(level + 1)
-	print(next)
-	get_tree().change_scene_to_file("res://assets/Scenes/Levels/" + next + ".tscn")
+	
+	GameManager.change_scene("res://assets/Scenes/Levels/" + next + ".tscn")
 	GameManager.endLevel = false
 
 func show_end() -> void:

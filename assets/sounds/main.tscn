@@ -6,4 +6,4 @@ loop = true
 
 [node name="Main" type="AudioStreamPlayer2D"]
 stream = SubResource("AudioStreamMP3_vdbsk")
-volume_db = -6.933
+parameters/looping = true

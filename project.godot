@@ -37,6 +37,7 @@ InputManager="*res://resources/input_manager.gd"
 Touch="res://resources/touch.tscn"
 LevelChange="*res://resources/level_change.tscn"
 Letter="*res://assets/sounds/letter.tscn"
+Chapter3="*res://assets/sounds/chapter_3.tscn"
 
 [display]
 
@@ -45,6 +46,12 @@ window/size/initial_position_type=0
 window/size/resizable=false
 window/stretch/mode="viewport"
 window/dpi/allow_hidpi=false
+
+[file_customization]
+
+folder_colors={
+"res://assets/sounds/": "gray"
+}
 
 [global_group]
 

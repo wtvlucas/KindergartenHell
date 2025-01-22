@@ -109,7 +109,7 @@ sources/0 = SubResource("TileSetAtlasSource_snjwh")
 size = Vector2(38, 624)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1w3ky"]
-size = Vector2(20, 768)
+size = Vector2(25.9985, 800)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_173nd"]
 size = Vector2(48, 56)
@@ -159,6 +159,7 @@ one_shot = true
 autostart = true
 
 [node name="Walls" type="Area2D" parent="." groups=["Walls"]]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2(144, 352)
@@ -174,7 +175,7 @@ rotation = -1.5708
 shape = SubResource("RectangleShape2D_1w3ky")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
-position = Vector2(576, 656)
+position = Vector2(576, 658.999)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_1w3ky")
 

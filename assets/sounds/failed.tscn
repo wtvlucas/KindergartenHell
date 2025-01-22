@@ -4,4 +4,3 @@
 
 [node name="Failed" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_x74rs")
-volume_db = -6.933

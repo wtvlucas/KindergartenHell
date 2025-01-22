@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://assets/Scripts/Levels/2/cp2_lvl2.gd" id="1_stp0d"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_qtum2"]
 [ext_resource type="Texture2D" uid="uid://ru1lu5ifor0u" path="res://assets/Sprite/UI/cenario2.png" id="3_kg3mk"]
-[ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="4_m43ku"]
+[ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="4_1u7i6"]
 [ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="6_8y5d2"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="7_30lqj"]
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="8_goyks"]
@@ -136,20 +136,14 @@ scale = Vector2(0.647, 0.647)
 texture = ExtResource("3_kg3mk")
 expand_mode = 1
 
-[node name="Green" parent="." instance=ExtResource("4_m43ku")]
-position = Vector2(656, 272)
-
-[node name="Green2" parent="." instance=ExtResource("4_m43ku")]
-position = Vector2(720, 272)
-
-[node name="Green3" parent="." instance=ExtResource("4_m43ku")]
-position = Vector2(848, 272)
+[node name="Blue" parent="." instance=ExtResource("4_1u7i6")]
+position = Vector2(784, 208)
 
 [node name="Red" parent="." instance=ExtResource("6_8y5d2")]
-position = Vector2(656, 336)
+position = Vector2(784, 464)
 
 [node name="Player" parent="." instance=ExtResource("7_30lqj")]
-position = Vector2(528, 344)
+position = Vector2(592, 280)
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 position = Vector2(320, 96)

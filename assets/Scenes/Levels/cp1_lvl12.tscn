@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://assets/Scripts/Levels/1/cp1_lvl12.gd" id="1_0kkwq"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_bl7mj"]
 [ext_resource type="Texture2D" uid="uid://josmu1668w6w" path="res://assets/Sprite/Level1Background.png" id="3_xq2dh"]
-[ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="4_p0d7s"]
 [ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="5_f7u33"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="6_w8p8c"]
+[ext_resource type="Texture2D" uid="uid://dp83io0r3oed3" path="res://assets/Sprite/UI/levels/13.png" id="7_3ydf3"]
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="7_ppshb"]
-[ext_resource type="Texture2D" uid="uid://d1nsdf00mvgjv" path="res://assets/Sprite/UI/2.Chapters/chapter2icon.png" id="8_m4xqd"]
+[ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="8_5f8rv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_snjwh"]
 texture = ExtResource("2_bl7mj")
@@ -133,12 +133,8 @@ offset_bottom = 989.0
 scale = Vector2(0.647, 0.647)
 texture = ExtResource("3_xq2dh")
 
-[node name="Red" parent="." instance=ExtResource("4_p0d7s")]
-position = Vector2(400, 336)
-scale = Vector2(1.04753, 1.04753)
-
 [node name="Blue" parent="." instance=ExtResource("5_f7u33")]
-position = Vector2(464, 336)
+position = Vector2(592, 336)
 collision_layer = 1
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
@@ -187,13 +183,17 @@ position = Vector2(664, 88)
 shape = SubResource("RectangleShape2D_k58w7")
 
 [node name="Player" parent="." instance=ExtResource("6_w8p8c")]
-position = Vector2(592, 344)
+position = Vector2(528, 216)
 
 [node name="Hud" parent="." instance=ExtResource("7_ppshb")]
 
 [node name="NextLevel" parent="Hud/LevelComplete" index="5"]
-anchor_right = 0.743056
-texture = ExtResource("8_m4xqd")
+offset_left = 0.0
+offset_right = 0.0
+texture = ExtResource("7_3ydf3")
+
+[node name="Green" parent="." instance=ExtResource("8_5f8rv")]
+position = Vector2(400, 208)
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 

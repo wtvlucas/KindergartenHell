@@ -4,9 +4,11 @@ extends Control
 @onready var chapters: TextureButton = %Chapters
 @onready var exit: TextureButton = %Exit
 @onready var arrow: Sprite2D = %Arrow
+@onready var settings_control: Control = %SettingsControl
+@onready var settings: TextureButton = %Settings
 
 
-
+var in_volume = false
 var option_position: Array = []
 var current_option : int = 1
 
@@ -21,7 +23,8 @@ func _ready() -> void:
 	option_position = [
 		play,
 		chapters,
-		exit
+		exit,
+		settings
 	]
 	
 	
@@ -41,6 +44,8 @@ func change_lvl() -> void:
 					Chapter1.play()
 				elif last_lvl.begins_with("cp2"):
 					Chapter2.play()
+				elif last_lvl.begins_with("cp3"):
+					Chapter3.play()
 					
 				Main.stream_paused = true
 				GameManager.change_scene("res://assets/Scenes/Levels/" + last_lvl + ".tscn")
@@ -52,15 +57,26 @@ func change_lvl() -> void:
 			SaveSystem.data.last_level = GameManager.current_level
 			SaveSystem.save_data()
 			get_tree().quit()
+			
+		elif current_option == 4:
+			settings_control.show()
+			in_volume = true
 		
 
 func _process(delta: float) -> void:
+	if in_volume:
+		return
+		
 	change_lvl()
 	#print(current_option)
 	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("up"):
 		move_character(-1)
 	elif Input.is_action_just_pressed("right") or Input.is_action_just_pressed("down"):
 		move_character(1)
+		
+	#if Input.is_action_just_pressed("pause"):
+		#settings_control.show()
+		#in_volume = true
 
 
 func move_character(direction: int) -> void:

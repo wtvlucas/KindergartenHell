@@ -4,4 +4,3 @@
 
 [node name="LooseStar" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_5wwd1")
-volume_db = -6.933

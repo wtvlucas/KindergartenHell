@@ -27,7 +27,7 @@ func _ready() -> void:
 		next_level
 	]
 	
-	if get_parent().current_level == "cp1_lvl5" or failed == true:
+	if get_parent().current_level == "cp1_lvl15" or failed == true or get_parent().current_level == "cp2_lvl15":
 		option = 2
 		
 	update_option_position()
@@ -37,9 +37,7 @@ func change_lvl() -> void:
 	if Input.is_action_just_pressed("select"):
 		if option == 1:
 			get_tree().reload_current_scene()
-			
 			GameManager.endLevel = false
-			#self.hide()
 		elif option == 2:
 			GameManager.change_scene("res://assets/Scenes/main_menu.tscn")
 			Main.stream_paused = false
@@ -49,9 +47,15 @@ func change_lvl() -> void:
 			SaveSystem.save_data()
 			GameManager.endLevel = false
 		elif option == 3:
-			if get_parent().current_level == "cp1_lvl5":
+			if get_parent().current_level == "cp1_lvl15":
 				if GameManager.chapter_2_unlocked:
 					GameManager.change_scene("res://assets/Scenes/Levels/cp2_lvl1.tscn")
+					
+					Chapter1.stop()
+					Chapter2.play()
+			elif get_parent().current_level == "cp2_lvl15":
+				if GameManager.chapter_3_unlocked:
+					GameManager.change_scene("res://assets/Scenes/Levels/cp3_lvl1.tscn")
 					
 					Chapter1.stop()
 					Chapter2.play()
@@ -63,7 +67,7 @@ func change_lvl() -> void:
 
 func _process(delta: float) -> void:
 	#print(failed)
-	if !GameManager.chapter_2_unlocked and get_parent().current_level == "cp1_lvl5" or failed == true:
+	if (!GameManager.chapter_2_unlocked or !GameManager.chapter_3_unlocked) and (get_parent().current_level == "cp1_lvl15" or get_parent().current_level == "cp2_lvl15") or failed == true:
 		next_level.set_modulate(Color(0.8, 0.8, 0.8, 0.8))
 	if !GameManager.endLevel:
 		return
@@ -78,10 +82,10 @@ func _process(delta: float) -> void:
 
 
 func move_character(direction: int) -> void:
-	if GameManager.current_level == "cp1_lvl5" or failed:
+	if GameManager.current_level == "cp1_lvl15" or failed or GameManager.current_level == "cp2_lvl15":
 		var next_option = option + direction
 		if next_option >= 1 and next_option <= positions.size():
-			if next_option == 3 and (!GameManager.chapter_2_unlocked or failed):
+			if next_option == 3 and (!GameManager.chapter_2_unlocked or !GameManager.chapter_3_unlocked or failed):
 				return 
 			option = next_option
 	else:

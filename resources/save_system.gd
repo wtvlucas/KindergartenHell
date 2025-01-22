@@ -10,21 +10,35 @@ func save_data() -> void:
 func load_data() -> void:
 	if ResourceLoader.exists(SAVE_PATH):
 		data = ResourceLoader.load(SAVE_PATH)
+		# Verifica se os novos elementos estão presentes, caso contrário, inicializa-os
+
+	else:
+		# Inicializa o SaveData se não houver arquivo salvo
+		data = SaveData.new()
+	  
+
 
 
 func _ready() -> void:
 	load_data()
+	#data.TutBlue = false
 	if data:
+		# Sincronizar os níveis com as estrelas exportadas
+		print(data.stars)
 		GameManager.current_level = data.last_level
+
 	
 
 func set_stars_for_level(level: String, value: int):
+#	print("trying to save")
 	if not data:
 		return
 	if level in data.stars:
 		data.stars[level] = clamp(value, 0, 3)
-		print("Estrelas ajustadas:", level, "=", data.stars[level])
+		#print("Estrelas ajustadas:", level, "=", data.stars[level])
 		save_data()
+	#else:
+		#print("Nível não encontrado:", level)
 
 func get_stars_for_level(level: String) -> int:
 	if not data:
@@ -40,7 +54,7 @@ func get_total_stars() -> int:
 func reset_stars():
 	for level in data.stars.keys():
 		data.stars[level] = 0
-	print("Todas as estrelas foram resetadas para 0.")
+	#print("Todas as estrelas foram resetadas para 0.")
 	save_data()
 	
 func _notification(what: int) -> void:
