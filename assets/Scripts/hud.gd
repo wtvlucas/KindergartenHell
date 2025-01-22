@@ -67,7 +67,11 @@ func change_lvl() -> void:
 
 func _process(delta: float) -> void:
 	#print(failed)
-	if (!GameManager.chapter_2_unlocked or !GameManager.chapter_3_unlocked) and (get_parent().current_level == "cp1_lvl15" or get_parent().current_level == "cp2_lvl15") or failed == true:
+	if (!GameManager.chapter_2_unlocked and get_parent().current_level == "cp1_lvl15"):
+		next_level.set_modulate(Color(0.8, 0.8, 0.8, 0.8))
+	elif (!GameManager.chapter_3_unlocked and get_parent().current_level == "cp2_lvl15"):
+		next_level.set_modulate(Color(0.8, 0.8, 0.8, 0.8))
+	elif failed:
 		next_level.set_modulate(Color(0.8, 0.8, 0.8, 0.8))
 	if !GameManager.endLevel:
 		return

@@ -21,6 +21,7 @@ func load_data() -> void:
 
 func _ready() -> void:
 	load_data()
+	cheat_stars()
 	#data.TutBlue = false
 	if data:
 		# Sincronizar os níveis com as estrelas exportadas
@@ -54,6 +55,12 @@ func get_total_stars() -> int:
 func reset_stars():
 	for level in data.stars.keys():
 		data.stars[level] = 0
+	#print("Todas as estrelas foram resetadas para 0.")
+	save_data()
+	
+func cheat_stars():
+	for level in data.stars.keys():
+		data.stars[level] = 3
 	#print("Todas as estrelas foram resetadas para 0.")
 	save_data()
 	
