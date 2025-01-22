@@ -6,7 +6,13 @@ extends CanvasLayer
 @onready var arrow: Sprite2D = %Arrow
 @onready var back: TextureButton = $Back
 
+@onready var help: TextureRect = %Help
+@onready var help_control: Control = %HelpControl
+@onready var help_button: TextureButton = %HelpButton
 
+
+
+var helping = false
 var positions: Array = []
 var option : int = 1
 
@@ -21,7 +27,8 @@ func _ready() -> void:
 	positions = [
 		back.position,
 		home.position,
-		restart.position
+		restart.position,
+		help_button.position
 	]
 	
 	
@@ -51,12 +58,18 @@ func change_lvl() -> void:
 			self.hide()
 			GameManager.paused = false
 			GameManager.moving = false
+		elif option == 4:
+			helping = true
+			help_control.show()
+
 		
 
 func _process(delta: float) -> void:
 	
-	if !GameManager.paused:
+	if !GameManager.paused or helping:
 		return
+		
+	
 	change_lvl()
 	#print(option)
 	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("up"):

@@ -134,7 +134,7 @@ scale = Vector2(0.647, 0.647)
 texture = ExtResource("3_f86va")
 
 [node name="Green" parent="." instance=ExtResource("4_gbllo")]
-position = Vector2(400, 272)
+position = Vector2(592, 272)
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 position = Vector2(320, 96)

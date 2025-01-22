@@ -119,6 +119,7 @@ script = ExtResource("1_iprqh")
 
 [node name="TileMap" type="TileMap" parent="." groups=["Tilemap"]]
 unique_name_in_owner = true
+visible = false
 tile_set = SubResource("TileSet_cpnob")
 format = 2
 layer_0/name = "floor"
@@ -133,11 +134,11 @@ scale = Vector2(0.647, 0.647)
 texture = ExtResource("3_pcamx")
 
 [node name="Green3" parent="." instance=ExtResource("4_3nf0a")]
-position = Vector2(664, 472)
+position = Vector2(656, 336)
 metadata/_edit_group_ = true
 
 [node name="Green2" parent="." instance=ExtResource("4_3nf0a")]
-position = Vector2(472, 408)
+position = Vector2(464, 272)
 metadata/_edit_group_ = true
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
@@ -196,7 +197,7 @@ position = Vector2(664, 88)
 shape = SubResource("RectangleShape2D_csxu3")
 
 [node name="Player" parent="." instance=ExtResource("9_2m4fx")]
-position = Vector2(528, 536)
+position = Vector2(528, 408)
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 

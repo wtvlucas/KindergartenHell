@@ -68,5 +68,6 @@ func move_character(direction: int) -> void:
 	update_option_position()
 
 func update_option_position() -> void:
-	var pos = option_position[current_option].position
-	arrow.position = Vector2(option_position[current_option - 1].x - 25, option_position[current_option - 1].y + 30)
+	var pos = option_position[current_option - 1].position
+	var sz = option_position[current_option - 1].size
+	arrow.position = Vector2(pos.x - 15, pos.y + sz.y / 2)

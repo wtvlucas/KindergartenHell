@@ -55,3 +55,6 @@ extends Resource
 @export var last_level : String = GameManager.current_level
 
 @export var TutGreen : bool = false
+@export var TutBlue : bool = false
+@export var TutRed : bool = false
+@export var TutOrange : bool = false

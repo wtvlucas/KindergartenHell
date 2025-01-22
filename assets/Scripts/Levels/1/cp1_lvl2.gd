@@ -20,14 +20,14 @@ var lvl_str = "cp1_lvl"
 var current_level = lvl_str + str(level)
 
 var dicts : Dictionary = {
-	max_moves = 20,
+	max_moves = 16,
 	need_to_save = 2,
 	saved = 0,
 	stars = 0,
 	
 	treestars = 8,
-	twostars = 4,
-	onestar = 0,
+	twostars = 5,
+	onestar = 2,
 }
 
 var last_stars: int = 0  

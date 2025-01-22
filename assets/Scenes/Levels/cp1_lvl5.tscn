@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cgr8f1b3oq5s7"]
+[gd_scene load_steps=14 format=3 uid="uid://cgr8f1b3oq5s7"]
 
 [ext_resource type="Script" path="res://assets/Scripts/Levels/1/cp1_lvl5.gd" id="1_ogxw5"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_7qumv"]
 [ext_resource type="Texture2D" uid="uid://josmu1668w6w" path="res://assets/Sprite/Level1Background.png" id="3_h5o0l"]
-[ext_resource type="PackedScene" uid="uid://p4s6bsp70ti5" path="res://assets/Scenes/Kids/red.tscn" id="5_g1bge"]
-[ext_resource type="PackedScene" uid="uid://c7xyyfqstw1ki" path="res://assets/Scenes/Kids/blue.tscn" id="6_t8dvx"]
+[ext_resource type="PackedScene" uid="uid://cwmqt23ggfnap" path="res://assets/Scenes/Kids/green.tscn" id="4_cruxn"]
 [ext_resource type="PackedScene" uid="uid://7s8tap4or6wg" path="res://assets/Scenes/hud.tscn" id="7_rbpg4"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://assets/Scenes/player.tscn" id="8_5ggpu"]
 [ext_resource type="Texture2D" uid="uid://d1nsdf00mvgjv" path="res://assets/Sprite/UI/2.Chapters/chapter2icon.png" id="8_webjt"]
@@ -133,13 +132,11 @@ offset_bottom = 989.0
 scale = Vector2(0.647, 0.647)
 texture = ExtResource("3_h5o0l")
 
-[node name="Red" parent="." instance=ExtResource("5_g1bge")]
-position = Vector2(400, 336)
-scale = Vector2(1.04753, 1.04753)
+[node name="Green" parent="." instance=ExtResource("4_cruxn")]
+position = Vector2(528, 528)
 
-[node name="Blue" parent="." instance=ExtResource("6_t8dvx")]
-position = Vector2(464, 336)
-collision_layer = 1
+[node name="Green2" parent="." instance=ExtResource("4_cruxn")]
+position = Vector2(400, 80)
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 position = Vector2(320, 96)
@@ -187,7 +184,7 @@ position = Vector2(664, 88)
 shape = SubResource("RectangleShape2D_k58w7")
 
 [node name="Player" parent="." instance=ExtResource("8_5ggpu")]
-position = Vector2(592, 344)
+position = Vector2(400, 472)
 
 [node name="Hud" parent="." instance=ExtResource("7_rbpg4")]
 

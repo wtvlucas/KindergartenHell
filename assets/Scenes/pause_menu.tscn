@@ -1,8 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bll5udapx4mfi"]
+[gd_scene load_steps=16 format=3 uid="uid://bll5udapx4mfi"]
 
 [ext_resource type="Script" path="res://assets/Scripts/pause_menu.gd" id="1_cu273"]
 [ext_resource type="Texture2D" uid="uid://cw0tqnfsgqbtk" path="res://assets/Sprite/UI/arrow.png" id="3_auwu0"]
+[ext_resource type="Texture2D" uid="uid://dubdu6i5iitl4" path="res://assets/Sprite/UI/help.png" id="4_fnc2s"]
+[ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="5_1j8wi"]
+[ext_resource type="Texture2D" uid="uid://d3w01mej88h86" path="res://assets/Sprite/Kids/idle/chavalo1.png" id="5_6g436"]
 [ext_resource type="Texture2D" uid="uid://dh88mixklmyoh" path="res://assets/Sprite/UI/menupause.png" id="5_r00hu"]
+[ext_resource type="Script" path="res://assets/Scripts/help_control.gd" id="5_rqinf"]
+[ext_resource type="Texture2D" uid="uid://b64h3q5q22sx8" path="res://assets/Sprite/Kids/idle/chavaloverde1.png" id="6_kvae5"]
+[ext_resource type="Texture2D" uid="uid://cbiikeegqwc4g" path="res://assets/Sprite/Kids/idle/chavalovermelho1.png" id="7_ub2ig"]
+[ext_resource type="Texture2D" uid="uid://csocfiopiltsg" path="res://assets/Sprite/Kids/idle/laranja (1).png" id="8_53cuy"]
+[ext_resource type="Texture2D" uid="uid://bdl16a87xyqrq" path="res://assets/Sprite/UI/setaback.png" id="10_11alf"]
 
 [sub_resource type="Animation" id="Animation_r1643"]
 length = 0.001
@@ -13,6 +21,18 @@ tracks/0/path = NodePath("Arrow:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HelpControl/ArrowPlayers:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -30,7 +50,19 @@ tracks/0/path = NodePath("Arrow:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.3, 0.5, 1.3, 1.5, 1.7),
+"times": PackedFloat32Array(0, 0.2, 0.4, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HelpControl/ArrowPlayers:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 1.2, 1.4, 1.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -41,6 +73,10 @@ _data = {
 "RESET": SubResource("Animation_r1643"),
 "blink": SubResource("Animation_8civw")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_wx61j"]
+font = ExtResource("5_1j8wi")
+font_size = 20
 
 [node name="PauseMenu" type="CanvasLayer"]
 layer = 5
@@ -88,6 +124,20 @@ offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="HelpButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 467.0
+offset_top = 196.0
+offset_right = 483.0
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,16 +147,109 @@ grow_vertical = 2
 texture = ExtResource("5_r00hu")
 expand_mode = 1
 
+[node name="Help" type="TextureRect" parent="."]
+unique_name_in_owner = true
+offset_left = 1014.0
+offset_top = 510.0
+offset_right = 1087.0
+offset_bottom = 583.0
+pivot_offset = Vector2(36, 0)
+texture = ExtResource("4_fnc2s")
+expand_mode = 1
+
 [node name="Arrow" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(224, 184)
+position = Vector2(296, 265)
 rotation = 1.5708
 scale = Vector2(0.48, 0.48)
 texture = ExtResource("3_auwu0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Arrow"]
+unique_name_in_owner = true
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_5x4ac")
 }
 autoplay = "blink"
+
+[node name="HelpControl" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_rqinf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="ColorRect" parent="HelpControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0477431
+anchor_top = 0.0671875
+anchor_right = 0.957465
+anchor_bottom = 0.926562
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.239216, 0.431373, 0.439216, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ArrowPlayers" type="Sprite2D" parent="HelpControl"]
+unique_name_in_owner = true
+position = Vector2(296, 265)
+rotation = 1.5708
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("3_auwu0")
+
+[node name="TutLabel" type="Label" parent="HelpControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 256.0
+offset_top = 272.0
+offset_right = 896.0
+offset_bottom = 528.0
+text = "Texto dos putos"
+label_settings = SubResource("LabelSettings_wx61j")
+
+[node name="Green" type="TextureRect" parent="HelpControl"]
+unique_name_in_owner = true
+offset_left = 272.0
+offset_top = 128.0
+offset_right = 372.0
+offset_bottom = 228.0
+texture = ExtResource("6_kvae5")
+
+[node name="Blue" type="TextureRect" parent="HelpControl"]
+unique_name_in_owner = true
+offset_left = 464.0
+offset_top = 128.0
+offset_right = 564.0
+offset_bottom = 228.0
+texture = ExtResource("5_6g436")
+
+[node name="Red" type="TextureRect" parent="HelpControl"]
+unique_name_in_owner = true
+offset_left = 656.0
+offset_top = 128.0
+offset_right = 756.0
+offset_bottom = 228.0
+texture = ExtResource("7_ub2ig")
+
+[node name="Orange" type="TextureRect" parent="HelpControl"]
+unique_name_in_owner = true
+offset_left = 848.0
+offset_top = 128.0
+offset_right = 948.0
+offset_bottom = 228.0
+texture = ExtResource("8_53cuy")
+
+[node name="Setaback" type="TextureRect" parent="HelpControl"]
+unique_name_in_owner = true
+offset_left = 104.0
+offset_top = 510.0
+offset_right = 224.0
+offset_bottom = 590.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("10_11alf")
