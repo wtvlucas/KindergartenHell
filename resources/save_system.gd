@@ -21,7 +21,7 @@ func load_data() -> void:
 
 func _ready() -> void:
 	load_data()
-	cheat_stars()
+	#cheat_stars()
 	#data.TutBlue = false
 	if data:
 		# Sincronizar os níveis com as estrelas exportadas

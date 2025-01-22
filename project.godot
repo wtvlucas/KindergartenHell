@@ -18,7 +18,7 @@ warnings/check_angle_interpolation_type_conflicting=false
 config/name="Hell"
 run/main_scene="res://assets/Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3")
-config/icon="res://logo.png"
+config/icon="res://icon.png"
 
 [autoload]
 
@@ -42,6 +42,7 @@ Chapter3="*res://assets/sounds/chapter_3.tscn"
 [display]
 
 window/size/viewport_height=640
+window/size/mode=3
 window/size/initial_position_type=0
 window/size/resizable=false
 window/stretch/mode="viewport"
