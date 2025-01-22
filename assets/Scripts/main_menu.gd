@@ -37,6 +37,7 @@ func change_lvl() -> void:
 		
 		if current_option == 1:
 			if !SaveSystem.data.TutGreen:
+				Main.stream_paused = true
 				GameManager.change_scene("res://assets/Scenes/tutorial/green_tutorial.tscn")
 			else:
 				var last_lvl = SaveSystem.data.last_level
