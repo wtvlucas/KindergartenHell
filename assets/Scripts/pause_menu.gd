@@ -49,6 +49,7 @@ func change_lvl() -> void:
 			Main.stream_paused = false
 			Chapter1.stop()
 			Chapter2.stop()
+			Chapter3.stop()
 			self.hide()
 			GameManager.paused = false
 			GameManager.unpause()

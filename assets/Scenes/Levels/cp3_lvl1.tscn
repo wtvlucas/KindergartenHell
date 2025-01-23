@@ -159,9 +159,6 @@ shape = SubResource("RectangleShape2D_gh75o")
 
 [node name="Hud" parent="." instance=ExtResource("7_nr0tq")]
 
-[node name="LevelComplete" parent="Hud" index="1"]
-visible = true
-
 [node name="Stars" parent="Hud/LevelComplete" index="1"]
 anchors_preset = 8
 anchor_left = 0.5

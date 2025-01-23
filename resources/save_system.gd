@@ -26,7 +26,7 @@ func _ready() -> void:
 	#data.TutBlue = false
 	if data:
 		# Sincronizar os níveis com as estrelas exportadas
-		print(data.stars)
+		#print(data.stars)
 		GameManager.current_level = data.last_level
 
 	
@@ -61,8 +61,8 @@ func reset_stars():
 	
 func cheat_stars():
 	for level in data.stars.keys():
-		if level.begins_with("cp1"):  # Verifica se o nível começa com "cp1"
-			data.stars[level] = 3  # Define 3 estrelas apenas para esses níveis
+		#if level.begins_with("cp1"):  # Verifica se o nível começa com "cp1"
+		data.stars[level] = 3  # Define 3 estrelas apenas para esses níveis
 	save_data()  # Salva os dados
 
 	

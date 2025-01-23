@@ -43,6 +43,7 @@ func change_lvl() -> void:
 			Main.stream_paused = false
 			Chapter1.stop()
 			Chapter2.stop()
+			Chapter3.stop()
 			SaveSystem.data.last_level = GameManager.current_level
 			SaveSystem.save_data()
 			GameManager.endLevel = false
