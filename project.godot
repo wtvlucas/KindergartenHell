@@ -42,7 +42,6 @@ Chapter3="*res://assets/sounds/chapter_3.tscn"
 [display]
 
 window/size/viewport_height=640
-window/size/mode=3
 window/size/initial_position_type=0
 window/size/resizable=false
 window/stretch/mode="viewport"

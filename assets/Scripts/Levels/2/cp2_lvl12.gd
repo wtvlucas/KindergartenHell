@@ -16,7 +16,7 @@ extends Node2D
 @onready var completed_label: Label = $Hud/LevelComplete/CompletedLabel
 
 var level = 12
-var lvl_str = "cp1_lvl"
+var lvl_str = "cp2_lvl"
 var current_level = lvl_str + str(level)
 
 var dicts : Dictionary = {

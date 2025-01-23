@@ -22,6 +22,7 @@ func load_data() -> void:
 func _ready() -> void:
 	load_data()
 	#cheat_stars()
+	#data.stars["cp2_lvl9"] = 0
 	#data.TutBlue = false
 	if data:
 		# Sincronizar os níveis com as estrelas exportadas
@@ -60,9 +61,10 @@ func reset_stars():
 	
 func cheat_stars():
 	for level in data.stars.keys():
-		data.stars[level] = 3
-	#print("Todas as estrelas foram resetadas para 0.")
-	save_data()
+		if level.begins_with("cp1"):  # Verifica se o nível começa com "cp1"
+			data.stars[level] = 3  # Define 3 estrelas apenas para esses níveis
+	save_data()  # Salva os dados
+
 	
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:

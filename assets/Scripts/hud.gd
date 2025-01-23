@@ -59,6 +59,8 @@ func change_lvl() -> void:
 					
 					Chapter1.stop()
 					Chapter2.play()
+			elif failed:
+				return
 			else:
 				get_parent().next()
 				

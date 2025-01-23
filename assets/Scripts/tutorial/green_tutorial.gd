@@ -95,7 +95,7 @@ func _process(delta: float) -> void:
 		SaveSystem.data.TutGreen = true
 		GameManager.moving = false
 		GameManager.change_scene("res://assets/Scenes/Levels/cp1_lvl1.tscn")
-		
+		Chapter1.play()
 
 
 func talk():
