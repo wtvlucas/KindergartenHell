@@ -47,6 +47,9 @@ func _process(delta: float) -> void:
 			else:
 				unpause()
 				
+				
+	GameManager.moving = clamp(GameManager.moving, 0, 10)  
+				
 	chapter_2_unlocked = SaveSystem.get_total_stars() >= 38
 		
 	chapter_3_unlocked = SaveSystem.get_total_stars() >= 76
