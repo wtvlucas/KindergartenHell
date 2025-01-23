@@ -31,13 +31,13 @@ Failed="*res://assets/sounds/failed.tscn"
 Victory="*res://assets/sounds/victory.tscn"
 Colided="*res://assets/sounds/colided.tscn"
 Main="*res://assets/sounds/main.tscn"
-Chapter1="*res://assets/sounds/chapter_1.tscn"
-Chapter2="*res://assets/sounds/chapter_2.tscn"
+Chapter1Music="*res://assets/sounds/chapter_1_music.tscn"
+Chapter2Music="*res://assets/sounds/chapter_2_music.tscn"
 InputManager="*res://resources/input_manager.gd"
 Touch="res://resources/touch.tscn"
 LevelChange="*res://resources/level_change.tscn"
 Letter="*res://assets/sounds/letter.tscn"
-Chapter3="*res://assets/sounds/chapter_3.tscn"
+Chapter3Music="*res://assets/sounds/chapter_3_music.tscn"
 
 [display]
 

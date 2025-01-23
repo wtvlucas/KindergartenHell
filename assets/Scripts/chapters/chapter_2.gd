@@ -38,7 +38,7 @@ func change_lvl() -> void:
 			var level_index = (current_level.y * num_columns) + current_level.x
 			var level_path = "res://assets/Scenes/Levels/cp2_lvl" + str(level_index + 1) + ".tscn"
 			Main.stream_paused = true
-			Chapter2.play()
+			Chapter2Music.play()
 			GameManager.change_scene(level_path)
 
 func _process(delta: float) -> void:

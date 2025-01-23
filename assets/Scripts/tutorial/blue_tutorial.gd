@@ -100,7 +100,7 @@ func _process(delta: float) -> void:
 		SaveSystem.data.TutBlue = true
 		GameManager.moving = false
 		GameManager.change_scene("res://assets/Scenes/Levels/cp1_lvl6.tscn")
-		Chapter1.play()
+		Chapter1Music.play()
 		
 
 

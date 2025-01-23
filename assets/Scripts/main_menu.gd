@@ -42,11 +42,11 @@ func change_lvl() -> void:
 			else:
 				var last_lvl = SaveSystem.data.last_level
 				if last_lvl.begins_with("cp1"):
-					Chapter1.play()
+					Chapter1Music.play()
 				elif last_lvl.begins_with("cp2"):
-					Chapter2.play()
+					Chapter2Music.play()
 				elif last_lvl.begins_with("cp3"):
-					Chapter3.play()
+					Chapter3Music.play()
 					
 				Main.stream_paused = true
 				GameManager.change_scene("res://assets/Scenes/Levels/" + last_lvl + ".tscn")

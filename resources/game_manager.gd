@@ -34,10 +34,11 @@ func unpause() -> void:
 
 
 func _process(delta: float) -> void:
-	print(GameManager.moving)
+	#print(get_tree().get_current_scene().get_name())
 	if get_tree().get_current_scene() != null:
+		#print(get_tree().get_current_scene().get_name())
 		var current_scene = get_tree().get_current_scene().get_name()
-		if Input.is_action_just_pressed("pause") and not current_scene in ["MainMenu", "Chapters", "Chapter1", "Chapter2"]:
+		if Input.is_action_just_pressed("pause") and not current_scene in ["MainMenu", "Chapters", "Chapter1", "Chapter2", "Chapter3"]:
 			if endLevel:
 				return
 			paused = !paused

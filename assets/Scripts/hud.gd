@@ -41,9 +41,9 @@ func change_lvl() -> void:
 		elif option == 2:
 			GameManager.change_scene("res://assets/Scenes/main_menu.tscn")
 			Main.stream_paused = false
-			Chapter1.stop()
-			Chapter2.stop()
-			Chapter3.stop()
+			Chapter1Music.stop()
+			Chapter2Music.stop()
+			Chapter3Music.stop()
 			SaveSystem.data.last_level = GameManager.current_level
 			SaveSystem.save_data()
 			GameManager.endLevel = false
@@ -52,14 +52,14 @@ func change_lvl() -> void:
 				if GameManager.chapter_2_unlocked:
 					GameManager.change_scene("res://assets/Scenes/Levels/cp2_lvl1.tscn")
 					
-					Chapter1.stop()
-					Chapter2.play()
+					Chapter1Music.stop()
+					Chapter2Music.play()
 			elif get_parent().current_level == "cp2_lvl15":
 				if GameManager.chapter_3_unlocked:
 					GameManager.change_scene("res://assets/Scenes/Levels/cp3_lvl1.tscn")
 					
-					Chapter1.stop()
-					Chapter2.play()
+					Chapter1Music.stop()
+					Chapter2Music.play()
 			elif failed:
 				return
 			else:
