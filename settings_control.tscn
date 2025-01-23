@@ -1,12 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdin04uokrbd6"]
+[gd_scene load_steps=8 format=3 uid="uid://cdin04uokrbd6"]
 
 [ext_resource type="Script" path="res://settings_control.gd" id="1_6xcql"]
 [ext_resource type="Texture2D" uid="uid://csokdcm4kk1qr" path="res://assets/Sprite/UI/wow.png" id="2_gm0d0"]
 [ext_resource type="Texture2D" uid="uid://dc43jjlcuqrd" path="res://assets/Sprite/UI/esc.png" id="3_2faik"]
+[ext_resource type="FontFile" uid="uid://bgort6x02naib" path="res://assets/fonts/Retro Gaming.ttf" id="4_c8gnl"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_d4pkl"]
 color = Color(1, 1, 1, 1)
 thickness = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_aaqm6"]
+font = ExtResource("4_c8gnl")
+font_size = 23
+
+[sub_resource type="LabelSettings" id="LabelSettings_cm0pf"]
+font = ExtResource("4_c8gnl")
+font_size = 34
 
 [node name="SettingsControl" type="Control"]
 layout_mode = 3
@@ -54,10 +63,37 @@ metadata/_edit_use_anchors_ = true
 [node name="EscKey" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0763889
-anchor_top = 0.834375
-anchor_right = 0.138889
-anchor_bottom = 0.909375
+anchor_left = 0.149306
+anchor_top = 0.854688
+anchor_right = 0.196181
+anchor_bottom = 0.910937
 texture = ExtResource("3_2faik")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="GoBack" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.0625
+anchor_top = 0.857813
+anchor_right = 0.342882
+anchor_bottom = 0.904688
+text = "Press          to go back"
+label_settings = SubResource("LabelSettings_aaqm6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Volume" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.5
+offset_top = -110.0
+offset_right = 161.5
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Volume"
+label_settings = SubResource("LabelSettings_cm0pf")
+horizontal_alignment = 1

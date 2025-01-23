@@ -123,6 +123,7 @@ autoplay = "blink"
 
 [node name="SettingsControl" parent="." instance=ExtResource("4_r1ig0")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Play" to="." method="_on_level_1_button_pressed"]
