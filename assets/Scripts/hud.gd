@@ -65,6 +65,7 @@ func change_lvl() -> void:
 			else:
 				get_parent().next()
 				
+			GameManager.moving = 0
 			GameManager.endLevel = false
 		
 

@@ -21,7 +21,7 @@ func load_data() -> void:
 
 func _ready() -> void:
 	load_data()
-	#cheat_stars()
+	cheat_stars()
 	#data.stars["cp2_lvl9"] = 0
 	#data.TutBlue = false
 	if data:
